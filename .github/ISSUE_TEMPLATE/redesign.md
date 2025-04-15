@@ -1,5 +1,5 @@
 ---
-name: Redesign
+name: Design
 about: Fix views in group capstone project
 title: "[REDESIGN] FileName(s)"
 labels: ''
