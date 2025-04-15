@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QdM-dE-fvm">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--CalendarView-->
+        <scene sceneID="ChB-Cl-3UM">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="oxS-zl-EpY" userLabel="CalendarView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mv7-RM-UrY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="LH3-N6-Y0Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="VrR-xW-xi4" userLabel="CalendarView Item"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaN-85-Opi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-47" y="-243"/>
+        </scene>
+        <!--TodayView-->
+        <scene sceneID="4o4-zo-M6f">
+            <objects>
+                <viewController id="rdc-vI-m2l" userLabel="TodayView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tln-7R-Jqa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="omD-Hn-TkQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Today" image="text.rectangle.page" catalog="system" selectedImage="text.rectangle.page.fill" id="a4v-Qw-N0a" userLabel="TodayView Item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxn-lw-VGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="-934"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="VsN-nU-grO">
+            <objects>
+                <tabBarController id="QdM-dE-fvm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wlP-B5-XFI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rdc-vI-m2l" kind="relationship" relationship="viewControllers" id="ITo-vl-nc9"/>
+                        <segue destination="oxS-zl-EpY" kind="relationship" relationship="viewControllers" id="Uf5-pW-WZE"/>
+                        <segue destination="N2n-2K-OYT" kind="relationship" relationship="viewControllers" id="EeY-dY-Eep"/>
+                        <segue destination="MFU-OO-rBK" kind="relationship" relationship="viewControllers" id="H5G-9U-CHR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhW-Z1-y78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-951" y="-629"/>
+        </scene>
+        <!--TaskView-->
+        <scene sceneID="PKb-j6-VTV">
+            <objects>
+                <viewController id="N2n-2K-OYT" userLabel="TaskView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bpG-J7-ijH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dyG-x4-KCe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="checkmark.circle" catalog="system" selectedImage="checkmark.circle.fill" id="a6i-OZ-Tee" userLabel="TaskView Item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QWD-Og-BEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-952" y="146"/>
+        </scene>
+        <!--ResourceView-->
+        <scene sceneID="W1V-oD-SA5">
+            <objects>
+                <viewController id="MFU-OO-rBK" userLabel="ResourceView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1tt-Pd-jth">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Nhz-Ig-WUG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Resources" image="book.circle" catalog="system" selectedImage="book.circle.fill" id="CT0-Js-47Q" userLabel="ResourceView Item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voq-xG-lgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1789" y="146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book.circle" catalog="system" width="128" height="123"/>
+        <image name="book.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="calendar.circle" catalog="system" width="128" height="123"/>
+        <image name="calendar.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="text.rectangle.page" catalog="system" width="115" height="128"/>
+        <image name="text.rectangle.page.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
