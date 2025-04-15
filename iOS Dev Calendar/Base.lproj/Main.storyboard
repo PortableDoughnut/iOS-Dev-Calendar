@@ -11,7 +11,7 @@
         <!--CalendarView-->
         <scene sceneID="ChB-Cl-3UM">
             <objects>
-                <viewController id="oxS-zl-EpY" userLabel="CalendarView" sceneMemberID="viewController">
+                <viewController id="oxS-zl-EpY" userLabel="CalendarView" customClass="CalendarViewController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mv7-RM-UrY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--TodayView-->
         <scene sceneID="4o4-zo-M6f">
             <objects>
-                <viewController id="rdc-vI-m2l" userLabel="TodayView" sceneMemberID="viewController">
+                <viewController id="rdc-vI-m2l" userLabel="TodayView" customClass="TodayViewController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tln-7R-Jqa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
         <!--TaskView-->
         <scene sceneID="PKb-j6-VTV">
             <objects>
-                <viewController id="N2n-2K-OYT" userLabel="TaskView" sceneMemberID="viewController">
+                <viewController id="N2n-2K-OYT" userLabel="TaskView" customClass="TaskViewController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpG-J7-ijH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--ResourceView-->
         <scene sceneID="W1V-oD-SA5">
             <objects>
-                <viewController id="MFU-OO-rBK" userLabel="ResourceView" sceneMemberID="viewController">
+                <viewController id="MFU-OO-rBK" userLabel="ResourceView" customClass="ResourceViewController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tt-Pd-jth">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
