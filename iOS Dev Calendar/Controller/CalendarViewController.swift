@@ -6,24 +6,59 @@
 //
 
 import UIKit
+import SwiftUI
+import MijickCalendarView
 
 class CalendarViewController: UIViewController {
+  private var selectedDate: Date? = nil
+  private var selectedRange: MDateRange? = .init()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+    let calendarView = CalendarContainerView(
+      selectedDate: Binding(
+        get: { self.selectedDate },
+        set: { self.selectedDate = $0 }
+      ),
+      selectedRange: Binding(
+        get: { self.selectedRange },
+        set: { self.selectedRange = $0 }
+      )
+    )
 
-    /*
-    // MARK: - Navigation
+    let hostingController = UIHostingController(rootView: calendarView)
+    addChild(hostingController)
+    hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(hostingController.view)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    NSLayoutConstraint.activate([
+      hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+      hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ])
 
+    hostingController.didMove(toParent: self)
+  }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct CalendarViewController_Previews: PreviewProvider {
+  static var previews: some View {
+    CalendarViewControllerRepresentable()
+      .edgesIgnoringSafeArea(.all)
+  }
+}
+
+struct CalendarViewControllerRepresentable: UIViewControllerRepresentable {
+  func makeUIViewController(context: Context) -> CalendarViewController {
+    return CalendarViewController()
+  }
+
+  func updateUIViewController(_ uiViewController: CalendarViewController, context: Context) {
+  }
+}
+#endif
