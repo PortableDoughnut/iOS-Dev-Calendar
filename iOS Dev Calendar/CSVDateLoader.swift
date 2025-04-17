@@ -41,10 +41,10 @@ class CSVDateLoader {
           let label = components[start]
           // Skip headers or empty labels
           if label.uppercased().starts(with: "WEEK") ||
-             label.uppercased() == "LEGEND:" ||
-             label.uppercased() == "DAY" ||
-             label.uppercased() == "DATE" ||
-             label.isEmpty {
+              label.uppercased() == "LEGEND:" ||
+              label.uppercased() == "DAY" ||
+              label.uppercased() == "DATE" ||
+              label.isEmpty {
             continue
           }
           let dateString = components[start + 2]
@@ -120,3 +120,4 @@ class CSVDateLoader {
     return nil
   }
 }
+
