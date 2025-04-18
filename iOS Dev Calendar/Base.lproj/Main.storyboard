@@ -24,21 +24,22 @@
             </objects>
             <point key="canvasLocation" x="-47" y="-243"/>
         </scene>
-        <!--TodayView-->
-        <scene sceneID="4o4-zo-M6f">
+        <!--Today-->
+        <scene sceneID="oPp-4l-kan">
             <objects>
-                <viewController id="rdc-vI-m2l" userLabel="TodayView" customClass="TodayViewController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tln-7R-Jqa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="omD-Hn-TkQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Today" image="text.rectangle.page" catalog="system" selectedImage="text.rectangle.page.fill" id="a4v-Qw-N0a" userLabel="TodayView Item"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fxn-lw-VGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="In4-ZC-rLN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" image="text.rectangle.page" catalog="system" selectedImage="text.rectangle.page.fill" id="MM0-tR-pMs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1kb-AX-S9J">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EyU-XA-5PX" kind="relationship" relationship="rootViewController" id="bbj-QI-GP1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFE-ZQ-TjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-934"/>
+            <point key="canvasLocation" x="398" y="-1020"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VsN-nU-grO">
@@ -50,7 +51,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rdc-vI-m2l" kind="relationship" relationship="viewControllers" id="ITo-vl-nc9"/>
+                        <segue destination="In4-ZC-rLN" kind="relationship" relationship="viewControllers" id="kBh-cP-G93"/>
                         <segue destination="oxS-zl-EpY" kind="relationship" relationship="viewControllers" id="Uf5-pW-WZE"/>
                         <segue destination="N2n-2K-OYT" kind="relationship" relationship="viewControllers" id="EeY-dY-Eep"/>
                         <segue destination="MFU-OO-rBK" kind="relationship" relationship="viewControllers" id="H5G-9U-CHR"/>
@@ -91,6 +92,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voq-xG-lgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1789" y="146"/>
+        </scene>
+        <!--TodayView-->
+        <scene sceneID="nHx-dm-a5j">
+            <objects>
+                <viewController id="EyU-XA-5PX" userLabel="TodayView" customClass="TodayViewController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P1X-bm-eb3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="WIh-Vt-cVX">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SBB-oe-WyA">
+                                        <rect key="frame" x="16" y="8" width="361.33333333333331" height="716"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="clR-V6-t0n">
+                                                <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="642"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTZ-hr-7Mo" userLabel="Lesson Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="317"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umh-qs-ww2" userLabel="Teacher Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="325" width="361.33333333333331" height="317"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b71-o8-vvg">
+                                                <rect key="frame" x="0.0" y="650" width="361.33333333333331" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEt-6K-2YD" userLabel="Goal Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHy-Bb-WYn" userLabel="Review Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                        <rect key="frame" x="184.66666666666669" y="0.0" width="176.66666666666669" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xYR-6Q-oP3">
+                                                <rect key="frame" x="0.0" y="708" width="361.33333333333331" height="0.0"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh8-uB-7CC" userLabel="Due Homework Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="0.0"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" id="pxf-8B-ftJ" userLabel="Todays Homework Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                        <rect key="frame" x="184.66666666666669" y="0.0" width="176.66666666666669" height="0.0"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-VB-ey7" userLabel="Code Challenge Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="716" width="361.33333333333331" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="Pvj-Ab-i36"/>
+                                <constraints>
+                                    <constraint firstItem="SBB-oe-WyA" firstAttribute="trailing" secondItem="u5a-m5-rG7" secondAttribute="trailing" constant="377.33333333333331" id="ABc-ig-Waj"/>
+                                    <constraint firstItem="SBB-oe-WyA" firstAttribute="width" secondItem="Pvj-Ab-i36" secondAttribute="width" multiplier="0.919423" id="FgZ-rh-J0l"/>
+                                    <constraint firstItem="xYR-6Q-oP3" firstAttribute="width" secondItem="ycO-38-M5l" secondAttribute="width" multiplier="0.919423" id="KWg-2V-1D8"/>
+                                    <constraint firstItem="SBB-oe-WyA" firstAttribute="leading" secondItem="u5a-m5-rG7" secondAttribute="leading" constant="16" id="Tep-Ue-9ZV"/>
+                                    <constraint firstItem="SBB-oe-WyA" firstAttribute="width" secondItem="ycO-38-M5l" secondAttribute="width" multiplier="0.919423" id="Uwe-Wy-QI6"/>
+                                    <constraint firstItem="SBB-oe-WyA" firstAttribute="top" secondItem="u5a-m5-rG7" secondAttribute="top" constant="8" id="n05-Fh-qlG"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="u5a-m5-rG7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ycO-38-M5l"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qrr-nt-OtQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TJJ-1a-fjy"/>
+                    <connections>
+                        <outlet property="CodeChallengeCard" destination="Efd-VB-ey7" id="Zp6-BF-hDN"/>
+                        <outlet property="DueHomeworkCardView" destination="Jh8-uB-7CC" id="3bb-VJ-6wq"/>
+                        <outlet property="GoalCardView" destination="zEt-6K-2YD" id="su7-wg-lfi"/>
+                        <outlet property="LessonCardView" destination="KTZ-hr-7Mo" id="FfS-V5-xwR"/>
+                        <outlet property="ReviewCardView" destination="xHy-Bb-WYn" id="ZBm-Xl-Z7h"/>
+                        <outlet property="TeacherCardView" destination="umh-qs-ww2" id="NgY-cx-TQG"/>
+                        <outlet property="TonightsHomeworkView" destination="pxf-8B-ftJ" id="9Aq-no-LWg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C72-yI-R8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296.9465648854962" y="-1020.4225352112677"/>
         </scene>
     </scenes>
     <resources>
