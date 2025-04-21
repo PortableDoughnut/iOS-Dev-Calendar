@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6492BD122DB00C02001F5855 /* MijickCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = 6492BD112DB00C02001F5855 /* MijickCalendarView */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0AB5996E2DAEA8E70017A54B /* iOS Dev Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Dev Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6492BD122DB00C02001F5855 /* MijickCalendarView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = "iOS Dev Calendar";
 			packageProductDependencies = (
+				6492BD112DB00C02001F5855 /* MijickCalendarView */,
 			);
 			productName = "iOS Dev Calendar";
 			productReference = 0AB5996E2DAEA8E70017A54B /* iOS Dev Calendar.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 0AB599652DAEA8E60017A54B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6492BD102DB00C02001F5855 /* XCRemoteSwiftPackageReference "CalendarView" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0AB5996F2DAEA8E70017A54B /* Products */;
 			projectDirPath = "";
@@ -333,6 +342,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6492BD102DB00C02001F5855 /* XCRemoteSwiftPackageReference "CalendarView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mijick/CalendarView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6492BD112DB00C02001F5855 /* MijickCalendarView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6492BD102DB00C02001F5855 /* XCRemoteSwiftPackageReference "CalendarView" */;
+			productName = MijickCalendarView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AB599662DAEA8E60017A54B /* Project object */;
 }
