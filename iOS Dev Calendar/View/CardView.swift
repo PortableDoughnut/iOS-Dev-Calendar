@@ -73,13 +73,11 @@ class CardView: UIView {
 		subtitleLabel.text = cardModel.subtitle
 		backgroundColor = cardModel.backgroundColor ?? .systemBackground
 		
-			// Dynamically adjust text color based on background brightness
+			// Use named color assets for text colors
 		if let bgColor = cardModel.backgroundColor {
-			let brightness = bgColor.brightness
-				// If the background is dark, make text light; if light, make text dark
-			let textColor: UIColor = brightness < 0.5 ? .white : .black
-			titleLabel.textColor = textColor
-			subtitleLabel.textColor = textColor.withAlphaComponent(0.7) // Slightly lighter subtitle
+			let isDarkBackground = bgColor.brightness < 0.5
+			titleLabel.textColor = UIColor(named: isDarkBackground ? "CardTextPrimaryLight" : "CardTextPrimaryDark") ?? (isDarkBackground ? .white : .black)
+			subtitleLabel.textColor = UIColor(named: isDarkBackground ? "CardTextSecondaryLight" : "CardTextSecondaryDark") ?? (isDarkBackground ? UIColor.white.withAlphaComponent(0.7) : UIColor.black.withAlphaComponent(0.7))
 		}
 	}
 }

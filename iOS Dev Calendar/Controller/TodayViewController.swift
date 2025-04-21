@@ -1,9 +1,9 @@
-//
-//  TodayViewController.swift
-//  iOS Dev Calendar
-//
-//  Created by Gwen Thelin on 4/15/25.
-//
+	//
+	//  TodayViewController.swift
+	//  iOS Dev Calendar
+	//
+	//  Created by Gwen Thelin on 4/15/25.
+	//
 
 import UIKit
 
@@ -16,9 +16,46 @@ class TodayViewController: UIViewController {
 	@IBOutlet weak var TeacherCardView: CardView!
 	@IBOutlet weak var LessonCardView: CardView!
 	
-	override func viewDidLoad() {
-        super.viewDidLoad()
+	enum CardType {
+		case lesson, teacher, goal, review, dueHomework, tonightsHomework, codeChallenge
+		
+		var title: String {
+			switch self {
+				case .lesson: return "Lesson"
+				case .teacher: return "Teacher"
+				case .goal: return "Goal"
+				case .review: return "Review"
+				case .dueHomework: return "Homework Due"
+				case .tonightsHomework: return "Tonight's Homework"
+				case .codeChallenge: return "Code Challenge"
+			}
+		}
+		
+		var backgroundColor: UIColor {
+			switch self {
+				case .lesson: return UIColor(red: 0.43, green: 0.11, blue: 0.14, alpha: 1.0)
+				case .teacher: return UIColor(red: 0.95, green: 0.79, blue: 0.41, alpha: 1.0)
+				case .goal: return UIColor(red: 0.17, green: 0.18, blue: 0.26, alpha: 1.0)
+				case .review: return UIColor(red: 0.55, green: 0.55, blue: 0.54, alpha: 1.0)
+				case .dueHomework: return UIColor(red: 0.84, green: 0.62, blue: 0.60, alpha: 1.0)
+				case .tonightsHomework: return UIColor(red: 0.95, green: 0.84, blue: 0.84, alpha: 1.0)
+				case .codeChallenge: return UIColor(red: 0.30, green: 0.42, blue: 0.31, alpha: 1.0)
+			}
+		}
+	}
 	
+	func configureCardView(_ cardView: CardView?, type: CardType, subtitle: String) {
+		let model = CardModel(
+			title: type.title,
+			subtitle: subtitle,
+			backgroundColor: type.backgroundColor
+		)
+		cardView?.configureWithModel(model)
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		setupTitles()
 		setupCards()
 	}
@@ -38,65 +75,12 @@ class TodayViewController: UIViewController {
 	
 		/// Fills the card outlets with data
 	func setupCards() {
-		for (card, model) in [
-			(
-				LessonCardView,
-				CardModel(
-					title: "Lesson",
-					subtitle: "SOLID",
-					backgroundColor: UIColor(red: 0.43, green: 0.11, blue: 0.14, alpha: 1.0)
-				)
-			),
-			(
-			TeacherCardView,
-			CardModel(
-				title: "Teacher",
-				subtitle: "Gwen Thelin",
-				backgroundColor: UIColor(red: 0.95, green: 0.79, blue: 0.41, alpha: 1.0)
-			)
-			),
-			(
-			GoalCardView,
-			CardModel(
-				title: "Goal",
-				subtitle: "Learn SOLID principles",
-				backgroundColor: UIColor(red: 0.17, green: 0.18, blue: 0.26, alpha: 1.0)
-			)
-		),
-			(
-			ReviewCardView,
-			CardModel(
-				title: "Review",
-				subtitle: "Review notes from yesterday",
-				backgroundColor: UIColor(red: 0.55, green: 0.55, blue: 0.54, alpha: 1.0)
-			)
-			),
-			(
-				DueHomeworkCardView,
-				CardModel(
-					title: "Homework Due",
-					subtitle: "Emoji Dictionary",
-					backgroundColor: UIColor(red: 0.84, green: 0.62, blue: 0.60, alpha: 1.0)
-				)
-			),
-			(
-				TonightsHomeworkView,
-				CardModel(
-					title: "Tonight's Homework",
-					subtitle: "Social Media App",
-					backgroundColor: UIColor(red: 0.95, green: 0.84, blue: 0.84, alpha: 1.0)
-				)
-			),
-			(
-				CodeChallengeCard,
-				CardModel(
-					title: "Code Challenge",
-					subtitle: "Build a Calculator",
-					backgroundColor: UIColor(red: 0.30, green: 0.42, blue: 0.31, alpha: 1.0)
-				)
-			)
-		] {
-			card?.configureWithModel(model)
-		}
+		configureCardView(LessonCardView, type: .lesson, subtitle: "SOLID")
+		configureCardView(TeacherCardView, type: .teacher, subtitle: "Gwen Thelin")
+		configureCardView(GoalCardView, type: .goal, subtitle: "Learn SOLID principles")
+		configureCardView(ReviewCardView, type: .review, subtitle: "Review notes from yesterday")
+		configureCardView(DueHomeworkCardView, type: .dueHomework, subtitle: "Emoji Dictionary")
+		configureCardView(TonightsHomeworkView, type: .tonightsHomework, subtitle: "Social Media App")
+		configureCardView(CodeChallengeCard, type: .codeChallenge, subtitle: "Build a Calculator")
 	}
 }
