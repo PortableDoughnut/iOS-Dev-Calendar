@@ -32,7 +32,7 @@ extension DV.ColoredCircle {
       .fill(.clear)
       .strokeBorder(Color("AccentColor"), lineWidth: 1)
       .transition(.asymmetric(insertion: .scale(scale: 0.5).combined(with: .opacity), removal: .opacity))
-      .active(if: isSelected()) /*&& !isPast())*/
+      .active(if: isSelected())
       .erased()
   }
 }
@@ -46,31 +46,19 @@ private extension DV.ColoredCircle {
     Text(getStringFromDay(format: "d"))
       .font(.regular(17))
       .foregroundColor(getTextColor())
-//      .strikethrough(isPast())
   }
 }
 private extension DV.ColoredCircle {
   func getTextColor() -> Color {
-//    guard !isPast() else { return .onBackgroundSecondary }
-    
     switch isSelected() {
     case true: return .white
     case false: return color == nil ? .onBackgroundPrimary : .white
     }
   }
   func getBackgroundColor() -> Color {
-//    guard !isPast() else { return .clear }
-    
     switch isSelected() {
     case true: return .onBackgroundPrimary
     case false: return color ?? .clear
     }
   }
 }
-
-// MARK: - On Selection Logic
-//extension DV.ColoredCircle {
-//  func onSelection() {
-//    if !isPast() { selectedDate?.wrappedValue = date }
-//  }
-//}

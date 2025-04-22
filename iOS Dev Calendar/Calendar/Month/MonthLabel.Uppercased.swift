@@ -24,6 +24,7 @@ extension ML { struct Uppercased: MonthLabel {
     .erased()
   }
 }}
+
 private extension ML.Uppercased {
   func createYearLabel() -> some View {
     Text(yearText)
@@ -36,6 +37,7 @@ private extension ML.Uppercased {
       .foregroundStyle(Color.grayAccent)
   }
 }
+
 private extension ML.Uppercased {
   var yearText: String { getString(format: "yyyy") }
   var monthText: String { getString(format: "MMMM").uppercased() }

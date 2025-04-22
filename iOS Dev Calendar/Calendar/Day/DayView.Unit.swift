@@ -19,14 +19,14 @@ extension DV {
     let selectedDate: Binding<Date?>?
     let selectedRange: Binding<MijickCalendarView.MDateRange?>?
     let availableDates: [CalendarDate]
-    
+
     private let calendar = Calendar.current
-    
+
     // Finds the matching calendar entry for this day
     private var calendarDate: CalendarDate? {
       availableDates.first { calendar.isDate($0.date, inSameDayAs: date) }
     }
-    
+
     // Returns the DayType enum based on label
     private var dayType: DayType {
       if let label = calendarDate?.label {
@@ -34,7 +34,7 @@ extension DV {
       }
       return .other
     }
-    
+
     private var isAvailable: Bool {
       calendarDate != nil
     }
@@ -50,19 +50,19 @@ extension DV.Unit {
     }
     .erased()
   }
-  
+
   internal func createDayLabel() -> AnyView {
     VStack(spacing: 6) {
       Text(getStringFromDay(format: "d"))
         .font(.semiBold(15))
         .foregroundStyle(determineTextColor())
-      
+
       if let label = calendarDate?.label {
         Text(label)
           .font(.system(size: 10, weight: .medium))
           .foregroundStyle(dayType.color)
       }
-      
+
       if let topic = calendarDate?.topic, !topic.isEmpty {
         Text(topic)
           .font(.system(size: 8))
@@ -77,7 +77,7 @@ extension DV.Unit {
     .clipShape(RoundedRectangle(cornerRadius: 6))
     .erased()
   }
-  
+
   internal func createSelectionView() -> AnyView {
     RoundedRectangle(cornerRadius: 6)
       .stroke(isSelected() ? dayType.color : Color.clear, lineWidth: 2)
@@ -94,7 +94,7 @@ private extension DV.Unit {
     }
     return isAvailable ? dayType.color : .secondary
   }
-  
+
   func determineBackgroundColor() -> Color {
     isAvailable ? dayType.color.opacity(0.15) : .clear
   }

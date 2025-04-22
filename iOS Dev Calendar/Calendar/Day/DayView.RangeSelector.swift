@@ -23,7 +23,7 @@ extension DV.RangeSelector {
     Text(getStringFromDay(format: "d"))
       .font(.semiBold(15))
       .foregroundStyle(isSelected() ? .backgroundPrimary : .onBackgroundPrimary)
-//      .strikethrough(isPast())
+      .strikethrough(isPast())
       .opacity(isPast() ? 0.7 : 1)
       .erased()
   }
