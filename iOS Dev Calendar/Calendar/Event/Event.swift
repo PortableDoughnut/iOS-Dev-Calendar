@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import Foundation
 
 struct Event: Equatable, Hashable {
   let name: String

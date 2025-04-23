@@ -29,6 +29,7 @@ private extension ML.Uppercased {
   func createYearLabel() -> some View {
     Text(yearText)
       .font(.thin(26))
+      .bold()
       .foregroundStyle(Color.grayAccent)
   }
   func createMonthLabel() -> some View {
