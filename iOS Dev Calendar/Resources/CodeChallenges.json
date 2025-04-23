@@ -1,0 +1,514 @@
+[
+  {
+    "dayID": "SF02",
+    "fileName": "'Name, Age, and Pi' - Basic Constants & Variables"
+  },
+  {
+    "dayID": "SF03",
+    "fileName": "'Colors, Numbers, Letters' - Control Flow, If Statements, Switch Statements"
+  },
+  {
+    "dayID": "SF04",
+    "fileName": "'Introduction Printer, Letter Counter, Number Adder' -  String Interpolation, Basic Functions"
+  },
+  {
+    "dayID": "SF05",
+    "fileName": "'Area of a Circle' - Basic functions, Doubles"
+  },
+  {
+    "dayID": "SF06",
+    "fileName": "'Rectangle Calculators' - Structs, Mutating Functions"
+  },
+  {
+    "dayID": "SF07",
+    "fileName": "'Persons and Students' - Classes & Subclasses, Inheritance, Memberwise Initializers"
+  },
+  {
+    "dayID": "SF08",
+    "fileName": "'Person Behaviors' - Structs, Mutating Functions, Identifiable"
+  },
+  {
+    "dayID": "SF09",
+    "fileName": "'Distance Between Points' - Basic Functions, Doubles, Global Functions "
+  },
+  {
+    "dayID": "SF10",
+    "fileName": "'Multiply Each Int in [Int] By Five' - Arrays, For Loops"
+  },
+  {
+    "dayID": "SF11",
+    "fileName": "'Evens and Odds' - Arrays, For Loops, Modulo"
+  },
+  {
+    "dayID": "SF12",
+    "fileName": "'Complete the Square' - Arrays, For Loops"
+  },
+  {
+    "dayID": "SF13",
+    "fileName": "'Fake Binary' - Type Casting, Strings and Arrays, Ranges, For Loops"
+  },
+  {
+    "dayID": "SF14",
+    "fileName": "'Squares or Square Roots' - Type casting, Arrays, For Loops, Remainders"
+  },
+  {
+    "dayID": "SF15",
+    "fileName": "'Alternating 1s and 0s' - For Loops, Ranges, Modulo"
+  },
+  {
+    "dayID": "SF16",
+    "fileName": "'Find Non Consecutive Elements' - Arrays, For Loops, Index Subscripting"
+  },
+  {
+    "dayID": "SF17",
+    "fileName": "'Difference in Cube Volumes' - Arrays, Single Responsibility Principle, Abstraction"
+  },
+  {
+    "dayID": "SF18",
+    "fileName": "'Subset of an Array' - Arrays, Ranges"
+  },
+  {
+    "dayID": "SF22",
+    "fileName": "'Sum of Positives' - Arrays, For Loops, Map Method"
+  },
+  {
+    "dayID": "SF23",
+    "fileName": "'Grade Calculator' - Switch Statements, Ranges"
+  },
+  {
+    "dayID": "SF24",
+    "fileName": "'What Century is the Year?' - Rounding Integers, Doubles, Basic Functions"
+  },
+  {
+    "dayID": "SF25",
+    "fileName": "'Nth Even Number' - Code Puzzle"
+  },
+  {
+    "dayID": "SF26",
+    "fileName": "'Converting Time Units' - Basic Functions"
+  },
+  {
+    "dayID": "SF27",
+    "fileName": "'Sum of a Range' - Recursion"
+  },
+  {
+    "dayID": "SF28",
+    "fileName": "'Find a Value in an Array' - For Loops, Generics"
+  },
+  {
+    "dayID": "SF29",
+    "fileName": "'Wolves and Sheep' - If/Else Statements, For Loops, Index"
+  },
+  {
+    "dayID": "SF30",
+    "fileName": "'Averaging Scores' - Simple Math"
+  },
+  {
+    "dayID": "SF31",
+    "fileName": "'Times Tables' - For Loops, Ranges, String Line Break"
+  },
+  {
+    "dayID": "SF32",
+    "fileName": "'Formatting Currency' - String Formatting"
+  },
+  {
+    "dayID": "SF33",
+    "fileName": "'Heron's Formula' - Math, String Formatting"
+  },
+  {
+    "dayID": "SF34",
+    "fileName": "'Target Practice' - Nested For Loops"
+  },
+  {
+    "dayID": "SF35",
+    "fileName": "'Bubble Sort' - Sorting Algorithms, Time Complexity"
+  },
+  {
+    "dayID": "SF36",
+    "fileName": "'Insertion Sort' - Sorting Algorithms"
+  },
+  {
+    "dayID": "SF37",
+    "fileName": "'Selection Sort' - Sorting Algorithms"
+  },
+  {
+    "dayID": "SF38",
+    "fileName": "'Merge Sort & Sorting Summary' - Sorting Algorithms"
+  },
+  {
+    "dayID": "TP01",
+    "fileName": "'Reverse Alphabetical' - Array Methods"
+  },
+  {
+    "dayID": "TP02",
+    "fileName": "'Compare Arrays' - Array Methods"
+  },
+  {
+    "dayID": "TP03",
+    "fileName": "'Validating Phone Numbers' - Throwing Functions, String Validation"
+  },
+  {
+    "dayID": "TP04",
+    "fileName": "'Word Frequency' - Strings as Collections, Dictionaries"
+  },
+  {
+    "dayID": "TP05",
+    "fileName": "'Sentence Counting' - Strings as Collections"
+  },
+  {
+    "dayID": "TP06",
+    "fileName": "'Date Formatting' - Date Formatting, String Validation"
+  },
+  {
+    "dayID": "TP07",
+    "fileName": "'Letter Counter' - Characters & Strings, String Functions"
+  },
+  {
+    "dayID": "TP08",
+    "fileName": "'Print Plurals' - Data Analysis"
+  },
+  {
+    "dayID": "TP09",
+    "fileName": "'Ball Clock' - String Interpolation, Abstract Math"
+  },
+  {
+    "dayID": "TP10",
+    "fileName": "'Palindromes' - String Methods, Extensions"
+  },
+  {
+    "dayID": "TP11",
+    "fileName": "'Factorials!' - Recursion, Math"
+  },
+  {
+    "dayID": "TP12",
+    "fileName": "'Sum by Sign' - Arrays, For Loops"
+  },
+  {
+    "dayID": "TP13",
+    "fileName": "'Finding Primes' - Math Puzzles"
+  },
+  {
+    "dayID": "TP14",
+    "fileName": "'Wilson Primes' - Math Puzzles"
+  },
+  {
+    "dayID": "TP15",
+    "fileName": "'Removing Spaces' - String Manipulation"
+  },
+  {
+    "dayID": "TP16",
+    "fileName": "'Am I Better' - Evaluating Data"
+  },
+  {
+    "dayID": "TP17",
+    "fileName": "'Multiples to the Limit' - Math Puzzles"
+  },
+  {
+    "dayID": "TP18",
+    "fileName": "'Index N to the Nth Power' - Math, Arrays"
+  },
+  {
+    "dayID": "TP19",
+    "fileName": "'Alphabet Indexer' - Ordered Data"
+  },
+  {
+    "dayID": "TP20",
+    "fileName": "'Sum Without Extremes' - Data Evaluation"
+  },
+  {
+    "dayID": "TP21",
+    "fileName": "'Will It Divide' - Math Puzzles"
+  },
+  {
+    "dayID": "TP22",
+    "fileName": "'Capitalization Helper' - Extensions"
+  },
+  {
+    "dayID": "TP23",
+    "fileName": "'Powers of Two' - Math Puzzles"
+  },
+  {
+    "dayID": "TP24",
+    "fileName": "'Rock Paper Scissors' - Control Flow"
+  },
+  {
+    "dayID": "TP25",
+    "fileName": "'Rock Paper Scissors 2.0' - RNG"
+  },
+  {
+    "dayID": "TP26",
+    "fileName": "'Can You Digit' - Regular Expressions"
+  },
+  {
+    "dayID": "TP27",
+    "fileName": "'In the Ballpark' - Math"
+  },
+  {
+    "dayID": "TP28",
+    "fileName": "'Telephone Pole Calculator' - Geometry"
+  },
+  {
+    "dayID": "ND01",
+    "fileName": "'Sums in Strings' - Data in Strings"
+  },
+  {
+    "dayID": "ND02",
+    "fileName": "'The Monk and the Stairs' - Interpreting Data"
+  },
+  {
+    "dayID": "ND03",
+    "fileName": "'Is It Uppercase?' - String Methods"
+  },
+  {
+    "dayID": "ND04",
+    "fileName": "'Binary to Decimal' - Type Conversion"
+  },
+  {
+    "dayID": "ND05",
+    "fileName": "'Name Swap' - Manipulating Strings"
+  },
+  {
+    "dayID": "ND06",
+    "fileName": "'String-Longer' - Manipulating Strings"
+  },
+  {
+    "dayID": "ND07",
+    "fileName": "'Difference Sums' - Arrays"
+  },
+  {
+    "dayID": "ND08",
+    "fileName": "'Between Two Ints' - For Loops"
+  },
+  {
+    "dayID": "ND09",
+    "fileName": "'OCR Clean-up' - String Manipulation"
+  },
+  {
+    "dayID": "ND10",
+    "fileName": "'Human, Cat, Dog Years' - Control Flow"
+  },
+  {
+    "dayID": "ND11",
+    "fileName": "'Case Comparison' - Characters, Extensions"
+  },
+  {
+    "dayID": "ND12",
+    "fileName": "'ShortLongShort' - Concatenation"
+  },
+  {
+    "dayID": "ND13",
+    "fileName": "'Point Reflection' - Geometry"
+  },
+  {
+    "dayID": "ND14",
+    "fileName": "'Is It Today?' - Dates"
+  },
+  {
+    "dayID": "ND15",
+    "fileName": "'Goose Removal' - Array Manipulation"
+  },
+  {
+    "dayID": "ND16",
+    "fileName": "'Punctuation Removal' - Strings"
+  },
+  {
+    "dayID": "ND17",
+    "fileName": "'Chickens, Cows, Heads, Legs' - Math Puzzle"
+  },
+  {
+    "dayID": "ND18",
+    "fileName": "'Area Perimeter' - Geometry"
+  },
+  {
+    "dayID": "ND19",
+    "fileName": "'ASCII Vowel Values' - ASCII Characters"
+  },
+  {
+    "dayID": "ND20",
+    "fileName": "'Sum the Smallest' - Array Manipulation"
+  },
+  {
+    "dayID": "ND21",
+    "fileName": "'Skills List' - Reflection"
+  },
+  {
+    "dayID": "ST02",
+    "fileName": "'Profile Page' - SwiftUI"
+  },
+  {
+    "dayID": "ST04",
+    "fileName": "'Microtransactions' - SwiftUI"
+  },
+  {
+    "dayID": "ST06",
+    "fileName": "'Product of Everything Else' - Math, Arrays"
+  },
+  {
+    "dayID": "ST08",
+    "fileName": "'Navigate Swiftly' - SwiftUI Navigation"
+  },
+  {
+    "dayID": "ST10",
+    "fileName": "'Tally App' - SwiftUI, Conditional Layouts"
+  },
+  {
+    "dayID": "ST12",
+    "fileName": "'Card View' - SwiftUI, Overlays, Extensions"
+  },
+  {
+    "dayID": "ST14",
+    "fileName": "'SF Symbol Lookup' - SwiftUI, SFSymbols, State"
+  },
+  {
+    "dayID": "ST16",
+    "fileName": "'Bowling for TDD' - Test Driven Development, Refactoring"
+  },
+  {
+    "dayID": "ST20",
+    "fileName": "'Special Topics Unit Review' - SwiftUI, TDD, CoreData"
+  },
+  {
+    "dayID": "FA03",
+    "fileName": "'camelCase & snake_case' - Strings as Collections, While Loops"
+  },
+  {
+    "dayID": "FA05",
+    "fileName": "'String Chopper' - Strings as Collections, Indexes"
+  },
+  {
+    "dayID": "FA08",
+    "fileName": "'Fibonacci Sequence' - Arrays, For Loops, Math"
+  },
+  {
+    "dayID": "FA10",
+    "fileName": "'Least Common Multiple' - Math"
+  },
+  {
+    "dayID": "FA12",
+    "fileName": "'Roaming Robot' - Structs, Enums, Geometry"
+  },
+  {
+    "dayID": "FA14",
+    "fileName": "'Measuring Water' - Logic Puzzles, Interview Skills"
+  },
+  {
+    "dayID": "FA15",
+    "fileName": "'Linked Lists' - Data Structures"
+  },
+  {
+    "dayID": "FA16",
+    "fileName": "'Queue with Linked Lists' - Data Structures"
+  },
+  {
+    "dayID": "FA17",
+    "fileName": "'Spinning Disc' - Interview Skills, Logic Puzzles"
+  },
+  {
+    "dayID": "FA18-20",
+    "fileName": "'Mock Interviews' - Soft Skills"
+  },
+  {
+    "dayID": "PC01",
+    "fileName": "'App Showcase Review' - App Design Planning"
+  },
+  {
+    "dayID": "PC05",
+    "fileName": "'Spot Check' - Array Logic"
+  },
+  {
+    "dayID": "PC07",
+    "fileName": "'Adding Time' - Working with Dates"
+  },
+  {
+    "dayID": "PC09",
+    "fileName": "'Folder Cleanup' - Custom Sorting"
+  },
+  {
+    "dayID": "PC11",
+    "fileName": "'Additive Persistence' - Math Puzzles"
+  },
+  {
+    "dayID": "PC13",
+    "fileName": "'Hashtag Generator' - String Manipulation, Interpolation"
+  },
+  {
+    "dayID": "PC15",
+    "fileName": "'Simplifying Fractions' - Representing Numbers"
+  },
+  {
+    "dayID": "PC17",
+    "fileName": "'Cup Swapping' - Programmatic Instructions"
+  },
+  {
+    "dayID": "PC19",
+    "fileName": "'Ice Cream Sandwich Police' - String Evaluation"
+  },
+  {
+    "dayID": "PC20",
+    "fileName": "'Collatz' - Simple Math Puzzles"
+  },
+  {
+    "dayID": "PC22",
+    "fileName": "'Sailboat Height' - Math"
+  },
+  {
+    "dayID": "PC24",
+    "fileName": "'Numbers of Numbers' - Unintuitive Logic"
+  },
+  {
+    "dayID": "PC26",
+    "fileName": "'Roaming Robot 2 - Judgment Day' - Geometry"
+  },
+  {
+    "dayID": "GC01",
+    "fileName": "'Closest Palindrome' - Evaluating Numbers"
+  },
+  {
+    "dayID": "GC04",
+    "fileName": "'Simple Cipher' - Beginner Cryptography"
+  },
+  {
+    "dayID": "GC06",
+    "fileName": "'Game Inventory' - Managing Datasets"
+  },
+  {
+    "dayID": "GC08",
+    "fileName": "'Process Reflection' - Soft Skills"
+  },
+  {
+    "dayID": "GC10",
+    "fileName": "'Pig Latin' - Strings"
+  },
+  {
+    "dayID": "GC12",
+    "fileName": "'#Bridges' - Evaluating Data"
+  },
+  {
+    "dayID": "GC14",
+    "fileName": "'Schoty' - Type Conversion"
+  },
+  {
+    "dayID": "GC16",
+    "fileName": "'Needle in a Haystack, Part 1' - Type Conversion"
+  },
+  {
+    "dayID": "GC18",
+    "fileName": "'Needle in a Haystack, Part 2' - Type Conversion"
+  },
+  {
+    "dayID": "GC20",
+    "fileName": "'Roman Numerals' - Type Conversion"
+  },
+  {
+    "dayID": "GC22",
+    "fileName": "'Sudoku Validator' - Math Puzzles"
+  },
+  {
+    "dayID": "GC24",
+    "fileName": "'Triangle Numbers' - Math Puzzles"
+  },
+  {
+    "dayID": "GC26",
+    "fileName": "'Final Challenge Jam' - Everything"
+  }
+]

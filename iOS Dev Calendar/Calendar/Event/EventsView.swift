@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import Foundation
 
 struct EventsView: View {
   let date: Date
