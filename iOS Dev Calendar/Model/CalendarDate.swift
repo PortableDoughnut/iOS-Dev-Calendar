@@ -15,7 +15,7 @@ struct CalendarDate {
   let outline: String?
   let homework: String?
   let instructor: String?
-
+  
   init(date: Date, label: String, topic: String = "", outline: String? = nil, homework: String? = nil, instructor: String? = nil) {
     self.date = date
     self.label = label

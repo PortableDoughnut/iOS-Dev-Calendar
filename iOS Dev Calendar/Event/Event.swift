@@ -15,4 +15,4 @@ struct Event: Equatable, Hashable {
   let color: Color
 }
 
-//TODO: Refactor the date range selection to just tasks
+// TODO: Refactor the date range selection to just tasks
