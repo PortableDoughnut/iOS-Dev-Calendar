@@ -8,13 +8,17 @@
 
 import Foundation
 
-struct CalendarDate {
+struct CalendarDate: Decodable, Hashable {
     let date: Date
     let label: String
     let topic: String
     let outline: String?
     let homework: String?
     let instructor: String?
+
+    private enum CodingKeys: String, CodingKey {
+            case date, label, topic, outline, homework, instructor
+        }
     
     init(date: Date, label: String, topic: String = "", outline: String? = nil, homework: String? = nil, instructor: String? = nil) {
         self.date = date
