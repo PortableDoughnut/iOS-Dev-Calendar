@@ -1,9 +1,9 @@
-	//
-	//  ResourceViewController.swift
-	//  iOS Dev Calendar
-	//
-	//  Created by Gwen Thelin on 4/15/25.
-	//
+//
+//  ResourceViewController.swift
+//  iOS Dev Calendar
+//
+//  Created by Gwen Thelin on 4/15/25.
+//
 
 import UIKit
 
