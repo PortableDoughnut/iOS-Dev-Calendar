@@ -47,11 +47,12 @@ struct CalendarContainerView: View {
             color: CalendarHelpers.color(for: date, available: availableDates),
             isCurrentMonth: isCurrentMonth,
             selectedDate: selectedDate,
-            selectedRange: nil
+            selectedRange: nil,
+            availableDates: availableDates
         )
     }
     
-    // 3️⃣ initializer to wire up the bindings
+    // initializer to wire up the bindings
     init(
         selectedDate: Binding<Date?>,
         availableDates: [CalendarDate],
