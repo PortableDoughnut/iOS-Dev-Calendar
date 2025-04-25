@@ -9,10 +9,10 @@
 import Foundation
 
 struct ScopeAndSequenceEntry: Codable {
-  let dayID: String
-  let color: String
-  let topic: String
-  let readingDue: String
-  let homeworkDue: String
-  let objectives: String
+    let dayID: String
+    let color: String
+    let topic: String
+    let readingDue: String
+    let homeworkDue: String
+    let objectives: String
 }

@@ -13,25 +13,25 @@ import SwiftUI
 import MijickCalendarView
 
 extension DV { struct RangeSelector: DayView {
-  let date: Date
-  let isCurrentMonth: Bool
-  let selectedDate: Binding<Date?>?
-  let selectedRange: Binding<MijickCalendarView.MDateRange?>?
+    let date: Date
+    let isCurrentMonth: Bool
+    let selectedDate: Binding<Date?>?
+    let selectedRange: Binding<MijickCalendarView.MDateRange?>?
 }}
 extension DV.RangeSelector {
-  func createDayLabel() -> AnyView {
-    Text(getStringFromDay(format: "d"))
-      .font(.semiBold(15))
-      .foregroundStyle(isSelected() ? .backgroundPrimary : .onBackgroundPrimary)
-      .strikethrough(isPast())
-      .opacity(isPast() ? 0.7 : 1)
-      .erased()
-  }
+    func createDayLabel() -> AnyView {
+        Text(getStringFromDay(format: "d"))
+            .font(.semiBold(15))
+            .foregroundStyle(isSelected() ? .backgroundPrimary : .onBackgroundPrimary)
+            .strikethrough(isPast())
+            .opacity(isPast() ? 0.7 : 1)
+            .erased()
+    }
 }
 
 // MARK: - On Selection Logic
 extension DV.RangeSelector {
-  func onSelection() { if !isPast() {
-    selectedRange?.wrappedValue?.addToRange(date)
-  }}
+    func onSelection() { if !isPast() {
+        selectedRange?.wrappedValue?.addToRange(date)
+    }}
 }

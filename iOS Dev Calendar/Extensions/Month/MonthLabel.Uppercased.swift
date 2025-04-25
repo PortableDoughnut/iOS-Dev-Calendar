@@ -12,35 +12,35 @@ import SwiftUI
 import MijickCalendarView
 
 extension ML { struct Uppercased: MonthLabel {
-  let month: Date
-  
-  func createContent() -> AnyView {
-    HStack(spacing: 8) {
-      createYearLabel()
-      createMonthLabel()
-      Spacer()
+    let month: Date
+    
+    func createContent() -> AnyView {
+        HStack(spacing: 8) {
+            createYearLabel()
+            createMonthLabel()
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .erased()
     }
-    .frame(maxWidth: .infinity, alignment: .leading)
-    .erased()
-  }
 }}
 
 private extension ML.Uppercased {
-  func createYearLabel() -> some View {
-    Text(yearText)
-      .font(.thin(26))
-      .bold()
-      .foregroundStyle(Color.grayAccent)
-  }
-  func createMonthLabel() -> some View {
-    Text(monthText)
-      .font(.bold(26))
-      .foregroundStyle(Color.grayAccent)
-  }
+    func createYearLabel() -> some View {
+        Text(yearText)
+            .font(.thin(26))
+            .bold()
+            .foregroundStyle(Color.grayAccent)
+    }
+    func createMonthLabel() -> some View {
+        Text(monthText)
+            .font(.bold(26))
+            .foregroundStyle(Color.grayAccent)
+    }
 }
 
 private extension ML.Uppercased {
-  var yearText: String { getString(format: "yyyy") }
-  var monthText: String { getString(format: "MMMM").uppercased() }
+    var yearText: String { getString(format: "yyyy") }
+    var monthText: String { getString(format: "MMMM").uppercased() }
 }
 

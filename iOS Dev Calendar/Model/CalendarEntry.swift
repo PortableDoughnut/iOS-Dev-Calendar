@@ -9,6 +9,6 @@
 import Foundation
 
 struct CalendarEntry: Codable {
-  let date: Date
-  let item: String
+    let date: Date
+    let item: String
 }

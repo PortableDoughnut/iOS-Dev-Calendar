@@ -14,7 +14,7 @@ import SwiftUI
 extension Btn { struct Rectangle: View {
     let imageName: String
     let action: () -> ()
-
+    
     var body: some View {
         Button(action: action) {
             Image(imageName)

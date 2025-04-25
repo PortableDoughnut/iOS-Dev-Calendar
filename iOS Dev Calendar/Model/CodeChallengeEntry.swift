@@ -9,6 +9,6 @@
 import Foundation
 
 struct CodeChallengeEntry: Codable {
-  let dayID: String
-  let fileName: String
+    let dayID: String
+    let fileName: String
 }

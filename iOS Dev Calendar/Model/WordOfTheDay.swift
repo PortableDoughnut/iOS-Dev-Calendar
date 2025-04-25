@@ -9,5 +9,5 @@
 import Foundation
 
 struct WordOfTheDay: Codable {
-  let word: String
+    let word: String
 }

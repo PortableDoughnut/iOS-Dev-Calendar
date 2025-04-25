@@ -9,6 +9,6 @@
 import Foundation
 
 struct ReviewTopicEntry: Codable {
-  let dayID: String
-  let reviewTopic: String
+    let dayID: String
+    let reviewTopic: String
 }

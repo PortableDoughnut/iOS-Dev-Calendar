@@ -14,7 +14,7 @@ import SwiftUI
 extension Btn { struct Default: View {
     let title: String
     let action: () -> ()
-
+    
     var body: some View {
         Button(action: action) {
             Text(title)

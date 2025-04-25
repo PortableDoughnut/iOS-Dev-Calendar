@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date: @retroactive Identifiable {
-  public var id: Int {
-    Int(timeIntervalSince1970)
-  }
+    public var id: Int {
+        Int(timeIntervalSince1970)
+    }
 }

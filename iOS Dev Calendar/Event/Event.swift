@@ -10,9 +10,9 @@ import SwiftUI
 import Foundation
 
 struct Event: Equatable, Hashable {
-  let name: String
-  let range: String
-  let color: Color
+    let name: String
+    let range: String
+    let color: Color
 }
 
 // TODO: Refactor the date range selection to just tasks
