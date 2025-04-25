@@ -12,7 +12,7 @@ import MijickCalendarView
 class CalendarViewController: UIViewController {
     private var selectedDate: Date?
     private var availableDates: [CalendarDate] = DataRepository.shared.calendarEntries.map {
-        CalendarDate(date: $0.date, label: $0.item)
+        CalendarDate(date: $0.date, label: $0.label)
     }
     private var showAllDates: Bool = true
     private var currentFilter: DayType?

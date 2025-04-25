@@ -45,7 +45,7 @@ struct CalendarGridView_Previews: PreviewProvider {
             selectedDate: $selectedDate,
             selectedMonth: $selectedMonth,
             availableDates: DataRepository.shared.calendarEntries.map {
-                CalendarDate(date: $0.date, label: $0.item)
+                CalendarDate(date: $0.date, label: $0.label)
             },      buildDayView: { date, isSelected, _, _ in
                 DV.ColoredCircle(
                     date: date,

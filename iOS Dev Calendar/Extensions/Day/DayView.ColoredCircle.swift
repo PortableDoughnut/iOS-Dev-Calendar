@@ -66,7 +66,7 @@ private extension DV.ColoredCircle {
             return .clear
         }
         // Extract the two‑letter prefix (e.g. "SF", "TP", etc.)
-        let prefix = String(entry.item.prefix(2))
+        let prefix = String(entry.label.prefix(2))
         print("  ↪️ prefix: \(prefix)")
         switch prefix {
         case "SF": print("  ↪️ prefix: \(prefix)"); return .blue
