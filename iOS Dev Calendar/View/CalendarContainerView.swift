@@ -48,10 +48,10 @@ struct CalendarContainerView: View {
             color: CalendarHelpers.color(for: date, available: availableDates),
             isCurrentMonth: isCurrentMonth,
             selectedDate: selectedDate,
-            selectedRange: nil
+            selectedRange: nil,
+            availableDates: availableDates
         )
     }
-
     // initializer to wire up the bindings
     init(
         selectedDate: Binding<Date?>,

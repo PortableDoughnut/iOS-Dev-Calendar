@@ -24,6 +24,7 @@ struct CalendarGridView: View {
     var body: some View {
         MCalendarView(selectedDate: $selectedDate, selectedRange: nil) { config in
             config
+                .firstWeekday(.sunday)
                 .monthLabel(ML.Uppercased.init)
                 .monthsTopPadding(20)
                 .monthsBottomPadding(10)

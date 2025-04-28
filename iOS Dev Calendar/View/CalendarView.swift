@@ -46,7 +46,8 @@ struct CalendarView: View {
             color: CalendarHelpers.color(for: date, available: availableDates),
             isCurrentMonth: isCurrentMonth,
             selectedDate: selectedDate,
-            selectedRange: nil
+            selectedRange: nil,
+            availableDates: availableDates
         )
     }
 }

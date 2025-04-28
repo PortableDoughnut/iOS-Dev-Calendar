@@ -44,23 +44,15 @@ enum DayType: String {
             return .gray
         }
     }
-
+    
     static func from(_ label: String) -> DayType {
-        // print("🔍 Processing label: \(label)") // Debug print
-
         // First, check if it's a holiday
         if label.uppercased() == "HOLIDAY" {
-            // print("✓ Found holiday")
             return .holiday
         }
-
         // For class types, get the letters before any numbers
         let typeString = String(label.prefix(while: { $0.isLetter })).uppercased()
-        // print("📝 Extracted type string: \(typeString)")
-
         let type = DayType(rawValue: typeString) ?? .other
-        // print("🎯 Determined type: \(type)")
-
         return type
     }
 }
