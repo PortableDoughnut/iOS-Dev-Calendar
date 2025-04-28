@@ -7,22 +7,25 @@
 
 
 import SwiftUI
-import Foundation
 
-struct EventRow: View {
-    let event: Event
-    
+struct TaskRow: View {
+    let entry: CalendarDate
+
     var body: some View {
         HStack(spacing: 10) {
+            // you can pick a color based on the topic or leave it static for now
             RoundedRectangle(cornerRadius: 3)
-                .fill(event.color)
+                .fill(Color.accentColor)
                 .frame(width: 6, height: 20)
-            
+
             VStack(alignment: .leading, spacing: 4) {
-                Text(event.name)
+                // Show the topic as the “title”
+                Text(entry.topic)
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.primary)
-                Text(event.range)
+
+                // Use the label (e.g. "9:00-10:00") as the subtitle
+                Text(entry.label)
                     .font(.system(size: 14))
                     .foregroundColor(.secondary)
             }

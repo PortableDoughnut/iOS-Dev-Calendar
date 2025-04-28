@@ -64,10 +64,33 @@ extension DV.ColoredCircle {
             .font(.regular(17))
             .foregroundColor(getTextColor())
     }
-
-    private func getTextColor() -> Color {
-        if isSelected() {
-            return .white
+  
+    // Determine circle fill color based on unit prefix from JSON data
+    private var unitColor: Color {
+        print("🔶 unitColor: checking date \(date)")
+        // Find the matching entry by date
+        guard let entry = DataRepository.shared.calendarEntries.first(where: {
+            Calendar.current.isDate($0.date, inSameDayAs: date)
+        }) else {
+            return .clear
+        }
+        // Extract the two‑letter prefix (e.g. "SF", "TP", etc.)
+        let prefix = String(entry.label.prefix(2))
+        print("  ↪️ prefix: \(prefix)")
+        switch prefix {
+        case "SF": print("  ↪️ prefix: \(prefix)"); return .blue
+        case "TP": print("  ↪️ prefix: \(prefix)"); return .green
+        case "ND": print("  ↪️ prefix: \(prefix)"); return .yellow
+        case "ST": print("  ↪️ prefix: \(prefix)"); return .orange
+        case "TT": print("  ↪️ prefix: \(prefix)"); return .red
+        case "FA": print("  ↪️ prefix: \(prefix)"); return .pink
+        case "PC": print("  ↪️ prefix: \(prefix)"); return .purple
+        case "GC": print("  ↪️ prefix: \(prefix)"); return .mint
+        case "HO": // Holiday
+            print("  ↪️ prefix: \(prefix)")
+            return .gray
+        default:
+            return .clear
         }
         return colorScheme == .dark ? .white : .black
     }

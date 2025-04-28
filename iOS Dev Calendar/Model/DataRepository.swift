@@ -11,7 +11,7 @@ import Foundation
 final class DataRepository {
     static let shared = DataRepository()
     
-    let calendarEntries: [CalendarEntry]
+    let calendarEntries: [CalendarDate]
     let wordOfTheDay: [WordOfTheDay]
     let scopeAndSequence: [ScopeAndSequenceEntry]
     let reviewTopics: [ReviewTopicEntry]

@@ -12,11 +12,10 @@ import MijickCalendarView
 struct CalendarView: View {
     @State private var selectedDate: Date? = .now
     @State private var selectedMonth: Date = .now
-    private let availableDates: [CalendarDate] = DataRepository.shared.calendarEntries.map {
-        CalendarDate(date: $0.date, label: $0.item)
-    }
-    private let events: [Date: [Event]] = .init()
-    
+
+    // 1) Grab your CalendarDate models straight out of the repo
+    private let availableDates: [CalendarDate] = DataRepository.shared.calendarEntries
+
     var body: some View {
         VStack {
             CalendarGridView(
@@ -26,14 +25,16 @@ struct CalendarView: View {
                 buildDayView: buildDayView
             )
             .padding(.horizontal, 24)
+
             Spacer()
         }
+        // 2) Pass the same array into EventsView when a date is tapped
         .sheet(item: $selectedDate) { date in
-            EventsView(date: date, events: events)
+            TaskView(date: date, entries: availableDates)
                 .presentationDetents([.height(300), .large])
         }
     }
-    
+
     private func buildDayView(
         _ date: Date,
         _ isCurrentMonth: Bool,

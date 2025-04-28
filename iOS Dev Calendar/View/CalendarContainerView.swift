@@ -5,7 +5,6 @@
 //  Created by Wesley Keetch on 4/22/25.
 //
 
-
 import SwiftUI
 import MijickCalendarView
 
@@ -13,12 +12,13 @@ struct CalendarContainerView: View {
     // these come from UIKit
     @Binding var selectedDate: Date?
     @Binding var showAllDates: Bool
+
+    // your real JSON-backed dates
     let availableDates: [CalendarDate]
-    
+
     // internal state
     @State private var selectedMonth: Date = .now
-    private let events: [Date: [Event]] = [:]
-    
+
     var body: some View {
         VStack {
             CalendarGridView(
@@ -28,14 +28,15 @@ struct CalendarContainerView: View {
                 buildDayView: buildDayView
             )
             .padding(.horizontal, 24)
+
             Spacer()
         }
         .sheet(item: $selectedDate) { date in
-            EventsView(date: date, events: events)
+            TaskView(date: date, entries: availableDates)
                 .presentationDetents([.height(300), .large])
         }
     }
-    
+
     private func buildDayView(
         _ date: Date,
         _ isCurrentMonth: Bool,
@@ -51,7 +52,6 @@ struct CalendarContainerView: View {
             availableDates: availableDates
         )
     }
-    
     // initializer to wire up the bindings
     init(
         selectedDate: Binding<Date?>,
@@ -66,9 +66,8 @@ struct CalendarContainerView: View {
 
 #Preview {
     CalendarContainerView(
-        selectedDate: .constant(.now),
-        availableDates: DataRepository.shared.calendarEntries.map {
-            CalendarDate(date: $0.date, label: $0.item)
-        },    showAllDates: .constant(true)
+        selectedDate: .constant(Date()),
+        availableDates: DataRepository.shared.calendarEntries,
+        showAllDates: .constant(true)
     )
 }
