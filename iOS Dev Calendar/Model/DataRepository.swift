@@ -19,12 +19,12 @@ final class DataRepository {
     
     private init() {
         // load or crash early in dev
-        calendarEntries = (try? JSONLoader.load("Calendar.json", as: [CalendarEntry].self)) ?? []
+        calendarEntries = (try? JSONLoader.load("Calendar", as: [CalendarEntry].self)) ?? []
         print("📅 Loaded \(calendarEntries.count) calendar entries")
-        wordOfTheDay    = (try? JSONLoader.load("WordOfTheDay.json", as: [WordOfTheDay].self))    ?? []
-        scopeAndSequence = (try? JSONLoader.load("ScopeAndSequence.json", as: [ScopeAndSequenceEntry].self)) ?? []
-        reviewTopics    = (try? JSONLoader.load("ReviewTopics.json", as: [ReviewTopicEntry].self)) ?? []
-        codeChallenges = (try? JSONLoader.load("CodeChallenges.json", as: [CodeChallengeEntry].self)) ?? []
+        wordOfTheDay    = (try? JSONLoader.load("WordOfTheDay", as: [WordOfTheDay].self))    ?? []
+        scopeAndSequence = (try? JSONLoader.load("ScopeAndSequence", as: [ScopeAndSequenceEntry].self)) ?? []
+        reviewTopics    = (try? JSONLoader.load("ReviewTopics", as: [ReviewTopicEntry].self)) ?? []
+        codeChallenges = (try? JSONLoader.load("CodeChallenges", as: [CodeChallengeEntry].self)) ?? []
     }
     
     // helper to lookup details by dayID

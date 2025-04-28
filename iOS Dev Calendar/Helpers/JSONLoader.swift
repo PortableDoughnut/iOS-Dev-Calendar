@@ -28,9 +28,11 @@ struct JSONLoader {
     ) throws -> T {
         // Locate resource in bundle
         guard let url = Bundle.main.url(forResource: resource, withExtension: ext) else {
+            print("❌ Failed to locate \(resource).\(ext) in bundle.")
             throw JSONLoadError.resourceNotFound("\(resource).\(ext)")
         }
-        
+        print("📁 Found \(resource).\(ext) at \(url)")
+
         // Read data
         let data: Data
         do {
@@ -38,13 +40,13 @@ struct JSONLoader {
         } catch {
             throw JSONLoadError.unreadableData(url, underlying: error)
         }
-        
+
         // Configure decoder
         let decoder = JSONDecoder()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         decoder.dateDecodingStrategy = .formatted(formatter)
-        
+
         // Decode
         do {
             return try decoder.decode(T.self, from: data)
