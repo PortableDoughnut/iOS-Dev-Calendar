@@ -18,12 +18,12 @@ extension DV {
         let isCurrentMonth: Bool
         let selectedDate: Binding<Date?>?
         let selectedRange: Binding<MijickCalendarView.MDateRange?>?
-        let availableDates: [CalendarDate]
+        let availableDates: [CalendarDateModel]
         
         private let calendar = Calendar.current
         
         // Finds the matching calendar entry for this day
-        private var calendarDate: CalendarDate? {
+        private var calendarDate: CalendarDateModel? {
             availableDates.first { calendar.isDate($0.date, inSameDayAs: date) }
         }
         

@@ -5,7 +5,7 @@
 //    - Mail: alina.petrovskaya@mijick.com
 //    - GitHub: https://github.com/Mijick
 //
-//  Copyright ©2023 Mijick. Licensed under MIT License.
+//  Copyright 2023 Mijick. Licensed under MIT License.
 
 
 import SwiftUI
@@ -19,7 +19,7 @@ extension DV {
         var isCurrentMonth: Bool
         var selectedDate: Binding<Date?>?
         var selectedRange: Binding<MDateRange?>?
-        var availableDates: [CalendarDate]
+        var availableDates: [CalendarDateModel]
 
         @Environment(\.colorScheme) private var colorScheme
     }
@@ -62,9 +62,9 @@ extension DV.ColoredCircle {
     private func createDayLabelText() -> some View {
         Text(getStringFromDay(format: "d"))
             .font(.regular(17))
-            .foregroundColor(getTextColor())
+//            .foregroundColor(getTextColor())
     }
-  
+
     // Determine circle fill color based on unit prefix from JSON data
     private var unitColor: Color {
         print("🔶 unitColor: checking date \(date)")
@@ -91,32 +91,6 @@ extension DV.ColoredCircle {
             return .gray
         default:
             return .clear
-        }
-        return colorScheme == .dark ? .white : .black
-    }
-}
-
-private extension DV.ColoredCircle {
-    var unitColor: Color {
-        guard let entry = availableDates.first(where: {
-            Calendar.current.isDate($0.date, inSameDayAs: date)
-        }) else {
-            return .gray.opacity(0.2) // fallback for weekends/non-unit days
-        }
-
-        let prefix = String(entry.label.prefix(2)).uppercased()
-
-        switch prefix {
-        case "SF": return .blue
-        case "TP": return .green
-        case "ND": return .yellow
-        case "ST": return .orange
-        case "TT": return .red
-        case "FA": return .pink
-        case "PC": return .purple
-        case "GC": return .mint
-        case "HO": return .gray
-        default: return .gray.opacity(0.2)
         }
     }
 }

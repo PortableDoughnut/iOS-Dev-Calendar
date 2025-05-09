@@ -133,7 +133,7 @@ class TodayViewController: UIViewController {
     func setupData() {
         do {
             // Load calendar entries from Calendar.json
-            let calendarEntries: [CalendarEntry] = try JSONLoader.load("Calendar", ext: "json")
+            let calendarEntries: [CalendarEntryModel] = try JSONLoader.load("Calendar", ext: "json")
             // Load scope and sequence entries from ScopeAndSequence.json
             let scopeAndSequence: [ScopeAndSequenceEntry] = try JSONLoader.load("ScopeAndSequence", ext: "json")
             // Load code challenge data from CodeChallenges.json

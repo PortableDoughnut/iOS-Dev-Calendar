@@ -14,7 +14,7 @@ struct CalendarContainerView: View {
     @Binding var showAllDates: Bool
 
     // your real JSON-backed dates
-    let availableDates: [CalendarDate]
+    let availableDates: [CalendarDateModel]
 
     // internal state
     @State private var selectedMonth: Date = .now
@@ -55,7 +55,7 @@ struct CalendarContainerView: View {
     // initializer to wire up the bindings
     init(
         selectedDate: Binding<Date?>,
-        availableDates: [CalendarDate],
+        availableDates: [CalendarDateModel],
         showAllDates: Binding<Bool>
     ) {
         self._selectedDate = selectedDate

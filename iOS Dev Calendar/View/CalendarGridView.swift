@@ -5,22 +5,21 @@
 //  Created by Wesley Keetch on 4/22/25.
 //
 
-
 import SwiftUI
 import MijickCalendarView
 
 struct CalendarGridView: View {
     @Binding var selectedDate: Date?
     @Binding var selectedMonth: Date
-    
-    let availableDates: [CalendarDate]
+
+    let availableDates: [CalendarDateModel]
     let buildDayView: (
         Date,
         Bool,
         Binding<Date?>?,
         Binding<MDateRange?>?
     ) -> DV.ColoredCircle
-    
+
     var body: some View {
         MCalendarView(selectedDate: $selectedDate, selectedRange: nil) { config in
             config
@@ -40,20 +39,24 @@ struct CalendarGridView: View {
 struct CalendarGridView_Previews: PreviewProvider {
     @State private static var selectedDate: Date? = nil
     @State private static var selectedMonth: Date = Date()
-    
+
+    static let sampleAvailableDates: [CalendarDateModel] = DataRepository.shared.calendarEntries.map {
+        CalendarDateModel(date: $0.date, label: $0.label)
+    }
+
     static var previews: some View {
         CalendarGridView(
             selectedDate: $selectedDate,
             selectedMonth: $selectedMonth,
-            availableDates: DataRepository.shared.calendarEntries.map {
-                CalendarDate(date: $0.date, label: $0.label)
-            },      buildDayView: { date, isSelected, _, _ in
+            availableDates: sampleAvailableDates,
+            buildDayView: { date, isSelected, _, _ in
                 DV.ColoredCircle(
                     date: date,
                     color: isSelected ? Color("AccentColor") : nil,
                     isCurrentMonth: true,
                     selectedDate: nil,
-                    selectedRange: nil
+                    selectedRange: nil,
+                    availableDates: sampleAvailableDates
                 )
             }
         )

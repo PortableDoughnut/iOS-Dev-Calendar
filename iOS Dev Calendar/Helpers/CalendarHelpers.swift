@@ -17,7 +17,7 @@ enum CalendarHelpers {
     }()
     
     /// Returns color for a date based on available calendar data
-    static func color(for date: Date, available: [CalendarDate]) -> Color? {
+    static func color(for date: Date, available: [CalendarDateModel]) -> Color? {
         let stripped = Calendar.current.startOfDay(for: date)
         guard let match = available.first(where: {
             Calendar.current.isDate(Calendar.current.startOfDay(for: $0.date), inSameDayAs: stripped)
