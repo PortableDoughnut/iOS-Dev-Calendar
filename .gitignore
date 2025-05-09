@@ -19,3 +19,7 @@ profile
 build
 .build
 .DS_Store
+.vscode
+.cursorrules
+
+instructions

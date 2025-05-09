@@ -17,16 +17,16 @@ final class DataRepository {
     let codeChallenges: [CodeChallengeEntry]
 
     private init() {
-        // load or crash early in dev
+        // Load data from JSON files
         calendarEntries = (try? JSONLoader.load("Calendar", as: [CalendarDateModel].self)) ?? []
         print("📅 Loaded \(calendarEntries.count) calendar entries")
-        wordOfTheDay    = (try? JSONLoader.load("WordOfTheDay", as: [WordOfTheDay].self))    ?? []
+        wordOfTheDay = (try? JSONLoader.load("WordOfTheDay", as: [WordOfTheDay].self)) ?? []
         scopeAndSequence = (try? JSONLoader.load("ScopeAndSequence", as: [ScopeAndSequenceEntry].self)) ?? []
-        reviewTopics    = (try? JSONLoader.load("ReviewTopics", as: [ReviewTopicEntry].self)) ?? []
+        reviewTopics = (try? JSONLoader.load("ReviewTopics", as: [ReviewTopicEntry].self)) ?? []
         codeChallenges = (try? JSONLoader.load("CodeChallenges", as: [CodeChallengeEntry].self)) ?? []
     }
 
-    // helper to lookup details by dayID
+    /// Lookup methods for day-specific data
     func scope(for dayID: String) -> ScopeAndSequenceEntry? {
         scopeAndSequence.first { $0.dayID == dayID }
     }

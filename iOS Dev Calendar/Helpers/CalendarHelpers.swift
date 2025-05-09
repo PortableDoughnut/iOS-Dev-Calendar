@@ -9,14 +9,14 @@
 import SwiftUI
 
 enum CalendarHelpers {
-    /// Formatter for month header strings like "April 2025"
+    /// Formatter for month header strings (e.g. "April 2025")
     static let monthFormatter: DateFormatter = {
         let f = DateFormatter()
         f.dateFormat = "LLLL yyyy"
         return f
     }()
     
-    /// Returns color for a date based on available calendar data
+    /// Returns color for a date based on calendar data
     static func color(for date: Date, available: [CalendarDateModel]) -> Color? {
         let stripped = Calendar.current.startOfDay(for: date)
         guard let match = available.first(where: {
@@ -25,7 +25,7 @@ enum CalendarHelpers {
         return DayType.from(match.label).color
     }
     
-    /// Title for events sheet, e.g. "TODAY" or "MONDAY, 21 APRIL"
+    /// Title for events sheet (e.g. "TODAY" or "MONDAY, 21 APRIL")
     static func formattedTitle(for date: Date) -> String {
         if Calendar.current.isDateInToday(date) {
             return "TODAY"
@@ -36,7 +36,7 @@ enum CalendarHelpers {
         }
     }
     
-    /// Very short weekday symbols starting from calendar.firstWeekday
+    /// Weekday symbols starting from calendar.firstWeekday
     static func weekdaySymbols() -> [String] {
         let s = Calendar.current.veryShortWeekdaySymbols
         let first = Calendar.current.firstWeekday - 1

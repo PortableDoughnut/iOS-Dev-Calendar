@@ -9,6 +9,29 @@
 import UIKit
 
 class TodayViewController: UIViewController {
+    // MARK: - UI Elements
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.alwaysBounceVertical = true
+        return scrollView
+    }()
+    
+    private let contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private let stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 12
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
     // Outlets for the various card views displayed on the screen
     // Each card corresponds to a different type of information for the day
     @IBOutlet weak var CodeChallengeCard: CardView!          // Card displaying the daily coding challenge
@@ -33,12 +56,10 @@ class TodayViewController: UIViewController {
     // JSONLoader instance used to load data from JSON files
     var jsonLoader: JSONLoader = .init()
     
-    // Enum representing the different types of cards displayed in the UI
-    // Each case corresponds to a card and provides a title and background color
+    // Card types for the UI with their respective titles and colors
     enum CardType {
         case lesson, goal, word, review, dueHomework, dueReading, codeChallenge
         
-        // Title to display on the card header, based on card type
         var title: String {
             switch self {
             case .lesson: return "Lesson"
@@ -51,26 +72,29 @@ class TodayViewController: UIViewController {
             }
         }
         
-        // Background color for the card, customized per card type for visual distinction
         var backgroundColor: UIColor {
             switch self {
-            case .lesson: return UIColor(red: 0.43, green: 0.11, blue: 0.14, alpha: 1.0)
-            case .goal: return UIColor(red: 0.95, green: 0.79, blue: 0.41, alpha: 1.0)
-            case .word: return UIColor(red: 0.17, green: 0.18, blue: 0.26, alpha: 1.0)
-            case .review: return UIColor(red: 0.55, green: 0.55, blue: 0.54, alpha: 1.0)
-            case .dueHomework: return UIColor(red: 0.84, green: 0.62, blue: 0.60, alpha: 1.0)
-            case .dueReading: return UIColor(red: 0.95, green: 0.84, blue: 0.84, alpha: 1.0)
-            case .codeChallenge: return UIColor(red: 0.30, green: 0.42, blue: 0.31, alpha: 1.0)
+            case .lesson: return UIColor(named: "card-primary") ?? .systemBackground
+            case .goal: return UIColor(named: "card-secondary") ?? .secondarySystemBackground
+            case .word: return UIColor(named: "card-tertiary") ?? .tertiarySystemBackground
+            case .review: return UIColor(named: "card-primary") ?? .systemBackground
+            case .dueHomework: return UIColor(named: "card-secondary") ?? .secondarySystemBackground
+            case .dueReading: return UIColor(named: "card-tertiary") ?? .tertiarySystemBackground
+            case .codeChallenge: return UIColor(named: "card-primary") ?? .systemBackground
             }
+        }
+        
+        var textColor: UIColor {
+            return UIColor(named: "text-primary") ?? .label
         }
     }
     
-    /// Configures a card view with the appropriate title, subtitle, and background color
+    /// Configures a card view with title, subtitle, and background color
     /// - Parameters:
-    ///   - cardView: The card view to configure (optional)
-    ///   - type: The type of card (determines title and default color)
-    ///   - subtitle: The subtitle text to display on the card
-    ///   - color: Optional custom background color; if not provided, uses default color for the type
+    ///   - cardView: The card view to configure
+    ///   - type: Card type determining title and default color
+    ///   - subtitle: Card subtitle text
+    ///   - color: Optional custom background color
     func configureCardView(_ cardView: CardView?, type: CardType, subtitle: String, color: UIColor? = nil) {
         // Create a CardModel instance with the title, subtitle, and background color
         let model = CardModel(
@@ -86,13 +110,51 @@ class TodayViewController: UIViewController {
     // Sets up data, titles, and card views
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Load and prepare data for today's display
+        setupScrollView()
         setupData()
-        // Setup the navigation bar titles with date
         setupTitles()
-        // Configure all card views with the loaded data
         setupCards()
+    }
+    
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(stackView)
+        
+        // Add all cards to stack view
+        let cards = [
+            LessonCardView,
+            GoalCardView,
+            TeacherCardView,
+            ReviewCardView,
+            DueHomeworkCardView,
+            TonightsHomeworkView,
+            CodeChallengeCard
+        ]
+        
+        cards.forEach { card in
+            if let card = card {
+                stackView.addArrangedSubview(card)
+            }
+        }
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+        ])
     }
     
     /// Sets up the navigation bar title and enables large titles for better readability
@@ -132,37 +194,26 @@ class TodayViewController: UIViewController {
     /// This method handles loading multiple data sources and matching them with today's date
     func setupData() {
         do {
-            // Load calendar entries from Calendar.json
+            // Load all required data from JSON files
             let calendarEntries: [CalendarEntryModel] = try JSONLoader.load("Calendar", ext: "json")
-            // Load scope and sequence entries from ScopeAndSequence.json
             let scopeAndSequence: [ScopeAndSequenceEntry] = try JSONLoader.load("ScopeAndSequence", ext: "json")
-            // Load code challenge data from CodeChallenges.json
             let codeChallengeData: [CodeChallengeEntry] = try JSONLoader.load("CodeChallenges", ext: "json")
-            // Load review topics from ReviewTopics.json
             let reviewData: [ReviewTopicEntry] = try JSONLoader.load("ReviewTopics", ext: "json")
-            // Load words of the day from WordOfTheDay.json
             let wordData: [WordOfTheDay] = try JSONLoader.load("WordOfTheDay", ext: "json")
             
-            // Get the start of the current day to compare dates without time component
+            // Get today's data
             let today = Calendar.current.startOfDay(for: Date())
-            // Find the calendar entry for today to get the dayID
             dayID = calendarEntries.first(where: {
                 Calendar.current.isDate($0.date, inSameDayAs: today)
-            })?.item ?? "" // Use empty string if not found
+            })?.item ?? ""
             
-            // Find the code challenge entry corresponding to today's dayID
-            // If not found, default to the first code challenge entry
-            let codeChallengeToday: CodeChallengeEntry = codeChallengeData.first(where: { $0.dayID == dayID }) ?? codeChallengeData[0]
-            // Find the review topic entry for today, defaulting to first if none found
-            let reviewToday: ReviewTopicEntry = reviewData.first(where: { $0.dayID == dayID }) ?? reviewData[0]
-            // TODO: Change from random to what is assigned that day
-            // Select a random word of the day from the loaded word data
-            let wordToday: WordOfTheDay = wordData[Int.random(in: 0..<wordData.count)]
+            // Get today's specific entries
+            let codeChallengeToday = codeChallengeData.first(where: { $0.dayID == dayID }) ?? codeChallengeData[0]
+            let reviewToday = reviewData.first(where: { $0.dayID == dayID }) ?? reviewData[0]
+            let wordToday = wordData[Int.random(in: 0..<wordData.count)]
             
-            // Find the scope and sequence entry matching today's dayID
+            // Update UI with today's data
             if let todayScope = scopeAndSequence.first(where: { $0.dayID == dayID }) {
-                // Assign color, topic, reading, homework, objectives, code challenge, review, and word of the day
-                // If any field is empty, default to "N/A" to indicate missing data
                 color = todayScope.color.isEmpty ? "N/A" : todayScope.color
                 topic = todayScope.topic.isEmpty ? "N/A" : todayScope.topic
                 readingDue = todayScope.readingDue.isEmpty ? "N/A" : todayScope.readingDue
@@ -172,20 +223,10 @@ class TodayViewController: UIViewController {
                 review = reviewToday.reviewTopic.isEmpty ? "N/A" : reviewToday.reviewTopic
                 wordOfTheDay = wordToday.word.isEmpty ? "N/A" : wordToday.word
             } else {
-                // Log a message if no scope and sequence entry was found for today's dayID
                 print("Could not find scope and sequence entry for dayID: \(dayID)")
             }
-        } catch JSONLoadError.resourceNotFound(let resource) {
-            // Handle the case where a JSON resource file was not found
-            print("Resource not found: \(resource)")
-        } catch JSONLoadError.unreadableData(let url, let error) {
-            // Handle errors reading data from a file URL
-            print("Could not read data from \(url): \(error)")
-        } catch JSONLoadError.decodingFailed(let type, let error) {
-            // Handle JSON decoding errors for a specific type
-            print("Failed to decode \(type): \(error)")
         } catch {
-            // Catch any other unknown errors
-            print("Unknown error: \(error)")
+            print("Error loading data: \(error)")
         }
-    }}
+    }
+}

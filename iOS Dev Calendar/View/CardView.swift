@@ -13,8 +13,22 @@ class CardView: UIView {
     private var cardModel: CardModel
     
     // MARK: - UI Elements
-    private let titleLabel = UILabel()
-    private let subtitleLabel = UILabel()
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.textColor = UIColor(named: "text-primary")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.textColor = UIColor(named: "text-primary")?.withAlphaComponent(0.8)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     // MARK: - Initialization
     /// - Parameter cardModel: Paramaters containing the card options
@@ -39,36 +53,25 @@ class CardView: UIView {
     
     // MARK: - Setup
     private func setupView() {
-        layer.cornerRadius = 16
+        layer.cornerRadius = 12
         layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 4
         layer.shadowOpacity = 0.1
-        layer.shadowOffset = CGSize(width: 0, height: 4)
-        layer.shadowRadius = 8
         clipsToBounds = false
         
-        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
-        titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.isAccessibilityElement = true
-        titleLabel.accessibilityTraits = .header
-        
-        subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        subtitleLabel.numberOfLines = 0
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        let mainStack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        mainStack.axis = .vertical
-        mainStack.alignment = .leading
-        mainStack.spacing = 8
-        mainStack.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(mainStack)
+        addSubview(titleLabel)
+        addSubview(subtitleLabel)
         
         NSLayoutConstraint.activate([
-            mainStack.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            mainStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            mainStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            mainStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+            subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            subtitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
         ])
     }
     
@@ -78,14 +81,34 @@ class CardView: UIView {
         self.cardModel = cardModel
         titleLabel.text = cardModel.title
         subtitleLabel.text = cardModel.subtitle
-        backgroundColor = cardModel.backgroundColor ?? .systemBackground
         
-        // Use named color assets for text colors
-        if let bgColor = cardModel.backgroundColor {
-            let isDarkBackground = bgColor.brightness < 0.5
-            titleLabel.textColor = UIColor(named: isDarkBackground ? "CardTextPrimaryLight" : "CardTextPrimaryDark") ?? (isDarkBackground ? .white : .black)
-            subtitleLabel.textColor = UIColor(named: isDarkBackground ? "CardTextSecondaryLight" : "CardTextSecondaryDark") ?? (isDarkBackground ? UIColor.white.withAlphaComponent(0.7) : UIColor.black.withAlphaComponent(0.7))
+        // Set background color with animation
+        UIView.animate(withDuration: 0.3) {
+            self.backgroundColor = cardModel.backgroundColor ?? .systemBackground
         }
+        
+        // Add button if needed
+        if let buttonTitle = cardModel.buttonTitle {
+            let button = UIButton(type: .system)
+            button.setTitle(buttonTitle, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
+            button.setTitleColor(UIColor(named: "text-primary"), for: .normal)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(button)
+            
+            NSLayoutConstraint.activate([
+                button.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 8),
+                button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+                button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+                button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
+            ])
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        // Update shadow for dark mode
+        layer.shadowOpacity = traitCollection.userInterfaceStyle == .dark ? 0.2 : 0.1
     }
 }
 

@@ -1,0 +1,19 @@
+{
+	"name": "xcode build server",
+	"version": "0.2",
+	"bspVersion": "2.0",
+	"languages": [
+		"c",
+		"cpp",
+		"objective-c",
+		"objective-cpp",
+		"swift"
+	],
+	"argv": [
+		"/opt/homebrew/bin/xcode-build-server"
+	],
+	"workspace": "/Users/gwent/Developer/iOS-Dev-Calendar/iOS Dev Calendar.xcodeproj/project.xcworkspace",
+	"build_root": "/Users/gwent/Library/Developer/Xcode/DerivedData/iOS_Dev_Calendar-hepeyuwzolxpicczbfpkxryuzeay",
+	"scheme": "iOS Dev Calendar",
+	"kind": "xcode"
+}
