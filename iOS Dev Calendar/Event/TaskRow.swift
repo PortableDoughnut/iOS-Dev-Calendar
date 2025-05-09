@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TaskRow: View {
-    let entry: CalendarDate
+    let entry: CalendarDateModel
 
     var body: some View {
         HStack(spacing: 10) {

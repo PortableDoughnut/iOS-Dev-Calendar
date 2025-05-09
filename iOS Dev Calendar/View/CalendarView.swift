@@ -14,7 +14,7 @@ struct CalendarView: View {
     @State private var selectedMonth: Date = .now
 
     // 1) Grab your CalendarDate models straight out of the repo
-    private let availableDates: [CalendarDate] = DataRepository.shared.calendarEntries
+    private let availableDates: [CalendarDateModel] = DataRepository.shared.calendarEntries
 
     var body: some View {
         VStack {

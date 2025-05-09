@@ -10,9 +10,9 @@ import SwiftUI
 
 struct TaskView: View {
     let date: Date
-    let entries: [CalendarDate]
+    let entries: [CalendarDateModel]
 
-    private var todaysEntries: [CalendarDate] {
+    private var todaysEntries: [CalendarDateModel] {
         entries.filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
     }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CalendarEntry: Codable {
+struct CalendarEntryModel: Codable {
     let date: Date
     let item: String
 }
