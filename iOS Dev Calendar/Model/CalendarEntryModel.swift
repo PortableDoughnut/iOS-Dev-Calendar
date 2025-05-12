@@ -11,4 +11,9 @@ import Foundation
 struct CalendarEntryModel: Codable {
     let date: Date
     let item: String
+    
+    // Add a computed property to get the label
+    var label: String {
+        return item
+    }
 }

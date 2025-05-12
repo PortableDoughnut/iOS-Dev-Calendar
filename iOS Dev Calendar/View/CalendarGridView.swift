@@ -40,9 +40,7 @@ struct CalendarGridView_Previews: PreviewProvider {
     @State private static var selectedDate: Date? = nil
     @State private static var selectedMonth: Date = Date()
 
-    static let sampleAvailableDates: [CalendarDateModel] = DataRepository.shared.calendarEntries.map {
-        CalendarDateModel(date: $0.date, label: $0.label)
-    }
+    static let sampleAvailableDates: [CalendarDateModel] = DataRepository.shared.calendarDates
 
     static var previews: some View {
         CalendarGridView(

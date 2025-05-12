@@ -67,7 +67,7 @@ struct CalendarContainerView: View {
 #Preview {
     CalendarContainerView(
         selectedDate: .constant(Date()),
-        availableDates: DataRepository.shared.calendarEntries,
+        availableDates: DataRepository.shared.calendarDates,
         showAllDates: .constant(true)
     )
 }

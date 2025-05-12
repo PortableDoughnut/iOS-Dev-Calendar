@@ -53,9 +53,6 @@ class TodayViewController: UIViewController {
     var review: String = ""            // Review topic for today
     var wordOfTheDay: String = ""      // Word of the day
     
-    // JSONLoader instance used to load data from JSON files
-    var jsonLoader: JSONLoader = .init()
-    
     // Card types for the UI with their respective titles and colors
     enum CardType {
         case lesson, goal, word, review, dueHomework, dueReading, codeChallenge
@@ -106,16 +103,19 @@ class TodayViewController: UIViewController {
         cardView?.configureWithModel(model)
     }
     
-    // Called after the view has been loaded into memory
-    // Sets up data, titles, and card views
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
-        setupData()
         setupTitles()
-        setupCards()
+        setupDebugButton()
+        Task {
+            await setupData()
+            setupCards()
+        }
     }
     
+    // MARK: - Setup
     private func setupScrollView() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -157,8 +157,7 @@ class TodayViewController: UIViewController {
         ])
     }
     
-    /// Sets up the navigation bar title and enables large titles for better readability
-    func setupTitles() {
+    private func setupTitles() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         
@@ -172,8 +171,7 @@ class TodayViewController: UIViewController {
         navigationItem.title = dateString
     }
     
-    /// Configures each card view with the appropriate data for today
-    func setupCards() {
+    private func setupCards() {
         // Configure the lesson card with the topic and color from today's data
         configureCardView(LessonCardView, type: .lesson, subtitle: topic, color: UIColor(named: color))
         // Configure the goal card with the word of the day
@@ -190,43 +188,92 @@ class TodayViewController: UIViewController {
         configureCardView(CodeChallengeCard, type: .codeChallenge, subtitle: CodeChallenge)
     }
     
-    /// Loads data from JSON files and sets up the properties for today's information
-    /// This method handles loading multiple data sources and matching them with today's date
-    func setupData() {
-        do {
-            // Load all required data from JSON files
-            let calendarEntries: [CalendarEntryModel] = try JSONLoader.load("Calendar", ext: "json")
-            let scopeAndSequence: [ScopeAndSequenceEntry] = try JSONLoader.load("ScopeAndSequence", ext: "json")
-            let codeChallengeData: [CodeChallengeEntry] = try JSONLoader.load("CodeChallenges", ext: "json")
-            let reviewData: [ReviewTopicEntry] = try JSONLoader.load("ReviewTopics", ext: "json")
-            let wordData: [WordOfTheDay] = try JSONLoader.load("WordOfTheDay", ext: "json")
-            
+    /// Loads data from remote URLs and sets up the properties for today's information
+    private func setupData() async {
             // Get today's data
             let today = Calendar.current.startOfDay(for: Date())
-            dayID = calendarEntries.first(where: {
-                Calendar.current.isDate($0.date, inSameDayAs: today)
-            })?.item ?? ""
+            print("📅 Setting up data for date: \(today)")
             
             // Get today's specific entries
-            let codeChallengeToday = codeChallengeData.first(where: { $0.dayID == dayID }) ?? codeChallengeData[0]
-            let reviewToday = reviewData.first(where: { $0.dayID == dayID }) ?? reviewData[0]
-            let wordToday = wordData[Int.random(in: 0..<wordData.count)]
-            
-            // Update UI with today's data
-            if let todayScope = scopeAndSequence.first(where: { $0.dayID == dayID }) {
+            if let todayScope = DataRepository.shared.scope(for: today) {
+                print("📚 Found scope for today: \(todayScope)")
                 color = todayScope.color.isEmpty ? "N/A" : todayScope.color
                 topic = todayScope.topic.isEmpty ? "N/A" : todayScope.topic
                 readingDue = todayScope.readingDue.isEmpty ? "N/A" : todayScope.readingDue
                 homeworkDue = todayScope.homeworkDue.isEmpty ? "N/A" : todayScope.homeworkDue
                 objectives = todayScope.objectives.isEmpty ? "N/A" : todayScope.objectives
+            } else {
+                print("⚠️ No scope found for today")
+            }
+            
+            if let codeChallengeToday = DataRepository.shared.codeChallenge(for: today) {
+                print("💻 Found code challenge for today: \(codeChallengeToday)")
                 CodeChallenge = codeChallengeToday.fileName.isEmpty ? "N/A" : codeChallengeToday.fileName
+            } else {
+                print("⚠️ No code challenge found for today")
+            }
+            
+            if let reviewToday = DataRepository.shared.reviewTopic(for: today) {
+                print("📝 Found review topic for today: \(reviewToday)")
                 review = reviewToday.reviewTopic.isEmpty ? "N/A" : reviewToday.reviewTopic
+            } else {
+                print("⚠️ No review topic found for today")
+            }
+            
+            if let wordToday = DataRepository.shared.wordOfTheDay(for: today) {
+                print("🔤 Found word of the day for today: \(wordToday)")
                 wordOfTheDay = wordToday.word.isEmpty ? "N/A" : wordToday.word
             } else {
-                print("Could not find scope and sequence entry for dayID: \(dayID)")
+                print("⚠️ No word of the day found for today")
             }
-        } catch {
-            print("Error loading data: \(error)")
+            
+            print("✅ Successfully loaded today's data")
+            print("📊 Data summary:")
+            print("  - Topic: \(topic)")
+            print("  - Reading Due: \(readingDue)")
+            print("  - Homework Due: \(homeworkDue)")
+            print("  - Objectives: \(objectives)")
+            print("  - Code Challenge: \(CodeChallenge)")
+            print("  - Review: \(review)")
+            print("  - Word of the Day: \(wordOfTheDay)")
+    }
+    
+    private func setupDebugButton() {
+        let debugButton = UIBarButtonItem(
+            title: "Debug",
+            style: .plain,
+            target: self,
+            action: #selector(debugButtonTapped)
+        )
+        navigationItem.rightBarButtonItem = debugButton
+    }
+    
+    @objc private func debugButtonTapped() {
+        print("\n🔍 DEBUG DATA:")
+        print("📅 Today's date: \(Date())")
+        print("\n📚 Scope and Sequence:")
+        DataRepository.shared.scopeAndSequence.forEach { entry in
+            print("- \(entry.date): \(entry.topic)")
+        }
+        
+        print("\n💻 Code Challenges:")
+        DataRepository.shared.codeChallenges.forEach { entry in
+            print("- \(entry.date): \(entry.fileName)")
+        }
+        
+        print("\n📝 Review Topics:")
+        DataRepository.shared.reviewTopics.forEach { entry in
+            print("- \(entry.date): \(entry.reviewTopic)")
+        }
+        
+        print("\n🔤 Words of the Day:")
+        DataRepository.shared.wordsOfTheDay.forEach { entry in
+            print("- \(entry.date): \(entry.word)")
+        }
+        
+        print("\n📅 Calendar Entries:")
+        DataRepository.shared.calendarEntries.forEach { entry in
+            print("- \(entry.date): \(entry.label)")
         }
     }
 }

@@ -69,7 +69,7 @@ extension DV.ColoredCircle {
     private var unitColor: Color {
         print("🔶 unitColor: checking date \(date)")
         // Find the matching entry by date
-        guard let entry = DataRepository.shared.calendarEntries.first(where: {
+        guard let entry = DataRepository.shared.calendarDates.first(where: {
             Calendar.current.isDate($0.date, inSameDayAs: date)
         }) else {
             return .clear

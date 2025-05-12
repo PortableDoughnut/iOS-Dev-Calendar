@@ -11,9 +11,7 @@ import MijickCalendarView
 
 class CalendarViewController: UIViewController {
     private var selectedDate: Date?
-    private var availableDates: [CalendarDateModel] = DataRepository.shared.calendarEntries.map {
-        CalendarDateModel(date: $0.date, label: $0.label)
-    }
+    private var availableDates: [CalendarDateModel] = DataRepository.shared.calendarDates
     private var showAllDates: Bool = true
     private var currentFilter: DayType?
 
