@@ -40,8 +40,8 @@ struct CalendarView: View {
         _ isCurrentMonth: Bool,
         selectedDate: Binding<Date?>?,
         range: Binding<MDateRange?>?
-    ) -> DV.ColoredCircle {
-        DV.ColoredCircle(
+    ) -> MijickDayView.ColoredCircle {
+        MijickDayView.ColoredCircle(
             date: date,
             color: CalendarHelpers.color(for: date, available: availableDates),
             isCurrentMonth: isCurrentMonth,

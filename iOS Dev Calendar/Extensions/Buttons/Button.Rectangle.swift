@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-extension Btn { struct Rectangle: View {
+extension MijickButton { struct Rectangle: View {
     let imageName: String
     let action: () -> ()
     
@@ -31,7 +31,7 @@ extension Btn { struct Rectangle: View {
 // MARK: - Preview
 #Preview {
     HStack(spacing: 16) {
-        Btn.Rectangle(imageName: "calendar-1", action: {})
-        Btn.Rectangle(imageName: "calendar-2", action: {})
+        MijickButton.Rectangle(imageName: "calendar-1", action: {})
+        MijickButton.Rectangle(imageName: "calendar-2", action: {})
     }
 }

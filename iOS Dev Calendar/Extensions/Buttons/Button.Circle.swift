@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-extension Btn { struct Circle: View {
+extension MijickButton { struct Circle: View {
     let imageName: String
     let action: () -> ()
     
@@ -29,5 +29,5 @@ extension Btn { struct Circle: View {
 
 // MARK: - Preview
 #Preview {
-    Btn.Circle(imageName: "github", action: {})
+    MijickButton.Circle(imageName: "github", action: {})
 }

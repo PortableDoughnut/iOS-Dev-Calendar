@@ -11,7 +11,7 @@
 import SwiftUI
 import MijickCalendarView
 
-extension ML { struct Uppercased: MonthLabel {
+extension MijickMonthLabel { struct Uppercased: MonthLabel {
     let month: Date
     
     func createContent() -> AnyView {
@@ -25,7 +25,7 @@ extension ML { struct Uppercased: MonthLabel {
     }
 }}
 
-private extension ML.Uppercased {
+private extension MijickMonthLabel.Uppercased {
     func createYearLabel() -> some View {
         Text(yearText)
             .font(.thin(26))
@@ -39,7 +39,7 @@ private extension ML.Uppercased {
     }
 }
 
-private extension ML.Uppercased {
+private extension MijickMonthLabel.Uppercased {
     var yearText: String { getString(format: "yyyy") }
     var monthText: String { getString(format: "MMMM").uppercased() }
 }

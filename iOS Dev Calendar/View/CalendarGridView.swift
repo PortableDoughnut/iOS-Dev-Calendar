@@ -18,13 +18,13 @@ struct CalendarGridView: View {
         Bool,
         Binding<Date?>?,
         Binding<MDateRange?>?
-    ) -> DV.ColoredCircle
+    ) -> MijickDayView.ColoredCircle
 
     var body: some View {
         MCalendarView(selectedDate: $selectedDate, selectedRange: nil) { config in
             config
                 .firstWeekday(.sunday)
-                .monthLabel(ML.Uppercased.init)
+                .monthLabel(MijickMonthLabel.Uppercased.init)
                 .monthsTopPadding(20)
                 .monthsBottomPadding(10)
                 .daysHorizontalSpacing(1)
@@ -50,7 +50,7 @@ struct CalendarGridView_Previews: PreviewProvider {
             selectedMonth: $selectedMonth,
             availableDates: sampleAvailableDates,
             buildDayView: { date, isSelected, _, _ in
-                DV.ColoredCircle(
+                MijickDayView.ColoredCircle(
                     date: date,
                     color: isSelected ? Color("AccentColor") : nil,
                     isCurrentMonth: true,

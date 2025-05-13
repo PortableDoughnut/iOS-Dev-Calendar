@@ -10,10 +10,10 @@
 
 
 /// Buttons
-enum Btn {}
+enum MijickButton {}
 
 /// Calendar Day View
-enum DV {}
+enum MijickDayView {}
 
 /// Calendar Month Label
-enum ML {}
+enum MijickMonthLabel {}
