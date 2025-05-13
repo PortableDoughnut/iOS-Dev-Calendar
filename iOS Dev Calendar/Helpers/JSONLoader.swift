@@ -1,8 +1,7 @@
 import Foundation
 
 enum JSONLoader {
-    static let baseURLs = ["https://legendary-disco-3jjqqp4.pages.github.io/data/",
-                           "https://raw.githubusercontent.com/legendary-disco-3jjqqp4/legendary-disco-3jjqqp4.pages.github.io/main/data/"]
+    static let baseURLs = ["https://mtechmobiledevelopment.github.io/Mobile-Development-Lesson-Plans/data/"]
 
     /// Loads JSON data from a remote URL
     /// - Parameters:
@@ -28,7 +27,14 @@ enum JSONLoader {
                     print("📦 Raw data received from \(urlString):")
                     print(String(data: data, encoding: .utf8) ?? "")
                     print("✅ Successfully loaded data from \(urlString)")
-                    return try JSONDecoder().decode(T.self, from: data)
+                    
+                    let decoder = JSONDecoder()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    formatter.timeZone = .current
+                    decoder.dateDecodingStrategy = .formatted(formatter)
+
+                    return try decoder.decode(T.self, from: data)
                 } else {
                     print("❌ HTTP error \(httpResponse.statusCode) for \(urlString)")
                     lastError = NSError(domain: "JSONLoader", code: -2, userInfo: [NSLocalizedDescriptionKey: "HTTP error: \(httpResponse.statusCode)"])

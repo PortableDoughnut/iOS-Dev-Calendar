@@ -15,7 +15,8 @@ struct CalendarDateModel: Decodable, Hashable {
     let outline: String?
     let homework: String?
     let instructor: String?
-    
+    let dayID: String?
+
     init(date: Date, label: String, topic: String = "", outline: String? = nil, homework: String? = nil, instructor: String? = nil) {
         self.date = date
         self.label = label
