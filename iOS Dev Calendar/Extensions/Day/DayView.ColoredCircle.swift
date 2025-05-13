@@ -12,7 +12,7 @@ import SwiftUI
 import MijickCalendarView
 import Foundation
 
-extension DV {
+extension MijickDayView {
     struct ColoredCircle: DayView {
         var date: Date
         var color: Color?
@@ -25,7 +25,7 @@ extension DV {
     }
 }
 
-extension DV.ColoredCircle {
+extension MijickDayView.ColoredCircle {
     func createDayLabel() -> AnyView {
         ZStack {
             createDayLabelBackground()

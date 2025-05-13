@@ -12,13 +12,13 @@
 import SwiftUI
 import MijickCalendarView
 
-extension DV { struct RangeSelector: DayView {
+extension MijickDayView { struct RangeSelector: DayView {
     let date: Date
     let isCurrentMonth: Bool
     let selectedDate: Binding<Date?>?
     let selectedRange: Binding<MijickCalendarView.MDateRange?>?
 }}
-extension DV.RangeSelector {
+extension MijickDayView.RangeSelector {
     func createDayLabel() -> AnyView {
         Text(getStringFromDay(format: "d"))
             .font(.semiBold(15))
@@ -30,7 +30,7 @@ extension DV.RangeSelector {
 }
 
 // MARK: - On Selection Logic
-extension DV.RangeSelector {
+extension MijickDayView.RangeSelector {
     func onSelection() { if !isPast() {
         selectedRange?.wrappedValue?.addToRange(date)
     }}

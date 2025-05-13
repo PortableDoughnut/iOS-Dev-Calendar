@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-extension Btn { struct Default: View {
+extension MijickButton { struct Default: View {
     let title: String
     let action: () -> ()
     
@@ -29,5 +29,5 @@ extension Btn { struct Default: View {
 
 // MARK: - Preview
 #Preview {
-    Btn.Default(title: "Test", action: {})
+    MijickButton.Default(title: "Test", action: {})
 }

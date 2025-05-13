@@ -12,7 +12,7 @@
 import SwiftUI
 import MijickCalendarView
 
-extension DV {
+extension MijickDayView {
     struct Unit: DayView {
         let date: Date
         let isCurrentMonth: Bool
@@ -42,7 +42,7 @@ extension DV {
 }
 
 // MARK: - View Building
-extension DV.Unit {
+extension MijickDayView.Unit {
     func createContent() -> AnyView {
         ZStack {
             createSelectionView()
@@ -87,7 +87,7 @@ extension DV.Unit {
 }
 
 // MARK: - Utility + Styling
-private extension DV.Unit {
+private extension MijickDayView.Unit {
     func determineTextColor() -> Color {
         if !isCurrentMonth {
             return .gray
@@ -101,7 +101,7 @@ private extension DV.Unit {
 }
 
 // MARK: - Selection
-extension DV.Unit {
+extension MijickDayView.Unit {
     func onSelection() {
         if isAvailable {
             selectedDate?.wrappedValue = date

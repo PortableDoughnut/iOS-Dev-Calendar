@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-extension Btn { struct Icon: View {
+extension MijickButton { struct Icon: View {
     let imageName: String
     let colour: Color
     let action: () -> ()
@@ -28,5 +28,5 @@ extension Btn { struct Icon: View {
 
 // MARK: - Preview
 #Preview {
-    Btn.Icon(imageName: "back", colour: .accent, action: {})
+    MijickButton.Icon(imageName: "back", colour: .accent, action: {})
 }
