@@ -38,7 +38,6 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var CodeChallengeCard: CardView!          // Card displaying the daily coding challenge
     @IBOutlet weak var TonightsHomeworkView: CardView!       // Card showing tonight's homework reading assignment
     @IBOutlet weak var DueHomeworkCardView: CardView!         // Card showing homework due for today
-    @IBOutlet weak var ReviewCardView: CardView!              // Card containing review topics for the day
     @IBOutlet weak var GoalCardView: CardView!                // Card displaying the word of the day (goal)
     @IBOutlet weak var TeacherCardView: CardView!             // Card showing lesson objectives or teacher notes
     @IBOutlet weak var LessonCardView: CardView!              // Card showing the lesson topic
@@ -51,19 +50,17 @@ class TodayViewController: UIViewController {
     var homeworkDue: String = ""       // Homework due today
     var objectives: String = ""        // Objectives or goals for today's lesson
     var CodeChallenge: String = ""     // Filename or description of today's code challenge
-    var review: String = ""            // Review topic for today
     var wordOfTheDay: String = ""      // Word of the day
 
     // Card types for the UI with their respective titles and colors
     enum CardType {
-        case lesson, goal, word, review, dueHomework, dueReading, codeChallenge
+        case lesson, goal, word, dueHomework, dueReading, codeChallenge
 
         var title: String {
             switch self {
             case .lesson: return "Lesson"
             case .goal: return "Word of the Day"
             case .word: return "Goal"
-            case .review: return "Review"
             case .dueHomework: return "Homework Due"
             case .dueReading: return "Reading Due"
             case .codeChallenge: return "Code Challenge"
@@ -75,7 +72,6 @@ class TodayViewController: UIViewController {
             case .lesson: return UIColor(named: "card-primary") ?? .systemBackground
             case .goal: return UIColor(named: "card-primary") ?? .systemBackground
             case .word: return UIColor(named: "card-primary") ?? .systemBackground
-            case .review: return UIColor(named: "card-primary") ?? .systemBackground
             case .dueHomework: return UIColor(named: "card-primary") ?? .systemBackground
             case .dueReading: return UIColor(named: "card-primary") ?? .systemBackground
             case .codeChallenge: return UIColor(named: "card-primary") ?? .systemBackground
@@ -126,7 +122,6 @@ class TodayViewController: UIViewController {
             LessonCardView,
             GoalCardView,
             TeacherCardView,
-            ReviewCardView,
             DueHomeworkCardView,
             TonightsHomeworkView,
             CodeChallengeCard
@@ -178,8 +173,6 @@ class TodayViewController: UIViewController {
         configureCardView(GoalCardView, type: .goal, subtitle: wordOfTheDay)
         // Configure the teacher card with lesson objectives
         configureCardView(TeacherCardView, type: .word, subtitle: objectives)
-        // Configure the review card with the review topic
-        configureCardView(ReviewCardView, type: .review, subtitle: review)
         // Configure the homework due card with homework due today
         configureCardView(DueHomeworkCardView, type: .dueHomework, subtitle: homeworkDue)
         // Configure the reading due card with reading due tonight
@@ -206,19 +199,12 @@ class TodayViewController: UIViewController {
                 print("⚠️ No scope found for today")
             }
             
-            if let codeChallengeToday = DataRepository.shared.codeChallenge(for: today) {
-                print("💻 Found code challenge for today: \(codeChallengeToday)")
+            if let codeChallengeToday = DataRepository.shared.codeChallenge(forDayID: dayID) {
+                print("💻 Found code challenge for day ID \(dayID): \(codeChallengeToday)")
                 CodeChallenge = codeChallengeToday.fileName.isEmpty ? "N/A" : codeChallengeToday.fileName
             } else {
-                print("⚠️ No code challenge found for today")
+                print("⚠️ No code challenge found for day ID \(dayID)")
             }
-            
-            if let reviewToday = DataRepository.shared.reviewTopic(for: today) {
-                print("📝 Found review topic for today: $reviewToday)")
-                review = reviewToday.reviewTopic.isEmpty ? "N/A" : reviewToday.reviewTopic
-            } else {
-                print("⚠️ No review topic found for today")
-}
             
             if let wordToday = DataRepository.shared.wordOfTheDay(for: today) {
                 print("🔤 Found word of the day for today: \(wordToday)")
@@ -234,7 +220,6 @@ class TodayViewController: UIViewController {
             print("  - Homework Due: \(homeworkDue)")
             print("  - Objectives: \(objectives)")
             print("  - Code Challenge: \(CodeChallenge)")
-            print("  - Review: \(review)")
             print("  - Word of the Day: \(wordOfTheDay)")
     }
 }

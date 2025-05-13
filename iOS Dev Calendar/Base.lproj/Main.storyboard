@@ -108,11 +108,7 @@
                                                 <rect key="frame" x="0.0" y="650" width="361.33333333333331" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEt-6K-2YD" userLabel="Goal Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="50"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHy-Bb-WYn" userLabel="Review Card" customClass="CardView" customModule="iOS_Dev_Calendar" customModuleProvider="target">
-                                                        <rect key="frame" x="184.66666666666669" y="0.0" width="176.66666666666669" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -160,7 +156,6 @@
                         <outlet property="DueHomeworkCardView" destination="Jh8-uB-7CC" id="3bb-VJ-6wq"/>
                         <outlet property="GoalCardView" destination="zEt-6K-2YD" id="su7-wg-lfi"/>
                         <outlet property="LessonCardView" destination="KTZ-hr-7Mo" id="FfS-V5-xwR"/>
-                        <outlet property="ReviewCardView" destination="xHy-Bb-WYn" id="ZBm-Xl-Z7h"/>
                         <outlet property="TeacherCardView" destination="umh-qs-ww2" id="NgY-cx-TQG"/>
                         <outlet property="TonightsHomeworkView" destination="pxf-8B-ftJ" id="9Aq-no-LWg"/>
                     </connections>

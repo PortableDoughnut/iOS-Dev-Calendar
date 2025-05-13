@@ -86,19 +86,12 @@ class DataRepository {
         return entry
     }
     
-    func codeChallenge(for date: Date) -> CodeChallengeEntry? {
-        // First find the calendar entry for today
-        guard let calendarEntry = calendarEntries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) else {
-            print("⚠️ No calendar entry found for date \(date)")
-            return nil
-        }
-        
-        // Then find the code challenge that matches the item from the calendar
-        let entry = codeChallenges.first { $0.dayID == calendarEntry.item }
+    func codeChallenge(forDayID id: String) -> CodeChallengeEntry? {
+        let entry = codeChallenges.first { $0.dayID == id }
         if let entry = entry {
-            print("💻 Found code challenge for item \(calendarEntry.item): \(entry)")
+            print("💻 Found code challenge for dayID \(id): \(entry)")
         } else {
-            print("⚠️ No code challenge found for item \(calendarEntry.item)")
+            print("⚠️ No code challenge found for dayID \(id)")
         }
         return entry
     }
