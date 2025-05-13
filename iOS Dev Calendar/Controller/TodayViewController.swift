@@ -1,3 +1,4 @@
+
 //
 //  TodayViewController.swift
 //  iOS Dev Calendar
@@ -17,13 +18,13 @@ class TodayViewController: UIViewController {
         scrollView.alwaysBounceVertical = true
         return scrollView
     }()
-    
+
     private let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     private let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -31,7 +32,7 @@ class TodayViewController: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-    
+
     // Outlets for the various card views displayed on the screen
     // Each card corresponds to a different type of information for the day
     @IBOutlet weak var CodeChallengeCard: CardView!          // Card displaying the daily coding challenge
@@ -41,7 +42,7 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var GoalCardView: CardView!                // Card displaying the word of the day (goal)
     @IBOutlet weak var TeacherCardView: CardView!             // Card showing lesson objectives or teacher notes
     @IBOutlet weak var LessonCardView: CardView!              // Card showing the lesson topic
-    
+
     // Variables to hold the data for the current day, to be displayed in the cards
     var dayID: String = ""             // Identifier for the current day, used to look up data
     var color: String = ""             // Color associated with today's lesson (used for card background)
@@ -52,11 +53,11 @@ class TodayViewController: UIViewController {
     var CodeChallenge: String = ""     // Filename or description of today's code challenge
     var review: String = ""            // Review topic for today
     var wordOfTheDay: String = ""      // Word of the day
-    
+
     // Card types for the UI with their respective titles and colors
     enum CardType {
         case lesson, goal, word, review, dueHomework, dueReading, codeChallenge
-        
+
         var title: String {
             switch self {
             case .lesson: return "Lesson"
@@ -72,11 +73,11 @@ class TodayViewController: UIViewController {
         var backgroundColor: UIColor {
             switch self {
             case .lesson: return UIColor(named: "card-primary") ?? .systemBackground
-            case .goal: return UIColor(named: "card-secondary") ?? .secondarySystemBackground
-            case .word: return UIColor(named: "card-tertiary") ?? .tertiarySystemBackground
+            case .goal: return UIColor(named: "card-primary") ?? .systemBackground
+            case .word: return UIColor(named: "card-primary") ?? .systemBackground
             case .review: return UIColor(named: "card-primary") ?? .systemBackground
-            case .dueHomework: return UIColor(named: "card-secondary") ?? .secondarySystemBackground
-            case .dueReading: return UIColor(named: "card-tertiary") ?? .tertiarySystemBackground
+            case .dueHomework: return UIColor(named: "card-primary") ?? .systemBackground
+            case .dueReading: return UIColor(named: "card-primary") ?? .systemBackground
             case .codeChallenge: return UIColor(named: "card-primary") ?? .systemBackground
             }
         }
@@ -108,7 +109,6 @@ class TodayViewController: UIViewController {
         super.viewDidLoad()
         setupScrollView()
         setupTitles()
-        setupDebugButton()
         Task {
             await setupData()
             setupCards()
@@ -214,11 +214,11 @@ class TodayViewController: UIViewController {
             }
             
             if let reviewToday = DataRepository.shared.reviewTopic(for: today) {
-                print("📝 Found review topic for today: \(reviewToday)")
+                print("📝 Found review topic for today: $reviewToday)")
                 review = reviewToday.reviewTopic.isEmpty ? "N/A" : reviewToday.reviewTopic
             } else {
                 print("⚠️ No review topic found for today")
-            }
+}
             
             if let wordToday = DataRepository.shared.wordOfTheDay(for: today) {
                 print("🔤 Found word of the day for today: \(wordToday)")
@@ -236,44 +236,5 @@ class TodayViewController: UIViewController {
             print("  - Code Challenge: \(CodeChallenge)")
             print("  - Review: \(review)")
             print("  - Word of the Day: \(wordOfTheDay)")
-    }
-    
-    private func setupDebugButton() {
-        let debugButton = UIBarButtonItem(
-            title: "Debug",
-            style: .plain,
-            target: self,
-            action: #selector(debugButtonTapped)
-        )
-        navigationItem.rightBarButtonItem = debugButton
-    }
-    
-    @objc private func debugButtonTapped() {
-        print("\n🔍 DEBUG DATA:")
-        print("📅 Today's date: \(Date())")
-        print("\n📚 Scope and Sequence:")
-        DataRepository.shared.scopeAndSequence.forEach { entry in
-            print("- \(entry.date): \(entry.topic)")
-        }
-        
-        print("\n💻 Code Challenges:")
-        DataRepository.shared.codeChallenges.forEach { entry in
-            print("- \(entry.date): \(entry.fileName)")
-        }
-        
-        print("\n📝 Review Topics:")
-        DataRepository.shared.reviewTopics.forEach { entry in
-            print("- \(entry.date): \(entry.reviewTopic)")
-        }
-        
-        print("\n🔤 Words of the Day:")
-        DataRepository.shared.wordsOfTheDay.forEach { entry in
-            print("- \(entry.date): \(entry.word)")
-        }
-        
-        print("\n📅 Calendar Entries:")
-        DataRepository.shared.calendarEntries.forEach { entry in
-            print("- \(entry.date): \(entry.label)")
-        }
     }
 }
