@@ -44,27 +44,27 @@ class DataRepository {
             // Load all required data from remote URLs
             print("📥 Loading calendar entries...")
             calendarEntries = try await JSONLoader.load("Calendar")
-            print("✅ Loaded \(calendarEntries.count) calendar entries")
-            
+            print("✅ Loaded $calendarEntries.count calendar entries")
+
             print("📥 Loading scope and sequence...")
             scopeAndSequence = try await JSONLoader.load("ScopeAndSequence")
-            print("✅ Loaded \(scopeAndSequence.count) scope and sequence entries")
-            
+            print("✅ Loaded $scopeAndSequence.count scope and sequence entries")
+
             print("📥 Loading code challenges...")
             codeChallenges = try await JSONLoader.load("CodeChallenges")
-            print("✅ Loaded \(codeChallenges.count) code challenges")
-            
+            print("✅ Loaded $codeChallenges.count code challenges")
+
             print("📥 Loading review topics...")
             reviewTopics = try await JSONLoader.load("ReviewTopics")
-            print("✅ Loaded \(reviewTopics.count) review topics")
-            
+            print("✅ Loaded $reviewTopics.count review topics")
+
             print("📥 Loading words of the day...")
             wordsOfTheDay = try await JSONLoader.load("WordOfTheDay")
-            print("✅ Loaded \(wordsOfTheDay.count) words of the day")
-            
+            print("✅ Loaded $wordsOfTheDay.count words of the day")
+
             print("✅ Successfully loaded all data from remote sources")
         } catch {
-            print("❌ Error loading data: \(error)")
+            print("❌ Error loading data: $error)")
         }
     }
     
@@ -72,16 +72,16 @@ class DataRepository {
     func scope(for date: Date) -> ScopeAndSequenceEntry? {
         // First find the calendar entry for today
         guard let calendarEntry = calendarEntries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) else {
-            print("⚠️ No calendar entry found for date \(date)")
+            print("⚠️ No calendar entry found for date $date)")
             return nil
         }
         
         // Then find the scope entry that matches the item from the calendar
         let entry = scopeAndSequence.first { $0.dayID == calendarEntry.item }
         if let entry = entry {
-            print("📚 Found scope entry for item \(calendarEntry.item): \(entry)")
+            print("📚 Found scope entry for item $calendarEntry.item: $entry)")
         } else {
-            print("⚠️ No scope entry found for item \(calendarEntry.item)")
+            print("⚠️ No scope entry found for item $calendarEntry.item")
         }
         return entry
     }
@@ -89,9 +89,9 @@ class DataRepository {
     func codeChallenge(forDayID id: String) -> CodeChallengeEntry? {
         let entry = codeChallenges.first { $0.dayID == id }
         if let entry = entry {
-            print("💻 Found code challenge for dayID \(id): \(entry)")
+            print("💻 Found code challenge for dayID $id: $entry)")
         } else {
-            print("⚠️ No code challenge found for dayID \(id)")
+            print("⚠️ No code challenge found for dayID $id")
         }
         return entry
     }
@@ -99,34 +99,34 @@ class DataRepository {
     func reviewTopic(for date: Date) -> ReviewTopicEntry? {
         // First find the calendar entry for today
         guard let calendarEntry = calendarEntries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) else {
-            print("⚠️ No calendar entry found for date \(date)")
+            print("⚠️ No calendar entry found for date $date)")
             return nil
         }
         
         // Then find the review topic that matches the item from the calendar
         let entry = reviewTopics.first { $0.dayID == calendarEntry.item }
         if let entry = entry {
-            print("📝 Found review topic for item \(calendarEntry.item): \(entry)")
+            print("📝 Found review topic for item $calendarEntry.item: $entry)")
         } else {
-            print("⚠️ No review topic found for item \(calendarEntry.item)")
+            print("⚠️ No review topic found for item $calendarEntry.item")
         }
         return entry
     }
     
     func wordOfTheDay(for date: Date) -> WordOfTheDay? {
-        // First find the calendar entry for today
-        guard let calendarEntry = calendarEntries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) else {
-            print("⚠️ No calendar entry found for date \(date)")
-            return nil
-        }
-        
-        // Then find the word of the day that matches the item from the calendar
-        let entry = wordsOfTheDay.first { $0.dayID == calendarEntry.item }
-        if let entry = entry {
-            print("🔤 Found word of the day for item \(calendarEntry.item): \(entry)")
-        } else {
-            print("⚠️ No word of the day found for item \(calendarEntry.item)")
-        }
-        return entry
+    // First find the calendar entry for today
+    guard let calendarEntry = calendarEntries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) else {
+        print("⚠️ No calendar entry found for date $date)")
+        return nil
     }
+    
+    // Randomly select a word from the available words
+    if let randomEntry = wordsOfTheDay.randomElement() {
+        print("🔤 Found word of the day: $randomEntry.word)")
+        return randomEntry
+    } else {
+        print("⚠️ No word of the day found")
+        return nil
+    }
+}
 }
