@@ -8,6 +8,11 @@
 import SwiftUI
 import MijickCalendarView
 
+struct IdentifiableDate: Identifiable, Equatable {
+    let date: Date
+    var id: TimeInterval { date.timeIntervalSinceReferenceDate }
+}
+
 struct CalendarContainerView: View {
     // these come from UIKit
     @Binding var selectedDate: Date?
@@ -16,24 +21,43 @@ struct CalendarContainerView: View {
     // your real JSON-backed dates
     let availableDates: [CalendarDateModel]
 
+    // NEW: Make this a StateObject to persist across view updates
+    @StateObject private var viewModel = ViewModel()
+    
     // internal state
     @State private var selectedMonth: Date = .now
 
     var body: some View {
         VStack {
             CalendarGridView(
-                selectedDate: $selectedDate,
+                selectedDate: Binding(
+                    get: { selectedDate },
+                    set: { newDate in
+                        selectedDate = newDate
+                        if let date = newDate {
+                            print("🎯 Selected date: \(date)")
+                            viewModel.showSheet(for: date)
+                        }
+                    }
+                ),
                 selectedMonth: $selectedMonth,
                 availableDates: availableDates,
                 buildDayView: buildDayView
             )
             .padding(.horizontal, 24)
+            .onChange(of: selectedDate) { oldValue, newValue in
+                print("🔵 CalendarGridView selectedDate changed from: \(String(describing: oldValue)) to: \(String(describing: newValue))")
+            }
 
             Spacer()
         }
-        .sheet(item: $selectedDate) { date in
-            TaskView(date: date, entries: availableDates)
+        // PRESENT THE SHEET RELIABLY
+        .sheet(item: $viewModel.selectedModalDate) { idDate in
+            TaskView(date: idDate.date, entries: DataRepository.shared.calendarEntries)
                 .presentationDetents([.height(300), .large])
+                .onDisappear {
+                    viewModel.selectedModalDate = nil
+                }
         }
     }
 
@@ -61,6 +85,17 @@ struct CalendarContainerView: View {
         self._selectedDate = selectedDate
         self.availableDates = availableDates
         self._showAllDates = showAllDates
+    }
+}
+
+// MARK: - ViewModel
+extension CalendarContainerView {
+    class ViewModel: ObservableObject {
+        @Published var selectedModalDate: IdentifiableDate?
+        
+        func showSheet(for date: Date) {
+            selectedModalDate = IdentifiableDate(date: date)
+        }
     }
 }
 
