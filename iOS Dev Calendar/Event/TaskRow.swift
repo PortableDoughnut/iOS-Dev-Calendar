@@ -4,7 +4,6 @@ struct TaskRow: View {
     let title: String
     let subtitle: String
     let type: CardType
-    var customColor: String? = nil
 
     // Add unique ID for UserDefaults
     private var taskId: String {
@@ -18,16 +17,14 @@ struct TaskRow: View {
         self.title = entry.topic
         self.subtitle = entry.label
         self.type = .lesson
-        self.customColor = nil
         _isCompleted = State(initialValue: UserDefaults.standard.bool(forKey: "\(entry.topic)_\(entry.label)"))
     }
 
     // For card-style entries
-    init(title: String, subtitle: String, type: CardType, color: String? = nil) {
+    init(title: String, subtitle: String, type: CardType) {
         self.title = title
         self.subtitle = subtitle
         self.type = type
-        self.customColor = color
         _isCompleted = State(initialValue: UserDefaults.standard.bool(forKey: "\(title)_\(subtitle)"))
     }
 
@@ -74,7 +71,7 @@ struct TaskRow: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(customColor.map { Color($0) } ?? type.backgroundColor)
+                .fill(Color.red)
                 .opacity(0.15)
         )
     }

@@ -33,6 +33,7 @@ struct TaskView: View {
                 // Add spacing at the top
                 Spacer()
                     .frame(height: 20)
+                
 
                 Text(CalendarHelpers.formattedTitle(for: date))
                     .font(.system(size: 20, weight: .bold))
@@ -41,11 +42,11 @@ struct TaskView: View {
 
                 if let scope = scopeAndSequence {
                     Group {
-                        TaskRow(title: "Lesson", subtitle: scope.topic, type: .lesson, color: scope.color)
+                        TaskRow(title: "Lesson \(scope.dayID)", subtitle: scope.topic, type: .lesson)
                         TaskRow(title: "Word of the Day", subtitle: wordOfTheDay?.word ?? "N/A", type: .goal)
                         TaskRow(title: "Objectives", subtitle: scope.objectives, type: .word)
                         TaskRow(title: "Review", subtitle: reviewTopic?.reviewTopic ?? "N/A", type: .review)
-                        TaskRow(title: "Homework Due", subtitle: scope.homeworkDue, type: .dueHomework)
+                        TaskRow(title: "Homework Due", subtitle: scope.assignmentsDue, type: .dueHomework)
                         TaskRow(title: "Reading Due", subtitle: scope.readingDue, type: .dueReading)
                         if let challenge = codeChallenge {
                             TaskRow(title: "Code Challenge", subtitle: challenge.fileName, type: .codeChallenge)

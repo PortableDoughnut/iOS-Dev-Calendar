@@ -1,1442 +1,1262 @@
 [
   {
-    "dayID": "SF1",
-    "color": "B",
-    "topic": "Student Orientation, Setup, Swift Fundamentals 1.3",
-    "readingDue": "Watch 'Swift - A Brief History', Read Swift Fundamentals 1.2",
-    "homeworkDue": "Lab: Constants and Variables (pg 46)",
-    "objectives": "navigate course materials.\nuse Xcode.\ndefine and use variables and constants."
-  },
-  {
-    "dayID": "SF2",
-    "color": "B",
-    "topic": "Operators, Control Flow (Paired)",
-    "readingDue": "Read Swift Fundamentals 1.4, 1.5",
-    "homeworkDue": "Lab: Operators (pg 56)\nPaired Lab: Control Flow (pg 72)",
-    "objectives": "use mathematical operators, comparison operators, and logical operators.\ncontrol application flow."
-  },
-  {
-    "dayID": "SF3",
-    "color": "B",
-    "topic": "Strings, Functions (Paired)",
-    "readingDue": "Swift Fundamentals 2.2, 2.3",
-    "homeworkDue": "Lab: Strings (pg 191)\nPaired Lab: Functions (pg 204)",
-    "objectives": "use Swift Strings, including creating, comparing, combining, and manipulating them.\nbuild Swift functions that take multiple named arguments, include default values, and return or don't return an object."
-  },
-  {
-    "dayID": "SF4",
-    "color": "B",
-    "topic": "Functions Pt. 2, Structs (Paired)",
-    "readingDue": "Swift Fundamentals 2.4",
-    "homeworkDue": "Paired Lab: Structures (pg 232)",
-    "objectives": "build Swift functions that take multiple named arguments, include default values, and return or don't return an object.\ncreate a fully featured Struct with properties, initializers, and methods, and explain its role in Swift development."
-  },
-  {
-    "dayID": "SF5",
-    "color": "B",
-    "topic": "Classes, Inheritance",
-    "readingDue": "Swift Fundamentals 2.5",
-    "homeworkDue": "Lab: Classes & Inheritance (pg. 249)",
-    "objectives": "describe the difference between a Struct and a Class.\ncreate a fully featured Class with properties, initializers, and methods, as well as superclass inheritance."
-  },
-  {
-    "dayID": "SF6",
-    "color": "B",
-    "topic": "Review Structs and Classes",
-    "readingDue": "Swift Fundamentals 2.6",
-    "homeworkDue": "",
-    "objectives": "describe the difference between a Struct and a Class.\ncreate a fully featured Class with properties, initializers, and methods, as well as superclass inheritance."
-  },
-  {
-    "dayID": "SF7",
-    "color": "B",
-    "topic": "Structs and Classes Presentations (Paired)",
-    "readingDue": "Swift Fundamentals 2.7",
-    "homeworkDue": "Paired Project: Classes & Structs Presentation (GitHub)",
-    "objectives": "identify appropriate uses for structs and classes and implement them in code"
-  },
-  {
-    "dayID": "SF8",
-    "color": "B",
-    "topic": "Collections",
-    "readingDue": "Swift Fundamentals 1.6",
-    "homeworkDue": "Lab: Collections (pg 263)",
-    "objectives": "create arrays and dictionaries of any type, including nested arrays and dictionaries"
-  },
-  {
-    "dayID": "SF9",
-    "color": "B",
-    "topic": "Loops",
-    "readingDue": "Swift Fundamentals 1.7",
-    "homeworkDue": "Lab: Loops (pg 275)",
-    "objectives": "use for and while loops to execute code repeatedly\nidentify appropriate situations to use loops"
-  },
-  {
-    "dayID": "SF10",
-    "color": "B",
-    "topic": "Optionals (Paired)",
-    "readingDue": "Swift Fundamentals 3.2",
-    "homeworkDue": "",
-    "objectives": "create optional variables and unwrap them\ncreate failable initializers, use optional chaining, and implicitly unwrap optionals"
-  },
-  {
-    "dayID": "SF11",
-    "color": "B",
-    "topic": "Review Optionals, Introduce Light Project ",
-    "readingDue": "Swift Fundamentals 3.3",
-    "homeworkDue": "Paired Lab: Optionals (pg 450)",
-    "objectives": "create optional variables and unwrap them\ncreate failable initializers, use optional chaining, and implicitly unwrap optionals"
-  },
-  {
-    "dayID": "SF12",
-    "color": "B",
-    "topic": "Xcode, Debugging, Documentation",
-    "readingDue": "Swift Fundamentals 1.8",
-    "homeworkDue": "Lab: Debug Your First App (pg 108)\nLab: Use Documentation (pg 118)",
-    "objectives": "describe what an IDE is\nuse Xcode's interface to begin building a project"
-  },
-  {
-    "dayID": "SF13",
-    "color": "B",
-    "topic": "Interface Builder Basics, Introduction to UIKit (Paired)",
-    "readingDue": "Swift Fundamentals 1.9, 2.8",
-    "homeworkDue": "Lab: Interface Builder Basics (pg 137) \nPaired Lab: UIKit Survey (pg 306)",
-    "objectives": "create and configure multiple Views in Interface Builder"
+    "assignmentsDue" : "",
+    "dayID" : "SF01",
+    "objectives" : "navigate course materials.\nuse Xcode.",
+    "readingDue" : "Watch 'Swift - A Brief History', Read Swift Fundamentals 1.2",
+    "topic" : "Student Orientation, Setup, Mac Crash Course"
   },
   {
-    "dayID": "SF14",
-    "color": "B",
-    "topic": "Displaying Data",
-    "readingDue": "Swift Fundamentals 2.9",
-    "homeworkDue": "Lab: Tutorial Screen (pg 323)",
-    "objectives": "configure Views in Interface Builder\ncustomize Labels and Image Views"
+    "assignmentsDue" : "Lab: Constants and Variables (pg 46)",
+    "dayID" : "SF02",
+    "objectives" : "define and use variables and constants.",
+    "readingDue" : "Read Swift Fundamentals 1.2",
+    "topic" : "Constants, Variables, and Basic Types"
   },
   {
-    "dayID": "SF15",
-    "color": "B",
-    "topic": "Controls in Action",
-    "readingDue": "Swift Fundamentals 2.10, Light Project Part 1",
-    "homeworkDue": "Lab: Basic Interactions (pg 347)",
-    "objectives": "create interactive controls such as buttons, switches, sliders, text fields, and gesture recognizers\nrun code in response to user input"
+    "assignmentsDue" : "Lab: Operators (pg 56)\nPaired Lab: Control Flow (pg 72)",
+    "dayID" : "SF03",
+    "objectives" : "use mathematical operators, comparison operators, and logical operators.\ncontrol application flow.",
+    "readingDue" : "Read Swift Fundamentals 1.4, 1.5",
+    "topic" : "Operators, Control Flow (Paired)"
   },
   {
-    "dayID": "SF16",
-    "color": "B",
-    "topic": "Auto Layout and Stack Views (Paired), introduce Apple Pie Project",
-    "readingDue": "Swift Fundamentals 2.11, Light Project Part 2",
-    "homeworkDue": "Paired Lab: Calculator Part 1 (pg 387)",
-    "objectives": "create and configure alignment and size constraints in Interface Builder\ncreate and use Stack Views"
+    "assignmentsDue" : "Lab: Strings (pg 191)",
+    "dayID" : "SF04",
+    "objectives" : "use Swift Strings, including creating, comparing, combining, and manipulating them.",
+    "readingDue" : "Swift Fundamentals 2.2",
+    "topic" : "Strings"
   },
   {
-    "dayID": "SF17",
-    "color": "B",
-    "topic": "Type Casting and Inspection, Constant and Variable Scope",
-    "readingDue": "Swift Fundamentals 3.5, Light Project Part 3",
-    "homeworkDue": "Lab: Type Casting (pg 458)\nLab: Scope (pg 475)",
-    "objectives": "cast variables to different types\ndefine and use scope"
+    "assignmentsDue" : "Lab: Functions",
+    "dayID" : "SF05",
+    "objectives" : "build Swift functions that take multiple named arguments, include default values, and return or don't return an object.",
+    "readingDue" : "Swift Fundamentals 2.3",
+    "topic" : "Functions (Paired)"
   },
   {
-    "dayID": "SF18",
-    "color": "B",
-    "topic": "Gaurd, Enum/Light Project Due TODAY",
-    "readingDue": "Swift Fundamentals 3.4, 3.6 / All Labs DUE",
-    "homeworkDue": "Lab: Guard (pg 467)\nLab: Enum (pg 485)\nProject: Light Project (pg 143)",
-    "objectives": "create guard statements and explain how they differ from if statements, as well as guard-let statements and how they differ from if-let statements\ncreate enums to define a limited set of custom options"
+    "assignmentsDue" : "Lab: Git Notes",
+    "dayID" : "SF06",
+    "objectives" : "identify the purpose and necessity of version control systems like Git.\ncreate Git repositories, commits, and branches from the command line.",
+    "readingDue" : "Read \"About Git\" by GitHub",
+    "topic" : "Git Overview & Git Init"
   },
   {
-    "dayID": "SF19",
-    "color": "B",
-    "topic": "Terminal Basics",
-    "readingDue": "Read \"Terminal Basics.md\" in the lesson folder",
-    "homeworkDue": "",
-    "objectives": "state in brief the history of command line interfaces and why they are still useful\nidentify the structure of a standard terminal command and use several common ones"
+    "assignmentsDue" : "",
+    "dayID" : "SF07",
+    "objectives" : "review Swift skills learned so far.\ndemonstrate knowledge of skills by building first project.",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 1: Mad Lib Story Generator"
   },
   {
-    "dayID": "SF20",
-    "color": "B",
-    "topic": "Git",
-    "readingDue": "Read \"About Git\" by GitHub",
-    "homeworkDue": "None",
-    "objectives": "identify the purpose and necessity of version control systems like Git\ncreate Git repositories, commits, and branches from the command line"
+    "assignmentsDue" : "",
+    "dayID" : "SF08",
+    "objectives" : "demonstrate knowledge of skills by building first project.",
+    "readingDue" : "",
+    "topic" : "Work on Project 1: Mad Lib Story Generator"
   },
   {
-    "dayID": "SF21",
-    "color": "B",
-    "topic": "GitHub",
-    "readingDue": "Apple Pie Project Part 1",
-    "homeworkDue": "Lab: GitHub Pull Request (GitHub)",
-    "objectives": "navigate the GitHub web interface\npush, pull, and clone repositories from GitHub"
+    "assignmentsDue" : "Project 1: Mad Lib Generator",
+    "dayID" : "SF09",
+    "objectives" : "demonstrate knowledge of skills by building first project.",
+    "readingDue" : "",
+    "topic" : "Work on Project: Mad Lib Story Generator"
   },
   {
-    "dayID": "SF22",
-    "color": "B",
-    "topic": "Segues and Navigation Controllers",
-    "readingDue": "Read Swift Fundamentals 3.7",
-    "homeworkDue": "Lab: Login (pg 521)",
-    "objectives": "create and configure Storyboard segues\nuse Navigation controllers and define their purpose"
+    "assignmentsDue" : "Paired Lab: Structures (pg 232)",
+    "dayID" : "SF10",
+    "objectives" : "create a fully featured Struct with properties, initializers, and methods, and explain its role in Swift development.",
+    "readingDue" : "Swift Fundamentals 2.4",
+    "topic" : "Structs (Paired)"
   },
   {
-    "dayID": "SF23",
-    "color": "B",
-    "topic": "Tab Bar Controllers",
-    "readingDue": "Read Swift Fundamentals 3.8, Apple Pie Project Part 2",
-    "homeworkDue": "Lab: About Me (pg 551)",
-    "objectives": "create and configure tab bar controllers"
+    "assignmentsDue" : "Lab: Classes & Inheritance (pg. 249)",
+    "dayID" : "SF11",
+    "objectives" : "describe the difference between a Struct and a Class.\ncreate a fully featured Class with properties, initializers, and methods, as well as superclass inheritance.",
+    "readingDue" : "Swift Fundamentals 2.5",
+    "topic" : "Classes, Inheritance"
   },
   {
-    "dayID": "SF24",
-    "color": "B",
-    "topic": "View Controller Life Cycle (Paired) / Vocabulary Quiz #1",
-    "readingDue": "Read Swift Fundamentals 3.9",
-    "homeworkDue": "Paired Lab: Order of Events (pg 573)",
-    "objectives": "run code when views load, appear, and disappear"
+    "assignmentsDue" : "",
+    "dayID" : "SF12",
+    "objectives" : "describe the difference between a Struct and a Class.\ncreate a fully featured Class with properties, initializers, and methods, as well as superclass inheritance.",
+    "readingDue" : "Swift Fundamentals 2.6",
+    "topic" : "Review Structs and Classes"
   },
   {
-    "dayID": "SF25",
-    "color": "B",
-    "topic": "Building Simple Workflows/Introduce Personality Quiz Project",
-    "readingDue": "Vocab Quiz, Read Swift Fundamentals 3.10",
-    "homeworkDue": "Lab: Pizza Delivery (pg 588)",
-    "objectives": "design apps thoughtfully with intuitive workflows"
+    "assignmentsDue" : "Paired Project: Classes & Structs Presentation (GitHub)",
+    "dayID" : "SF13",
+    "objectives" : "identify appropriate uses for structs and classes and implement them in code",
+    "readingDue" : "Swift Fundamentals 2.7",
+    "topic" : "Structs and Classes Presentations (Paired)"
   },
   {
-    "dayID": "SF26",
-    "color": "B",
-    "topic": "Constraints Practice",
-    "readingDue": "Apple Pie Project Part 3",
-    "homeworkDue": "",
-    "objectives": "create and configure alignment and size constraints in Interface Builder"
+    "assignmentsDue" : "Lab: Debug Your First App (pg 108)",
+    "dayID" : "SF14",
+    "objectives" : "describe what an IDE is\nuse Xcode's interface to begin building a project",
+    "readingDue" : "Swift Fundamentals FIXME",
+    "topic" : "Xcode, Debugging"
   },
   {
-    "dayID": "SF27",
-    "color": "B",
-    "topic": "Calculator Part 2",
-    "readingDue": "Work on Apple Pie Project",
-    "homeworkDue": "",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Use Documentation (pg 118)",
+    "dayID" : "SF15",
+    "objectives" : "navigate and utilize Swift's documentation.",
+    "readingDue" : "Swift Fundamentals FIXME",
+    "topic" : "Xcode, Debugging, Documentation"
   },
   {
-    "dayID": "SF28",
-    "color": "B",
-    "topic": "Calculator Part 2 / Apple Pie Project Due TODAY",
-    "readingDue": "Apple Pie Project DUE / All Labs DUE",
-    "homeworkDue": "Paired Project: Calculator Part 2 (GitHub)\nProject: Apple Pie (pg 401)",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Scope (pg 475)",
+    "dayID" : "SF16",
+    "objectives" : "define and use scope.",
+    "readingDue" : "Swift Fundamentals FIXME",
+    "topic" : "Scope"
   },
   {
-    "dayID": "SF29",
-    "color": "B",
-    "topic": "Introduce Your Family",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Collections (pg 263)",
+    "dayID" : "SF17",
+    "objectives" : "create arrays and dictionaries of any type, including nested arrays and dictionaries",
+    "readingDue" : "Swift Fundamentals 1.6",
+    "topic" : "Collections"
   },
   {
-    "dayID": "SF30",
-    "color": "B",
-    "topic": "Introduce Your Family Day 2",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Loops (pg 275)",
+    "dayID" : "SF18",
+    "objectives" : "use for and while loops to execute code repeatedly\nidentify appropriate situations to use loops",
+    "readingDue" : "Swift Fundamentals 1.7",
+    "topic" : "Loops"
   },
   {
-    "dayID": "SF31",
-    "color": "B",
-    "topic": "Introduce Your Family Day 3",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "Project: Introduce Your Family (GitHub)",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "",
+    "dayID" : "SF19",
+    "objectives" : "review Swift skills learned so far.\nbuild second project using base skills and structs, classes, collections, loops, scope.",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 2: Playlist Manager"
   },
   {
-    "dayID": "SF32",
-    "color": "B",
-    "topic": "Tally App",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Project 2: Playlist Manager",
+    "dayID" : "SF20",
+    "objectives" : "review Swift skills learned so far.\nbuild second project using base skills and structs, classes, collections, loops, scope.",
+    "readingDue" : "",
+    "topic" : "Work on Project 2: Playlist Manager"
   },
   {
-    "dayID": "SF33",
-    "color": "B",
-    "topic": "Tally App Day 2",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "Project: Tally App (GitHub)",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Type Casting (pg 458)",
+    "dayID" : "SF21",
+    "objectives" : "cast variables to different types",
+    "readingDue" : "Swift Fundamentals 3.5",
+    "topic" : "Type Casting and Inspection"
   },
   {
-    "dayID": "SF34",
-    "color": "B",
-    "topic": "Text validation app",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "Project: Text Validation App (GitHub)",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "",
+    "dayID" : "SF22",
+    "objectives" : "create optional variables and unwrap them\ncreate failable initializers, use optional chaining, and implicitly unwrap optionals",
+    "readingDue" : "Swift Fundamentals 3.2",
+    "topic" : "Optionals (Paired)"
   },
   {
-    "dayID": "SF35",
-    "color": "B",
-    "topic": "T.S.M.A. - User Profile Day 1",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Paired Lab: Optionals (pg 450)",
+    "dayID" : "SF23",
+    "objectives" : "create optional variables and unwrap them\ncreate failable initializers, use optional chaining, and implicitly unwrap optionals",
+    "readingDue" : "Swift Fundamentals 3.3",
+    "topic" : "Review Optionals"
   },
   {
-    "dayID": "SF36",
-    "color": "B",
-    "topic": "T.S.M.A. - User Profile Day 2",
-    "readingDue": "Work on Personality Quiz",
-    "homeworkDue": "",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Guard (pg 467)",
+    "dayID" : "SF24",
+    "objectives" : "create guard statements and explain how they differ from if statements, as well as guard-let statements and how they differ from if-let statements",
+    "readingDue" : "Swift Fundamentals 3.4",
+    "topic" : "Guard"
   },
   {
-    "dayID": "SF37",
-    "color": "B",
-    "topic": "T.S.M.A - User Profile Day 3",
-    "readingDue": "T.S.M.A. User Profile Due",
-    "homeworkDue": "Project: Tech Social Media App - User Profile (GitHub)",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "Lab: Enum (pg 485)",
+    "dayID" : "SF25",
+    "objectives" : "create enums to define a limited set of custom options",
+    "readingDue" : "Swift Fundamentals 3.6",
+    "topic" : "Enum"
   },
   {
-    "dayID": "SF38",
-    "color": "B",
-    "topic": "Wrap up and Presentations/Personality Quiz Due TODAY",
-    "readingDue": "Personality Quiz Due, All Labs Due - Drop Deadline",
-    "homeworkDue": "Project: Personality Quiz (pg 592)",
-    "objectives": "review prior learning by completing summative projects"
+    "assignmentsDue" : "",
+    "dayID" : "SF26",
+    "objectives" : "review prior learning by completing summative projects",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 3: Calculator"
   },
   {
-    "dayID": "TP1",
-    "color": "L",
-    "topic": "Protocols (Paired)",
-    "readingDue": "Read Data Collections 1.1",
-    "homeworkDue": "Paired Lab: Protocols (pg 30)",
-    "objectives": "adopt commonly used Swift protocols such as Equatable\ncreate custom protocols"
+    "assignmentsDue" : "",
+    "dayID" : "SF27",
+    "objectives" : "review prior learning by completing summative projects",
+    "readingDue" : "",
+    "topic" : "Work on Project 3: Calculator"
   },
   {
-    "dayID": "TP2",
-    "color": "L",
-    "topic": "Delegation",
-    "readingDue": "Data Collections 1.2",
-    "homeworkDue": "Paired Lab: Delegate (GitHub)",
-    "objectives": "define what delegation is and use existing delegate protocols such as UITextFieldDelegate\ncreate delegate protocols and implement them"
+    "assignmentsDue" : "",
+    "dayID" : "SF28",
+    "objectives" : "review prior learning by completing summative projects",
+    "readingDue" : "",
+    "topic" : "Work on Project 3: Calculator"
   },
   {
-    "dayID": "TP3",
-    "color": "L",
-    "topic": "SOLID Design",
-    "readingDue": "Review Slides (GitHub)",
-    "homeworkDue": "SOLID Lab (GitHub)",
-    "objectives": "thoughtfully design code with the SOLID principles"
+    "assignmentsDue" : "ALL LABS AND PROJECTS DUE, Project 3: Calculator Due",
+    "dayID" : "SF29",
+    "objectives" : "review prior learning by completing summative projects",
+    "readingDue" : "",
+    "topic" : "Present Project 3: Calculator"
   },
   {
-    "dayID": "TP4",
-    "color": "L",
-    "topic": "App Anatomy and Life Cycle (Paired), Model-View-Controller",
-    "readingDue": "Data Collections 1.3",
-    "homeworkDue": "Paired Lab: App Event Count (pg 46)\nLab: Favorite Athletes (pg 69)",
-    "objectives": "describe the use of the AppDelegate file and the life cycle states of an app\ndefine MVC architecture and use it in your code"
+    "assignmentsDue" : "Closures Lab, Extensions Lab",
+    "dayID" : "SF30",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Closures, Extensions"
   },
   {
-    "dayID": "TP5",
-    "color": "L",
-    "topic": "Scroll Views",
-    "readingDue": "Data Collections 1.4",
-    "homeworkDue": "Lab: I Spy (pg 98)",
-    "objectives": "create and configure scroll views"
+    "assignmentsDue" : "Lab: Views",
+    "dayID" : "SF31",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "SwiftUI Views, Text"
   },
   {
-    "dayID": "TP6",
-    "color": "L",
-    "topic": "Table Views",
-    "readingDue": "Data Collections 1.5",
-    "homeworkDue": "Lab: Meal Tracker (pg 127)",
-    "objectives": "create and configure table views"
+    "assignmentsDue" : "Lab: View Modifiers",
+    "dayID" : "SF32",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "View Modifiers"
   },
   {
-    "dayID": "TP7",
-    "color": "L",
-    "topic": "Intermediate Table Views",
-    "readingDue": "Data Collections 1.6",
-    "homeworkDue": "Lab: Favorite Books (pg 162)",
-    "objectives": "use advanced features of table views including custom cells and static table views"
+    "assignmentsDue" : "Lab: Stacks & ForEach",
+    "dayID" : "SF33",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "VStack, HStack, ZStack, ForEach"
   },
   {
-    "dayID": "TP8",
-    "color": "L",
-    "topic": "Table View Examples and Practice",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "achieve mastery of table views"
+    "assignmentsDue" : "",
+    "dayID" : "SF34",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "SwiftUI Property Wrappers"
   },
   {
-    "dayID": "TP9",
-    "color": "L",
-    "topic": "Table View Examples and Practice",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "achieve mastery of table views"
+    "assignmentsDue" : "Lab: Property Wrappers",
+    "dayID" : "SF35",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review Property Wrappers"
   },
   {
-    "dayID": "TP10",
-    "color": "L",
-    "topic": "Saving Data (Paired)",
-    "readingDue": "Data Collections 1.7",
-    "homeworkDue": "Paired Lab: Remember Your Emojis (pg 179)",
-    "objectives": "encode, save, load, and decode data from the disk"
+    "assignmentsDue" : "Lab: Buttons",
+    "dayID" : "SF36",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Buttons"
   },
   {
-    "dayID": "TP11",
-    "color": "L",
-    "topic": "System View Controllers",
-    "readingDue": "Data Collections 1.8",
-    "homeworkDue": "Lab: Home Furniture Sharing (pg 204)",
-    "objectives": "use some of the built in view controllers like web browsing and email"
+    "assignmentsDue" : "Lab: UI Elements & Controls",
+    "dayID" : "SF37",
+    "objectives" : "create more SwiftUI elements such as Images, Shapes, TextFields, Switches, Sliders and more",
+    "readingDue" : "",
+    "topic" : "UI Elements & Controls"
   },
   {
-    "dayID": "TP12",
-    "color": "L",
-    "topic": "Complex Input Screens (Paired)",
-    "readingDue": "Data Collections 1.9",
-    "homeworkDue": "",
-    "objectives": "build static tables with lots of different inputs"
+    "assignmentsDue" : "",
+    "dayID" : "SF38",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 4"
   },
   {
-    "dayID": "TP13",
-    "color": "L",
-    "topic": "Complex Input Screens Continued/Introduce List Project",
-    "readingDue": "",
-    "homeworkDue": "Paired Lab: Employee Roster (pg 258)",
-    "objectives": "build static tables with lots of different inputs"
+    "assignmentsDue" : "Project 4",
+    "dayID" : "TP01",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 4"
   },
   {
-    "dayID": "TP14",
-    "color": "L",
-    "topic": "Review Table Views/Introduce Your Family, Part 2",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "Lab: Subviews",
+    "dayID" : "TP02",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Subviews"
   },
   {
-    "dayID": "TP15",
-    "color": "L",
-    "topic": "Introduce Your Family, Part 2, Day 2",
-    "readingDue": "Family Project Part 2 Due",
-    "homeworkDue": "Project: Introduce Your Family, Part 2 (GitHub)",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP03",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Navigation"
   },
   {
-    "dayID": "TP16",
-    "color": "L",
-    "topic": "T.S.M.A. - Posts Table, Day 1",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "Lab: Navigation",
+    "dayID" : "TP04",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review Navigation"
   },
   {
-    "dayID": "TP17",
-    "color": "L",
-    "topic": "T.S.M.A. - Posts Table, Day 2",
-    "readingDue": "Social Media App Part 2 Due",
-    "homeworkDue": "Project: Tech Social Media App - Posts Table (GitHub)",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP05",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 5: Personality Quiz Part 1"
   },
   {
-    "dayID": "TP18",
-    "color": "L",
-    "topic": "Score Keeper Day 1",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP06",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 5: Personality Quiz Part 1"
   },
   {
-    "dayID": "TP19",
-    "color": "L",
-    "topic": "Score Keeper Day 2",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP07",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Architecture with MVVM"
   },
   {
-    "dayID": "TP20",
-    "color": "L",
-    "topic": "Score Keeper Day 3, introduce Vocab Quiz #2",
-    "readingDue": "",
-    "homeworkDue": "Vocab Quiz #2 (Canvas)",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "Lab: MVVM",
+    "dayID" : "TP08",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review MVVM"
   },
   {
-    "dayID": "TP21",
-    "color": "L",
-    "topic": "Score Keeper Day 4",
-    "readingDue": "Score Keeper App Due",
-    "homeworkDue": "Project: Score Keeper Part 1 (GitHub)",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "Lab: Imperative vs Declarative",
+    "dayID" : "TP09",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Imperative vs Declarative Introduction"
   },
   {
-    "dayID": "TP22",
-    "color": "L",
-    "topic": "Games Tracker Day 1",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP10",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 6: Personality Quiz Part 2"
   },
   {
-    "dayID": "TP23",
-    "color": "L",
-    "topic": "Games Tracker Day 2",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP11",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 6: Personality Quiz Part 2"
   },
   {
-    "dayID": "TP24",
-    "color": "L",
-    "topic": "Games Tracker Day 3",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP12",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 6: Personality Quiz Part 2"
   },
   {
-    "dayID": "TP25",
-    "color": "L",
-    "topic": "Games Tracker Day 4",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "Present Project 6: Personality Quiz",
+    "dayID" : "TP13",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Present Project 6: Personality Quiz Part 2"
   },
   {
-    "dayID": "TP26",
-    "color": "L",
-    "topic": "Games Tracker Day 5",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP14",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 7"
   },
   {
-    "dayID": "TP27",
-    "color": "L",
-    "topic": "Games Tracker Day 6",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP15",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 7"
   },
   {
-    "dayID": "TP28",
-    "color": "L",
-    "topic": "Present Games Tracker/List Project Due TODAY\nWatch Fall Capstone Presentations",
-    "readingDue": "Games Tracker DUE, All Labs DUE - Drop Deadline",
-    "homeworkDue": "Project: Score Keeper Part 2: Games Tracker (GitHub)\nProject: List (pg 265)",
-    "objectives": "practice implementing Table Views and other concepts learned this unit"
+    "assignmentsDue" : "",
+    "dayID" : "TP16",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 7"
   },
   {
-    "dayID": "ND1",
-    "color": "P",
-    "topic": "Closures (Paired), Extensions",
-    "readingDue": "Data Collections 2.1, 2.2",
-    "homeworkDue": "Paired Lab: Closures (pg 338)\nLab: Extensions (pg 349)",
-    "objectives": "describe what a closure is and create one in Swift\nwrite extensions and describe their common purposes (i.e. extending standard types and organization)"
+    "assignmentsDue" : "",
+    "dayID" : "TP17",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 7"
   },
   {
-    "dayID": "ND2",
-    "color": "P",
-    "topic": "Practical Animation",
-    "readingDue": "Data Collections 2.3",
-    "homeworkDue": "Lab: Enter to Win a Contest (pg 390)",
-    "objectives": "identify how and when animations are used in iOS\nadd animations to UIViews"
+    "assignmentsDue" : "",
+    "dayID" : "TP18",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 7"
   },
   {
-    "dayID": "ND3",
-    "color": "P",
-    "topic": "HTTP and URLSession",
-    "readingDue": "Data Collections 2.4",
-    "homeworkDue": "Lab: iTunes Search Part 1 (pg 411)",
-    "objectives": "use URLSession to send and fetch data"
+    "assignmentsDue" : "ALL LABS AND PROJECTS DUE, Project 7 Due",
+    "dayID" : "TP19",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Finish Project 7"
   },
   {
-    "dayID": "ND4",
-    "color": "P",
-    "topic": "Working with the Web: Decoding JSON",
-    "readingDue": "Data Collections 2.5",
-    "homeworkDue": "Lab: iTunes Search Part 2 (pg 438)",
-    "objectives": "use and interpret JSON data"
+    "assignmentsDue" : "",
+    "dayID" : "TP20",
+    "objectives" : "adopt commonly used Swift protocols such as Equatable.\ncreate custom protocols.",
+    "readingDue" : "Data Collections 1.1",
+    "topic" : "Protocols"
   },
   {
-    "dayID": "ND5",
-    "color": "P",
-    "topic": "Working with the Web: Concurrency (Paired)",
-    "readingDue": "Data Collections 2.6",
-    "homeworkDue": "Paired Lab: iTunes Search Part 3 (pg 465)",
-    "objectives": "describe how processors handle multiple functions simultaneously\nwrite asynchronous network code"
+    "assignmentsDue" : "Paired Lab: Protocols (pg 30)",
+    "dayID" : "TP21",
+    "objectives" : "adopt commonly used Swift protocols such as Equatable.\ncreate custom protocols.",
+    "readingDue" : "",
+    "topic" : "Review Protocols"
   },
   {
-    "dayID": "ND6",
-    "color": "P",
-    "topic": "Swift Generics",
-    "readingDue": "Data Collections 3.2",
-    "homeworkDue": "Lab: Generics (pg 615)",
-    "objectives": "use generics to create cleaner and safer code"
+    "assignmentsDue" : "Lab: SOLID",
+    "dayID" : "TP22",
+    "objectives" : "thoughtfully design code with SOLID principles",
+    "readingDue" : "",
+    "topic" : "SOLID"
   },
   {
-    "dayID": "ND7",
-    "color": "P",
-    "topic": "Local Notifications",
-    "readingDue": "Data Collections 3.6",
-    "homeworkDue": "Lab: BillManager (pg 786)",
-    "objectives": "display notifications to users"
+    "assignmentsDue" : "Lab: Saving Data",
+    "dayID" : "TP23",
+    "objectives" : "",
+    "readingDue" : "Data Collections 1.7",
+    "topic" : "FileManager and UserDefaults"
   },
   {
-    "dayID": "ND8",
-    "color": "P",
-    "topic": "Lab Day / Introduce Restaurant Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "complete labs covering concepts introduced so far, including the restaurant project"
+    "assignmentsDue" : "Lab: iTunes Search Part 1 (pg 411)",
+    "dayID" : "TP24",
+    "objectives" : "use URLSession to send and fetch data",
+    "readingDue" : "Data Collections 2.4",
+    "topic" : "HTTP and URLSession"
   },
   {
-    "dayID": "ND9",
-    "color": "P",
-    "topic": "Introduce Random APIs Project, Part 1",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "use your understanding of networking to access API data"
+    "assignmentsDue" : "Lab: iTunes Search Part 2 (pg 438)",
+    "dayID" : "TP25",
+    "objectives" : "use and interpret JSON data",
+    "readingDue" : "Data Collections 2.5",
+    "topic" : "Decoding JSON"
   },
   {
-    "dayID": "ND10",
-    "color": "P",
-    "topic": "Random APIs Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "use your understanding of networking to access API data"
+    "assignmentsDue" : "Lab: iTunes Search Part 2 (pg 438)",
+    "dayID" : "TP26",
+    "objectives" : "use and interpret JSON data",
+    "readingDue" : "Data Collections 2.5",
+    "topic" : "Review HTTP, URLSession, JSON"
   },
   {
-    "dayID": "ND11",
-    "color": "P",
-    "topic": "Random APIs Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "use your understanding of networking to access API data"
+    "assignmentsDue" : "",
+    "dayID" : "TP27",
+    "objectives" : "describe how processors handle multiple functions simultaneously\nwrite asynchronous network code",
+    "readingDue" : "Data Collections 2.6",
+    "topic" : "Working with the Web: Concurrency (Paired)"
   },
   {
-    "dayID": "ND12",
-    "color": "P",
-    "topic": "Random APIs Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "use your understanding of networking to access API data"
+    "assignmentsDue" : "Paired Lab: iTunes Search Part 3 (pg 465)",
+    "dayID" : "TP28",
+    "objectives" : "describe how processors handle multiple functions simultaneously\nwrite asynchronous network code",
+    "readingDue" : "",
+    "topic" : "Review Concurrency"
   },
   {
-    "dayID": "ND13",
-    "color": "P",
-    "topic": "Random APIs Project",
-    "readingDue": "",
-    "homeworkDue": "Project: Random APIs, Part 1",
-    "objectives": "use your understanding of networking to access API data"
+    "assignmentsDue" : "",
+    "dayID" : "ND01",
+    "objectives" : "use generics to create cleaner and safer code",
+    "readingDue" : "Data Collections 3.2",
+    "topic" : "Swift Generics"
   },
   {
-    "dayID": "ND14",
-    "color": "P",
-    "topic": "SwiftUI Introduction",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Introduction (GitHub)",
-    "objectives": "describe the key differences between UIKit and SwiftUI\ncreate simple SwiftUI views"
+    "assignmentsDue" : "Lab: Generics (pg 615)",
+    "dayID" : "ND02",
+    "objectives" : "use generics to create cleaner and safer code",
+    "readingDue" : "",
+    "topic" : "Swift Generics"
   },
   {
-    "dayID": "ND15",
-    "color": "P",
-    "topic": "SwiftUI: Dealing with Data",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Data (GitHub)",
-    "objectives": "define and use SwiftUI's property wrappers to manage State"
+    "assignmentsDue" : "",
+    "dayID" : "ND03",
+    "objectives" : "use your understanding of networking to access API data",
+    "readingDue" : "",
+    "topic" : "Introduce Project 8: Random APIs"
   },
   {
-    "dayID": "ND16",
-    "color": "P",
-    "topic": "Review Dealing with Data",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": "define and use SwiftUI's property wrappers to manage State"
+    "assignmentsDue" : "",
+    "dayID" : "ND04",
+    "objectives" : "use your understanding of networking to access API data",
+    "readingDue" : "",
+    "topic" : "Work on Project 8: Random APIs"
   },
   {
-    "dayID": "ND17",
-    "color": "P",
-    "topic": "SwiftUI: Subviews",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Subviews (GitHub)",
-    "objectives": "create SwiftUI subviews for cleaner and more reusable code"
+    "assignmentsDue" : "",
+    "dayID" : "ND05",
+    "objectives" : "use your understanding of networking to access API data",
+    "readingDue" : "",
+    "topic" : "Work on Project 8: Random APIs"
   },
   {
-    "dayID": "ND18",
-    "color": "P",
-    "topic": "SwiftUI: Navigation",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Navigation (GitHub)",
-    "objectives": "use a NavigationStack to provide similar functionality to a UINavigationController"
+    "assignmentsDue" : "Project: Random APIs",
+    "dayID" : "ND06",
+    "objectives" : "use your understanding of networking to access API data",
+    "readingDue" : "",
+    "topic" : "Work on Project 8: Random APIs"
   },
   {
-    "dayID": "ND19",
-    "color": "P",
-    "topic": "Lab Day",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ND07",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "SwiftData"
   },
   {
-    "dayID": "ND20",
-    "color": "P",
-    "topic": "Lab Day",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ND08",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "SwiftData"
   },
   {
-    "dayID": "ND21",
-    "color": "P",
-    "topic": "All Labs due today",
-    "readingDue": "All Labs DUE - Drop Deadline",
-    "homeworkDue": "Project: Restaurant (pg 473)",
-    "objectives": ""
+    "assignmentsDue" : "Lab: SwiftData",
+    "dayID" : "ND09",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "SwiftData"
   },
   {
-    "dayID": "ST1",
-    "color": "Y",
-    "topic": "SwiftUI: Architecture",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": "define what MVVM architecture is and how to use it"
+    "assignmentsDue" : "",
+    "dayID" : "ND10",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Lab Day"
   },
   {
-    "dayID": "ST2",
-    "color": "Y",
-    "topic": "SwiftUI: Advanced Navigation",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ND11",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Lab Day"
   },
   {
-    "dayID": "ST3",
-    "color": "Y",
-    "topic": "SwiftUI: Animations",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Animation (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Other Architectures",
+    "dayID" : "ND12",
+    "objectives" : "compare MVVM to other architecture options.\nreview and refine understanding of MVVM.",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Other Architectures"
   },
   {
-    "dayID": "ST4",
-    "color": "Y",
-    "topic": "SwiftUI: Integrating UIKit / Introduce SwiftUI Project",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": "add simple animations to SwiftUI views"
+    "assignmentsDue" : "",
+    "dayID" : "ND13",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Advanced Navigation"
   },
   {
-    "dayID": "ST5",
-    "color": "Y",
-    "topic": "SwiftUI Project: Random APIs, Part 2",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": "integrate UIKit and SwiftUI into one another"
+    "assignmentsDue" : "Lab: Advanced Navigation",
+    "dayID" : "ND14",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Review Advanced Navigation"
   },
   {
-    "dayID": "ST6",
-    "color": "Y",
-    "topic": "SwiftUI Project: Random APIs, Part 2 DUE TODAY",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": "apply knowledge of SwiftUI and APIs in one project"
+    "assignmentsDue" : "",
+    "dayID" : "ND15",
+    "objectives" : "add simple animations to SwiftUI views",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Animations"
   },
   {
-    "dayID": "ST7",
-    "color": "Y",
-    "topic": "SwiftUI: GeometryReader",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Project: Random APIs, Part 2 (GitHub)",
-    "objectives": "apply knowledge of SwiftUI and APIs in one project"
+    "assignmentsDue" : "Lab: SwiftUI Animation (GitHub)",
+    "dayID" : "ND16",
+    "objectives" : "add simple animations to SwiftUI views",
+    "readingDue" : "",
+    "topic" : "Review Animations"
   },
   {
-    "dayID": "ST8",
-    "color": "Y",
-    "topic": "SwiftUI: Advanced Layout with LazyGrids",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Geometry Reader (GitHub)",
-    "objectives": "use GeometryReader for fine-grained control over SwiftUI layouts"
+    "assignmentsDue" : "",
+    "dayID" : "ND17",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 9"
   },
   {
-    "dayID": "ST9",
-    "color": "Y",
-    "topic": "SwiftUI: Advanced Techniques",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI: Advanced Layout (GitHub)",
-    "objectives": "build views equivalent to UIKit's collection views in SwiftUI using LazyGrids"
+    "assignmentsDue" : "",
+    "dayID" : "ND18",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 9"
   },
   {
-    "dayID": "ST10",
-    "color": "Y",
-    "topic": "What is TDD, Red-Green-Refactor (Paired)",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Lab: SwiftUI Advanced Techniques (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "Project 9",
+    "dayID" : "ND19",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 9"
   },
   {
-    "dayID": "ST11",
-    "color": "Y",
-    "topic": "SwiftData",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "Paired Lab: TDD Model Objects (GitHub)",
-    "objectives": "describe what Test Driven Development is and how it can improve code and collaboration\ndescribe the Red-Green-Refactor cycle in TDD"
+    "assignmentsDue" : "Lab: Date Pickers",
+    "dayID" : "ND20",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Date Pickers"
   },
   {
-    "dayID": "ST12",
-    "color": "Y",
-    "topic": "SwiftData",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": "use SwiftData to access CoreData and describe its unique implementation and features"
+    "assignmentsDue" : "Lab: Photo Pickers",
+    "dayID" : "ND21",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Photo Pickers"
   },
   {
-    "dayID": "ST13",
-    "color": "Y",
-    "topic": "SwiftData",
-    "readingDue": "Review lesson slides",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Color Pickers",
+    "dayID" : "ST01",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Color Pickers"
   },
   {
-    "dayID": "ST14",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: GeometryReader",
+    "dayID" : "ST02",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "GeometryReader"
   },
   {
-    "dayID": "ST15",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST03",
+    "objectives" : "build views equivalent to UIKit's collection views in SwiftUI using LazyGrids",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Advanced Layout with LazyGrids"
   },
   {
-    "dayID": "ST16",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: LazyGrids",
+    "dayID" : "ST04",
+    "objectives" : "build views equivalent to UIKit's collection views in SwiftUI using LazyGrids",
+    "readingDue" : "",
+    "topic" : "Review LazyGrids"
   },
   {
-    "dayID": "ST17",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST05",
+    "objectives" : "build views equivalent to UIKit's collection views in SwiftUI using LazyGrids",
+    "readingDue" : "Review lesson slides",
+    "topic" : "SwiftUI: Advanced Techniques"
   },
   {
-    "dayID": "ST18",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: SwiftUI Advanced Techniques (GitHub)",
+    "dayID" : "ST06",
+    "objectives" : "",
+    "readingDue" : "Review lesson slides",
+    "topic" : "Review Advanced Techniques"
   },
   {
-    "dayID": "ST19",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST07",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 11"
   },
   {
-    "dayID": "ST20",
-    "color": "Y",
-    "topic": "SwiftUI Project: Trip Logger",
-    "readingDue": "All Labs DUE - Drop Deadline",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST08",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 11"
   },
   {
-    "dayID": "FA1",
-    "color": "O",
-    "topic": "Introduce Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Project 11",
+    "dayID" : "ST09",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 11"
   },
   {
-    "dayID": "FA2",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST10",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Review, Introduce Project 12: Trip Logger"
   },
   {
-    "dayID": "FA3",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST11",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 12: Trip Logger"
   },
   {
-    "dayID": "FA4",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST12",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 12: Trip Logger"
   },
   {
-    "dayID": "FA5",
-    "color": "O",
-    "topic": "Fishing for Frameworks, Introduce capstone pitch",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST13",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 12: Trip Logger"
   },
   {
-    "dayID": "FA6",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST14",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 12: Trip Logger"
   },
   {
-    "dayID": "FA7",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST15",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 12: Trip Logger"
   },
   {
-    "dayID": "FA8",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Project 12: Trip Logger",
+    "dayID" : "ST16",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Present Project 12: Trip Logger"
   },
   {
-    "dayID": "FA9",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST17",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Introduce Project 10: Tech Social Media App (TSMA) Part 1"
   },
   {
-    "dayID": "FA10",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST18",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 10: TSMA Part 1"
   },
   {
-    "dayID": "FA11",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST19",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 10: TSMA Part 1"
   },
   {
-    "dayID": "FA12",
-    "color": "O",
-    "topic": "Tech Social Media App Project",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "ST20",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Work on Project 10: TSMA Part 1"
   },
   {
-    "dayID": "FA13",
-    "color": "O",
-    "topic": "Tech Social Media App Project DUE TODAY",
-    "readingDue": "Tech Social Media App DUE",
-    "homeworkDue": "Project: Tech Social Media App (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA01",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Introduce Tech Social Media App Project"
   },
   {
-    "dayID": "FA14",
-    "color": "O",
-    "topic": "Resume Prep",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA02",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "FA15",
-    "color": "O",
-    "topic": "Resume Prep & LinkedIn",
-    "readingDue": "Resume Due, LinkedIn Due",
-    "homeworkDue": "Lab: Resume (GitHub)\nLab: LinkedIn (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA03",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "FA16",
-    "color": "O",
-    "topic": "Job Search Prep",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA04",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "FA17",
-    "color": "O",
-    "topic": "Interview Prep",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA05",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Fishing for Frameworks, Introduce capstone pitch"
   },
   {
-    "dayID": "FA18",
-    "color": "O",
-    "topic": "Code Challenge and Mock Interviews",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA06",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "FA19",
-    "color": "O",
-    "topic": "Code Challenge and Mock Interviews",
-    "readingDue": "",
-    "homeworkDue": "Lab: Mock Interview 1 (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA07",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "FA20",
-    "color": "O",
-    "topic": "Code Challenge and Mock Interviews",
-    "readingDue": "All Labs Due - Drop Deadline",
-    "homeworkDue": "Lab: Mock Interview 2 (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA08",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "PC1",
-    "color": "R",
-    "topic": "Personal Capstone Pitches",
-    "readingDue": "Capstone Pitch Due",
-    "homeworkDue": "Lab: Capstone Pitch",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA09",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "PC2",
-    "color": "R",
-    "topic": "Personal Capstone Planning",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA10",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "PC3",
-    "color": "R",
-    "topic": "Personal Capstone Planning",
-    "readingDue": "Capstone Plan Due",
-    "homeworkDue": "Lab: Personal Capstone Plan (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA11",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "PC4",
-    "color": "R",
-    "topic": "Software Release Cycle",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": "use Apple's App Store Connect platform and other CI/CD tools to efficiently publish apps\nI can identify the standard terminology of the development cycle (alpha, semantic versioning, CI/CD)"
+    "assignmentsDue" : "",
+    "dayID" : "FA12",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Tech Social Media App Project"
   },
   {
-    "dayID": "PC5",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "Lab: API Evaluation Presentation (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "Project: Tech Social Media App (GitHub)",
+    "dayID" : "FA13",
+    "objectives" : "",
+    "readingDue" : "Tech Social Media App DUE",
+    "topic" : "Tech Social Media App Project DUE TODAY"
   },
   {
-    "dayID": "PC6",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA14",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Resume Prep"
   },
   {
-    "dayID": "PC7",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Resume (GitHub)\nLab: LinkedIn (GitHub)",
+    "dayID" : "FA15",
+    "objectives" : "",
+    "readingDue" : "Resume Due, LinkedIn Due",
+    "topic" : "Resume Prep & LinkedIn"
   },
   {
-    "dayID": "PC8",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA16",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Job Search Prep"
   },
   {
-    "dayID": "PC9",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA17",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Interview Prep"
   },
   {
-    "dayID": "PC10",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "FA18",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Code Challenge and Mock Interviews"
   },
   {
-    "dayID": "PC11",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Mock Interview 1 (GitHub)",
+    "dayID" : "FA19",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Code Challenge and Mock Interviews"
   },
   {
-    "dayID": "PC12",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Mock Interview 2 (GitHub)",
+    "dayID" : "FA20",
+    "objectives" : "",
+    "readingDue" : "All Labs Due - Drop Deadline",
+    "topic" : "Code Challenge and Mock Interviews"
   },
   {
-    "dayID": "PC13",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Capstone Pitch",
+    "dayID" : "PC01",
+    "objectives" : "",
+    "readingDue" : "Capstone Pitch Due",
+    "topic" : "Personal Capstone Pitches"
   },
   {
-    "dayID": "PC14",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC02",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Planning"
   },
   {
-    "dayID": "PC15",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Personal Capstone Plan (GitHub)",
+    "dayID" : "PC03",
+    "objectives" : "",
+    "readingDue" : "Capstone Plan Due",
+    "topic" : "Personal Capstone Planning"
   },
   {
-    "dayID": "PC16",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC04",
+    "objectives" : "use Apple's App Store Connect platform and other CI\/CD tools to efficiently publish apps\nI can identify the standard terminology of the development cycle (alpha, semantic versioning, CI\/CD)",
+    "readingDue" : "",
+    "topic" : "Software Release Cycle"
   },
   {
-    "dayID": "PC17",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: API Evaluation Presentation (GitHub)",
+    "dayID" : "PC05",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC18",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC06",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC19",
-    "color": "R",
-    "topic": "Personal Capstone Work Time",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC07",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC20",
-    "color": "R",
-    "topic": "Personal Capstone Work Time, check off Beta",
-    "readingDue": "Capstone Beta Due",
-    "homeworkDue": "Lab: Personal Capstone Beta (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC08",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC21",
-    "color": "R",
-    "topic": "Personal Capstone TestFlight Tutorial, Review Testing Assignment Requirements",
-    "readingDue": "",
-    "homeworkDue": "Capstone pushed to TestFlight",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC09",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC22",
-    "color": "R",
-    "topic": "Personal Capstone - Prepare to Present",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC10",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC23",
-    "color": "R",
-    "topic": "Personal Capstone - Prepare to Present",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC11",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC24",
-    "color": "R",
-    "topic": "Personal Capstone - Prepare to Present",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC12",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC25",
-    "color": "R",
-    "topic": "Personal Capstone - Check Off TestFlight Tests",
-    "readingDue": "Capstone TestFlight Tests Due",
-    "homeworkDue": "Lab: Personal Capstone TestFlight Tests (GitHub)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC13",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "PC26",
-    "color": "R",
-    "topic": "Present Personal Capstone to Fall Cohort",
-    "readingDue": "Capstone Presentation DUE - Drop Deadline",
-    "homeworkDue": "Project: Presentation of Personal Capstone (GitHub)\nProject: App Store Published (Soft Deadline)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC14",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "GC1",
-    "color": "G",
-    "topic": "Collaborating with Git and GitHub",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC15",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "GC2",
-    "color": "G",
-    "topic": "Group Capstone: Agile and Scrum Overview / Pick Project DUE",
-    "readingDue": "Pick Project DUE",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC16",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "GC3",
-    "color": "G",
-    "topic": "Group Capstone: Project Management and Sprint Planning",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC17",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "GC4",
-    "color": "G",
-    "topic": "Group Capstone: SOLID Review",
-    "readingDue": "Group Capstone Plan Due",
-    "homeworkDue": "Project: Group Capstone Plan",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC18",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "GC5",
-    "color": "G",
-    "topic": "Group Capstone: Daily Stand-ups Tutorial",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC19",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone Work Time"
   },
   {
-    "dayID": "GC6",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Personal Capstone Beta (GitHub)",
+    "dayID" : "PC20",
+    "objectives" : "",
+    "readingDue" : "Capstone Beta Due",
+    "topic" : "Personal Capstone Work Time, check off Beta"
   },
   {
-    "dayID": "GC7",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Capstone pushed to TestFlight",
+    "dayID" : "PC21",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone TestFlight Tutorial, Review Testing Assignment Requirements"
   },
   {
-    "dayID": "GC8",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC22",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone - Prepare to Present"
   },
   {
-    "dayID": "GC9",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC23",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone - Prepare to Present"
   },
   {
-    "dayID": "GC10",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "PC24",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Personal Capstone - Prepare to Present"
   },
   {
-    "dayID": "GC11",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Lab: Personal Capstone TestFlight Tests (GitHub)",
+    "dayID" : "PC25",
+    "objectives" : "",
+    "readingDue" : "Capstone TestFlight Tests Due",
+    "topic" : "Personal Capstone - Check Off TestFlight Tests"
   },
   {
-    "dayID": "GC12",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "Project: Presentation of Personal Capstone (GitHub)\nProject: App Store Published (Soft Deadline)",
+    "dayID" : "PC26",
+    "objectives" : "",
+    "readingDue" : "Capstone Presentation DUE - Drop Deadline",
+    "topic" : "Present Personal Capstone to Fall Cohort"
   },
   {
-    "dayID": "GC13",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "GC01",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Collaborating with Git and GitHub"
   },
   {
-    "dayID": "GC14",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "GC02",
+    "objectives" : "",
+    "readingDue" : "Pick Project DUE",
+    "topic" : "Group Capstone: Agile and Scrum Overview \/ Pick Project DUE"
   },
   {
-    "dayID": "GC15",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "Personal Capstone Submitted to Apple for Review Deadline",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC16",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC17",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC18",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC19",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC20",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC21",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "Group Capstone Alpha Due",
-    "homeworkDue": "Project: Group Capstone Alpha",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC22",
-    "color": "G",
-    "topic": "Group Capstone - Peer Testing",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC23",
-    "color": "G",
-    "topic": "Group Capstone - Peer Testing & Implement final changes",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC24",
-    "color": "G",
-    "topic": "Group Capstone - Implement Final Changes",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC25",
-    "color": "G",
-    "topic": "Group Capstone - Implement Final Changes",
-    "readingDue": "Group Capstone Beta Due",
-    "homeworkDue": "Project: Group Capstone Beta",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC26",
-    "color": "G",
-    "topic": "Group Capstone",
-    "readingDue": "",
-    "homeworkDue": "",
-    "objectives": ""
-  },
-  {
-    "dayID": "GC27",
-    "color": "G",
-    "topic": "Group Capstone Presentations",
-    "readingDue": "Group Capstone DUE, Personal Capstone Published to App Store DUE",
-    "homeworkDue": "Project: Group Capstone Presentation\nProject: App Store Published (Hard Deadline)",
-    "objectives": ""
+    "assignmentsDue" : "",
+    "dayID" : "GC03",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone: Project Management and Sprint Planning"
+  },
+  {
+    "assignmentsDue" : "Project: Group Capstone Plan",
+    "dayID" : "GC04",
+    "objectives" : "",
+    "readingDue" : "Group Capstone Plan Due",
+    "topic" : "Group Capstone: SOLID Review"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC05",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone: Daily Stand-ups Tutorial"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC06",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC07",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC08",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC09",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC10",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC11",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC12",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC13",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC14",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "Personal Capstone Submitted to Apple for Review Deadline",
+    "dayID" : "GC15",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC16",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC17",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC18",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC19",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC20",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "Project: Group Capstone Alpha",
+    "dayID" : "GC21",
+    "objectives" : "",
+    "readingDue" : "Group Capstone Alpha Due",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC22",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone - Peer Testing"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC23",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone - Peer Testing & Implement final changes"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC24",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone - Implement Final Changes"
+  },
+  {
+    "assignmentsDue" : "Project: Group Capstone Beta",
+    "dayID" : "GC25",
+    "objectives" : "",
+    "readingDue" : "Group Capstone Beta Due",
+    "topic" : "Group Capstone - Implement Final Changes"
+  },
+  {
+    "assignmentsDue" : "",
+    "dayID" : "GC26",
+    "objectives" : "",
+    "readingDue" : "",
+    "topic" : "Group Capstone"
+  },
+  {
+    "assignmentsDue" : "Project: Group Capstone Presentation\nProject: App Store Published (Hard Deadline)",
+    "dayID" : "GC27",
+    "objectives" : "",
+    "readingDue" : "Group Capstone DUE, Personal Capstone Published to App Store DUE",
+    "topic" : "Group Capstone Presentations"
   }
 ]

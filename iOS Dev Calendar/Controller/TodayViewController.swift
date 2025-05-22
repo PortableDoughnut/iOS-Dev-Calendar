@@ -23,7 +23,7 @@ class TodayViewController: UIViewController {
     var color: String = ""             // Color associated with today's lesson (used for card background)
     var topic: String = ""             // Topic of today's lesson
     var readingDue: String = ""        // Reading due today
-    var homeworkDue: String = ""       // Homework due today
+    var assignmentsDue: String = ""       // Homework due today
     var objectives: String = ""        // Objectives or goals for today's lesson
     var CodeChallenge: String = ""     // Filename or description of today's code challenge
     var review: String = ""            // Review topic for today
@@ -120,7 +120,7 @@ class TodayViewController: UIViewController {
         // Configure the review card with the review topic
         configureCardView(ReviewCardView, type: .review, subtitle: review)
         // Configure the homework due card with homework due today
-        configureCardView(DueHomeworkCardView, type: .dueHomework, subtitle: homeworkDue)
+        configureCardView(DueHomeworkCardView, type: .dueHomework, subtitle: assignmentsDue)
         // Configure the reading due card with reading due tonight
         configureCardView(TonightsHomeworkView, type: .dueReading, subtitle: readingDue)
         // Configure the code challenge card with today's code challenge
@@ -143,10 +143,9 @@ class TodayViewController: UIViewController {
         
         // Get scope and sequence
         if let todayScope = repository.scope(for: dayID) {
-            color = todayScope.color.isEmpty ? "N/A" : todayScope.color
             topic = todayScope.topic.isEmpty ? "N/A" : todayScope.topic
             readingDue = todayScope.readingDue.isEmpty ? "N/A" : todayScope.readingDue
-            homeworkDue = todayScope.homeworkDue.isEmpty ? "N/A" : todayScope.homeworkDue
+            assignmentsDue = todayScope.assignmentsDue.isEmpty ? "N/A" : todayScope.assignmentsDue
             objectives = todayScope.objectives.isEmpty ? "N/A" : todayScope.objectives
         }
         
