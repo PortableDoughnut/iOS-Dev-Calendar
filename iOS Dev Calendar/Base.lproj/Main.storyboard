@@ -54,6 +54,7 @@
                         <segue destination="In4-ZC-rLN" kind="relationship" relationship="viewControllers" id="kBh-cP-G93"/>
                         <segue destination="oxS-zl-EpY" kind="relationship" relationship="viewControllers" id="Uf5-pW-WZE"/>
                         <segue destination="MFU-OO-rBK" kind="relationship" relationship="viewControllers" id="H5G-9U-CHR"/>
+                        <segue destination="P75-1x-aS6" kind="relationship" relationship="viewControllers" id="1Bt-md-jcs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhW-Z1-y78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,6 +76,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voq-xG-lgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1789" y="146"/>
+        </scene>
+        <!--All Lessons-->
+        <scene sceneID="tsc-TT-a55">
+            <objects>
+                <hostingController id="P75-1x-aS6" customClass="CalendarListHostingController" customModule="iOS_Dev_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All Lessons" image="calendar.day.timeline.left" catalog="system" selectedImage="calendar.day.timeline.left" id="4Wm-6K-dLA"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loM-vk-s9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="262"/>
         </scene>
         <!--TodayView-->
         <scene sceneID="nHx-dm-a5j">
@@ -175,6 +186,7 @@
         <image name="book.circle.fill" catalog="system" width="128" height="123"/>
         <image name="calendar.circle" catalog="system" width="128" height="123"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="calendar.day.timeline.left" catalog="system" width="128" height="88"/>
         <image name="text.rectangle.page" catalog="system" width="115" height="128"/>
         <image name="text.rectangle.page.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">

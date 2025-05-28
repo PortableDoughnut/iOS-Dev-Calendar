@@ -45,3 +45,9 @@ struct CalendarDateModel: Decodable, Hashable {
         self.instructor = instructor
     }
 }
+
+extension CalendarDateModel: Identifiable {
+    var id: String {
+        UUID().uuidString
+    }
+}

@@ -20,3 +20,13 @@ extension View {
 extension View {
     @ViewBuilder func active(if condition: Bool) -> some View { if condition { self } }
 }
+
+extension View {
+    func inExpandingRectangle(color: Color? = nil) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .fill(color ?? Color.clear)
+            self
+        }
+    }
+}
