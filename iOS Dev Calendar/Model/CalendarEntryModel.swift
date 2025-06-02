@@ -13,6 +13,12 @@ struct CalendarEntryModel: Codable {
     let item: String
 }
 
+extension CalendarEntryModel {
+    var scope: ScopeAndSequenceEntry? {
+        DataRepository.shared.scopeAndSequence.first { $0.dayID == self.item }
+    }
+}
+
 extension CalendarEntryModel: Identifiable {
     var id: UUID {
         UUID()

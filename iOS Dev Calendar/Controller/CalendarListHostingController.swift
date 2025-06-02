@@ -16,13 +16,13 @@ class CalendarListHostingController: UIHostingController<CalendarListView> {
 }
 
 struct CalendarListView: View {
-    private var scopeAndSequence = DataRepository.shared.scopeAndSequence
+    private var calendarEntries = DataRepository.shared.calendarEntries.filter { !$0.item.isEmpty }
     
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(scopeAndSequence, id: \.dayID) { entry in
-                    ScopeAndSequenceEntryView(scopeAndSequenceEntry: entry)
+                ForEach(calendarEntries) { entry in
+                    ScopeAndSequenceEntryView(calendarEntry: entry)
                         .padding(.horizontal)
                 }
             }
