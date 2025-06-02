@@ -13,11 +13,11 @@ struct TaskRow: View {
     @State private var isCompleted: Bool = false
 
     // For calendar entries
-    init(entry: CalendarDateModel) {
+    init(entry: ScopeAndSequenceEntry) {
         self.title = entry.topic
-        self.subtitle = entry.label
+        self.subtitle = entry.dayID
         self.type = .lesson
-        _isCompleted = State(initialValue: UserDefaults.standard.bool(forKey: "\(entry.topic)_\(entry.label)"))
+        _isCompleted = State(initialValue: UserDefaults.standard.bool(forKey: "\(entry.topic)_\(entry.dayID)"))
     }
 
     // For card-style entries

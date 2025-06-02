@@ -17,12 +17,12 @@ enum CalendarHelpers {
     }()
     
     /// Returns color for a date based on available calendar data
-    static func color(for date: Date, available: [CalendarDateModel]) -> Color? {
+    static func color(for date: Date, available: [CalendarEntryModel]) -> Color? {
         let stripped = Calendar.current.startOfDay(for: date)
         guard let match = available.first(where: {
             Calendar.current.isDate(Calendar.current.startOfDay(for: $0.date), inSameDayAs: stripped)
         }) else { return nil }
-        return DayType.from(match.label).color
+        return DayType.from(match.item).color
     }
     
     /// Title for events sheet, e.g. "TODAY" or "MONDAY, 21 APRIL"

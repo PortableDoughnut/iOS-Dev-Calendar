@@ -10,7 +10,7 @@ import Foundation
 final class DataRepository {
     static let shared = DataRepository()
 
-    let calendarEntries: [CalendarDateModel]
+    let calendarEntries: [CalendarEntryModel]
     let wordOfTheDay: [WordOfTheDay]
     let scopeAndSequence: [ScopeAndSequenceEntry]
     let reviewTopics: [ReviewTopicEntry]
@@ -18,7 +18,7 @@ final class DataRepository {
 
     private init() {
         // load or crash early in dev
-        calendarEntries = (try? JSONLoader.load("Calendar", as: [CalendarDateModel].self)) ?? []
+        calendarEntries = (try? JSONLoader.load("Calendar", as: [CalendarEntryModel].self)) ?? []
         print("📅 Loaded \(calendarEntries.count) calendar entries")
         wordOfTheDay    = (try? JSONLoader.load("WordOfTheDay", as: [WordOfTheDay].self))    ?? []
         scopeAndSequence = (try? JSONLoader.load("ScopeAndSequence", as: [ScopeAndSequenceEntry].self)) ?? []

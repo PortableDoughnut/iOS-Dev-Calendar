@@ -18,18 +18,22 @@ extension MijickDayView {
         let isCurrentMonth: Bool
         let selectedDate: Binding<Date?>?
         let selectedRange: Binding<MijickCalendarView.MDateRange?>?
-        let availableDates: [CalendarDateModel]
+        let availableDates: [CalendarEntryModel]
         
         private let calendar = Calendar.current
         
         // Finds the matching calendar entry for this day
-        private var calendarDate: CalendarDateModel? {
+        private var calendarDate: CalendarEntryModel? {
             availableDates.first { calendar.isDate($0.date, inSameDayAs: date) }
+        }
+        
+        private var scopeAndSequenceEntry: ScopeAndSequenceEntry? {
+            DataRepository.shared.scope(for: calendarDate?.item ?? "")
         }
         
         // Returns the DayType enum based on label
         private var dayType: DayType {
-            if let label = calendarDate?.label {
+            if let label = calendarDate?.item {
                 return DayType.from(label)
             }
             return .other
@@ -57,13 +61,13 @@ extension MijickDayView.Unit {
                 .font(.semiBold(15))
                 .foregroundStyle(determineTextColor())
             
-            if let label = calendarDate?.label {
+            if let label = calendarDate?.item {
                 Text(label)
                     .font(.system(size: 10, weight: .medium))
                     .foregroundStyle(dayType.color)
             }
             
-            if let topic = calendarDate?.topic, !topic.isEmpty {
+            if let topic = scopeAndSequenceEntry?.topic, !topic.isEmpty {
                 Text(topic)
                     .font(.system(size: 8))
                     .foregroundStyle(dayType.color.opacity(0.8))

@@ -12,3 +12,9 @@ struct CalendarEntryModel: Codable {
     let date: Date
     let item: String
 }
+
+extension CalendarEntryModel: Identifiable {
+    var id: UUID {
+        UUID()
+    }
+}

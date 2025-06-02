@@ -11,7 +11,7 @@ import SwiftUI
 struct ScopeAndSequenceEntryView: View {
     let scopeAndSequenceEntry: ScopeAndSequenceEntry
     var date: Date? {
-        DataRepository.shared.calendarEntries.first(where: { $0.label == scopeAndSequenceEntry.dayID })?.date
+        DataRepository.shared.calendarEntries.first(where: { $0.item == scopeAndSequenceEntry.dayID })?.date
     }
     var color: Color {
         let dayIDPrefix = scopeAndSequenceEntry.dayID.prefix(2)

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TaskView: View {
     let date: Date
-    let entries: [CalendarDateModel]
+    let entries: [CalendarEntryModel]
 
     // Get dayID for the selected date
     private var dayID: String {
-        entries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) })?.label ?? ""
+        entries.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) })?.item ?? ""
     }
 
     // Hold our loaded data
@@ -23,7 +23,7 @@ struct TaskView: View {
     @State private var wordOfTheDay: WordOfTheDay?
 
     // Existing code...
-    private var todaysEntries: [CalendarDateModel] {
+    private var todaysEntries: [CalendarEntryModel] {
         entries.filter { Calendar.current.isDate($0.date, inSameDayAs: date) }
     }
 

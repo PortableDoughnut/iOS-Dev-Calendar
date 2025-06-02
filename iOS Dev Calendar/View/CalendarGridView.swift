@@ -12,7 +12,7 @@ struct CalendarGridView: View {
     @Binding var selectedDate: Date?
     @Binding var selectedMonth: Date
 
-    let availableDates: [CalendarDateModel]
+    let availableDates: [CalendarEntryModel]
     let buildDayView: (
         Date,
         Bool,
@@ -40,8 +40,8 @@ struct CalendarGridView_Previews: PreviewProvider {
     @State private static var selectedDate: Date? = nil
     @State private static var selectedMonth: Date = Date()
 
-    static let sampleAvailableDates: [CalendarDateModel] = DataRepository.shared.calendarEntries.map {
-        CalendarDateModel(date: $0.date, label: $0.label)
+    static let sampleAvailableDates: [CalendarEntryModel] = DataRepository.shared.calendarEntries.map {
+        CalendarEntryModel(date: $0.date, item: $0.item)
     }
 
     static var previews: some View {

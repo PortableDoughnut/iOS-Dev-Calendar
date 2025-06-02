@@ -19,7 +19,7 @@ struct CalendarContainerView: View {
     @Binding var showAllDates: Bool
 
     // your real JSON-backed dates
-    let availableDates: [CalendarDateModel]
+    let availableDates: [CalendarEntryModel]
 
     // NEW: Make this a StateObject to persist across view updates
     @StateObject private var viewModel = ViewModel()
@@ -79,7 +79,7 @@ struct CalendarContainerView: View {
     // initializer to wire up the bindings
     init(
         selectedDate: Binding<Date?>,
-        availableDates: [CalendarDateModel],
+        availableDates: [CalendarEntryModel],
         showAllDates: Binding<Bool>
     ) {
         self._selectedDate = selectedDate

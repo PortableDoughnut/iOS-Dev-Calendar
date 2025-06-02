@@ -19,7 +19,7 @@ extension MijickDayView {
         var isCurrentMonth: Bool
         var selectedDate: Binding<Date?>?
         var selectedRange: Binding<MDateRange?>?
-        var availableDates: [CalendarDateModel]
+        var availableDates: [CalendarEntryModel]
 
         @Environment(\.colorScheme) private var colorScheme
     }
@@ -75,7 +75,7 @@ extension MijickDayView.ColoredCircle {
             return .clear
         }
         // Extract the two‑letter prefix (e.g. "SF", "TP", etc.)
-        let prefix = String(entry.label.prefix(2))
+        let prefix = String(entry.item.prefix(2))
         print("  ↪️ prefix: \(prefix)")
         switch prefix {
         case "SF": print("  ↪️ prefix: \(prefix)"); return .blue

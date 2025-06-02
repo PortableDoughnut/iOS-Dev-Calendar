@@ -30,7 +30,7 @@ class TodayViewController: UIViewController {
     var wordOfTheDay: String = ""      // Word of the day
     
     var repository: DataRepository = .shared
-    var todayEntry: CalendarDateModel?
+    var todayEntry: CalendarEntryModel?
     
     // Enum representing the different types of cards displayed in the UI
     // Each case corresponds to a card and provides a title and background color
@@ -136,7 +136,7 @@ class TodayViewController: UIViewController {
             Calendar.current.isDate($0.date, inSameDayAs: today)
         }
         
-        guard let dayID = todayEntry?.label else {
+        guard let dayID = todayEntry?.item else {
             print("Could not find calendar entry for today")
             return
         }

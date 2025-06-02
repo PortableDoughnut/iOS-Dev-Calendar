@@ -10,12 +10,12 @@ import MijickCalendarView
 
 class CalendarViewController: UIViewController {
     private var selectedDate: Date? = nil
-    private var availableDates: [CalendarDateModel] = DataRepository.shared.calendarEntries.map {
-        CalendarDateModel(date: $0.date, label: $0.label)
+    private var availableDates: [CalendarEntryModel] = DataRepository.shared.calendarEntries.map {
+        CalendarEntryModel(date: $0.date, item: $0.item)
     }
     private var showAllDates: Bool = true
     private var currentFilter: DayType? = nil
-    private var filteredDates: [CalendarDateModel] = []
+    private var filteredDates: [CalendarEntryModel] = []
     private var calendarView: CalendarContainerView = CalendarContainerView(
         selectedDate: .constant(nil),
         availableDates: [],
@@ -84,8 +84,8 @@ class CalendarViewController: UIViewController {
         showAllDates = false
         currentFilter = type
         filteredDates = availableDates.filter {
-            DayType.from($0.label) == currentFilter
-            || DayType.from($0.label) == .holiday
+            DayType.from($0.item) == currentFilter
+            || DayType.from($0.item) == .holiday
         }
 
         // Instead of recreating the hosting controller, just update the calendar view
