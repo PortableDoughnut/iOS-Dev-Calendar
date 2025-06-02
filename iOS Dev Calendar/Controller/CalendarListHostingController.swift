@@ -20,11 +20,16 @@ struct CalendarListView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            LazyVStack {
                 ForEach(scopeAndSequence, id: \.dayID) { entry in
                     ScopeAndSequenceEntryView(scopeAndSequenceEntry: entry)
+                        .padding(.horizontal)
                 }
             }
         }
     }
+}
+
+#Preview {
+    CalendarListView()
 }

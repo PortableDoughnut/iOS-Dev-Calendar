@@ -13,42 +13,88 @@ struct ScopeAndSequenceEntryView: View {
     var date: Date? {
         DataRepository.shared.calendarEntries.first(where: { $0.label == scopeAndSequenceEntry.dayID })?.date
     }
-        
+    var color: Color {
+        switch scopeAndSequenceEntry.dayID.prefix(2) {
+        case "SF":
+            return .blue
+        case "TP":
+            return .green
+        case "ND":
+            return .indigo
+        case "ST":
+            return .yellow
+        case "FA":
+            return .orange
+        case "PC":
+            return .red
+        case "GC":
+            return .mint
+        default:
+            return .gray
+        }
+    }
+    
+    @State var showDetails = false
+    
     var body: some View {
-        VStack(spacing: 5) {
-            HStack {
-                Text(" \(date?.formatted(Date.FormatStyle().weekday(.abbreviated)) ?? "") \(date?.formatted(date: .numeric, time: .omitted) ?? "") - LessonID: \(scopeAndSequenceEntry.dayID)")
+        VStack {
+            Grid(verticalSpacing: 0) {
+                GridRow {
+                    VStack {
+                        Text("\(date?.formatted(Date.FormatStyle().weekday(.abbreviated)) ?? "")")
+                        Text("\(date?.formatted(Date.FormatStyle().month(.twoDigits).day(.twoDigits).year(.twoDigits)) ?? "")")
+                        Text("\(scopeAndSequenceEntry.dayID)")
+                    }
                     .monospaced()
+                    .padding()
+                    .background {
+                        color
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    
+                    Text(scopeAndSequenceEntry.topic)
+                        .font(.thin(14))
+                        .padding(.trailing)
+                    
+                    Spacer()
+                                        
+                    Image(systemName: "chevron.right.circle")
+                        .rotationEffect(showDetails ? Angle(degrees: 90) : Angle(degrees: 0))
+                }
                 
-                Spacer()
+                if showDetails {
+                    GridRow {
+                        Text("Reading Due")
+                        Text(scopeAndSequenceEntry.readingDue.isEmpty ? "None" : scopeAndSequenceEntry.readingDue)
+                    }
+                    .padding(.vertical)
+                    .font(.caption)
+                    GridRow {
+                        Text("Assignments Due")
+                        Text(scopeAndSequenceEntry.assignmentsDue.isEmpty ? "None" : scopeAndSequenceEntry.assignmentsDue)
+                    }
+                    .padding(.bottom)
+                    .font(.caption)
+                    
+                }
             }
             
-            HStack(alignment: .top) {
-                VStack {
-                    Text("Topic")
-                    Text(scopeAndSequenceEntry.topic)
-                        .padding()
+            if showDetails {
+                Button("Go to Lesson Details") {
+                    
                 }
-                VStack {
-                    Text("Reading Due")
-                    Text(scopeAndSequenceEntry.readingDue)
-                        .padding()
-                }
-                VStack {
-                    Text("Assignments Due")
-                    Text(scopeAndSequenceEntry.assignmentsDue)
-                        .padding()
-                }
+                .padding(.bottom)
             }
-            .font(.caption)
         }
-        .padding()
-        .background {
-            RoundedRectangle(cornerRadius: 10).fill(.gray)
+        .padding(.trailing)
+        .background(.thinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .onTapGesture {
+            showDetails.toggle()
         }
     }
 }
 
 #Preview {
-    ScopeAndSequenceEntryView(scopeAndSequenceEntry: DataRepository.shared.scopeAndSequence.first!)
+    CalendarListView()
 }
