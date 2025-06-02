@@ -14,24 +14,9 @@ struct ScopeAndSequenceEntryView: View {
         DataRepository.shared.calendarEntries.first(where: { $0.label == scopeAndSequenceEntry.dayID })?.date
     }
     var color: Color {
-        switch scopeAndSequenceEntry.dayID.prefix(2) {
-        case "SF":
-            return .blue
-        case "TP":
-            return .green
-        case "ND":
-            return .indigo
-        case "ST":
-            return .yellow
-        case "FA":
-            return .orange
-        case "PC":
-            return .red
-        case "GC":
-            return .mint
-        default:
-            return .gray
-        }
+        let dayIDPrefix = scopeAndSequenceEntry.dayID.prefix(2)
+        let dayType = DayType(rawValue: String(dayIDPrefix))
+        return dayType?.color ?? .gray
     }
     
     @State var showDetails = false
