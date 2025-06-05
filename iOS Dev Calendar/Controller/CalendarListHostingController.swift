@@ -20,7 +20,7 @@ struct CalendarListView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack {
+            VStack(alignment: .leading, spacing: 10) {
                 ForEach(calendarEntries) { entry in
                     ScopeAndSequenceEntryView(calendarEntry: entry)
                         .padding(.horizontal)

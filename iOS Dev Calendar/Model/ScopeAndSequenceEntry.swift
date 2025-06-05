@@ -15,3 +15,9 @@ struct ScopeAndSequenceEntry: Codable {
     let assignmentsDue: String
     let objectives: String
 }
+
+extension ScopeAndSequenceEntry: Identifiable {
+    var id: String {
+        dayID
+    }
+}

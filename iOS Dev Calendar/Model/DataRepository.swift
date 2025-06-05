@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DataRepository {
+class DataRepository {
     static let shared = DataRepository()
 
     let calendarEntries: [CalendarEntryModel]
