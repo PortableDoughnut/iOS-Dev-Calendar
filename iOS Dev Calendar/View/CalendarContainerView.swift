@@ -26,38 +26,68 @@ struct CalendarContainerView: View {
     
     // internal state
     @State private var selectedMonth: Date = .now
+    
+    @State var showingListView = false
 
     var body: some View {
         VStack {
-            CalendarGridView(
-                selectedDate: Binding(
-                    get: { selectedDate },
-                    set: { newDate in
-                        selectedDate = newDate
-                        if let date = newDate {
-                            print("🎯 Selected date: \(date)")
-                            viewModel.showSheet(for: date)
-                        }
-                    }
-                ),
-                selectedMonth: $selectedMonth,
-                availableDates: availableDates,
-                buildDayView: buildDayView
-            )
-            .padding(.horizontal, 24)
-            .onChange(of: selectedDate) { oldValue, newValue in
-                print("🔵 CalendarGridView selectedDate changed from: \(String(describing: oldValue)) to: \(String(describing: newValue))")
-            }
-
-            Spacer()
-        }
-        // PRESENT THE SHEET RELIABLY
-        .sheet(item: $viewModel.selectedModalDate) { idDate in
-            TaskView(date: idDate.date, entries: DataRepository.shared.calendarEntries)
-                .presentationDetents([.height(300), .large])
-                .onDisappear {
-                    viewModel.selectedModalDate = nil
+            HStack {
+                Button {
+                    // Refresh data from GitHub page
+                } label: {
+                    Image(systemName: "arrow.clockwise")
                 }
+
+                Spacer()
+                
+                Text("Calendar")
+                    .font(.title)
+                
+                Spacer()
+                
+                Button(showingListView ? "Grid" : "List") {
+                    showingListView.toggle()
+                }
+                .buttonStyle(BorderedButtonStyle())
+            }
+            .padding()
+            
+            if !showingListView {
+                VStack {
+                    CalendarGridView(
+                        selectedDate: Binding(
+                            get: { selectedDate },
+                            set: { newDate in
+                                selectedDate = newDate
+                                if let date = newDate {
+                                    print("🎯 Selected date: \(date)")
+                                    viewModel.showSheet(for: date)
+                                }
+                            }
+                        ),
+                        selectedMonth: $selectedMonth,
+                        availableDates: availableDates,
+                        buildDayView: buildDayView
+                    )
+                    .padding(.horizontal, 24)
+                    .onChange(of: selectedDate) { oldValue, newValue in
+                        print("🔵 CalendarGridView selectedDate changed from: \(String(describing: oldValue)) to: \(String(describing: newValue))")
+                    }
+                    
+                    Spacer()
+                }
+                // PRESENT THE SHEET RELIABLY
+                .sheet(item: $viewModel.selectedModalDate) { idDate in
+                    TaskView(date: idDate.date, entries: DataRepository.shared.calendarEntries)
+                        .presentationDetents([.height(300), .large])
+                        .onDisappear {
+                            viewModel.selectedModalDate = nil
+                        }
+                }
+            } else {
+                CalendarListView()
+            }
+        
         }
     }
 
