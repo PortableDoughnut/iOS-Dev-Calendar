@@ -70,26 +70,18 @@ struct TaskView: View {
     }
 
     private func loadData() {
-        do {
-            // Load scope and sequence
-            let scopeEntries: [ScopeAndSequenceEntry] = try JSONLoader.load("ScopeAndSequence", ext: "json")
-            scopeAndSequence = scopeEntries.first(where: { $0.dayID == dayID })
-
-            // Load code challenges
-            let challenges: [CodeChallengeEntry] = try JSONLoader.load("CodeChallenges", ext: "json")
-            codeChallenge = challenges.first(where: { $0.dayID == dayID })
-
-            // Load review topics
-            let reviews: [ReviewTopicEntry] = try JSONLoader.load("ReviewTopics", ext: "json")
-            reviewTopic = reviews.first(where: { $0.dayID == dayID })
-
-            // Load word of the day
-            let words: [WordOfTheDay] = try JSONLoader.load("WordOfTheDay", ext: "json")
-            wordOfTheDay = words.randomElement()
-
-        } catch {
-            print("Failed to load data: \(error)")
-        }
+        // Load scope and sequence
+        scopeAndSequence = DataRepository
+            .shared.scope(for: dayID)
+        
+        // Load code challenges
+        codeChallenge = DataRepository.shared.codeChallenge(for: dayID)
+        
+        // Load review topics
+        reviewTopic = DataRepository.shared.reviewTopic(for: dayID)
+        
+        // Load word of the day
+        wordOfTheDay = DataRepository.shared.wordOfTheDay(for: dayID)
     }
 }
 

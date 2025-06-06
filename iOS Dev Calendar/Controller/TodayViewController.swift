@@ -150,8 +150,8 @@ class TodayViewController: UIViewController {
         }
         
         // Get other data using repository helpers
-        CodeChallenge = repository.codeChallenge(for: dayID) ?? "N/A"
-        review = repository.reviewTopic(for: dayID) ?? "N/A"
+        CodeChallenge = repository.codeChallenge(for: dayID)?.fileName ?? "N/A"
+        review = repository.reviewTopic(for: dayID)?.reviewTopic ?? "N/A"
         
         // Get random word of the day
         if !repository.wordOfTheDay.isEmpty {

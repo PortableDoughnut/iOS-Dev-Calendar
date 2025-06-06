@@ -67,7 +67,6 @@ extension MijickDayView.ColoredCircle {
 
     // Determine circle fill color based on unit prefix from JSON data
     private var unitColor: Color {
-        print("🔶 unitColor: checking date \(date)")
         // Find the matching entry by date
         guard let entry = DataRepository.shared.calendarEntries.first(where: {
             Calendar.current.isDate($0.date, inSameDayAs: date)
@@ -78,16 +77,23 @@ extension MijickDayView.ColoredCircle {
         let prefix = String(entry.item.prefix(2))
         print("  ↪️ prefix: \(prefix)")
         switch prefix {
-        case "SF": print("  ↪️ prefix: \(prefix)"); return .blue
-        case "TP": print("  ↪️ prefix: \(prefix)"); return .green
-        case "ND": print("  ↪️ prefix: \(prefix)"); return .yellow
-        case "ST": print("  ↪️ prefix: \(prefix)"); return .orange
-        case "TT": print("  ↪️ prefix: \(prefix)"); return .red
-        case "FA": print("  ↪️ prefix: \(prefix)"); return .pink
-        case "PC": print("  ↪️ prefix: \(prefix)"); return .purple
-        case "GC": print("  ↪️ prefix: \(prefix)"); return .mint
+        case "SF":
+            return .blue
+        case "TP":
+            return .green
+        case "ND":
+            return .yellow
+        case "ST":
+            return .orange
+        case "TT":
+            return .red
+        case "FA":
+            return .pink
+        case "PC":
+            return .purple
+        case "GC":
+            return .mint
         case "HO": // Holiday
-            print("  ↪️ prefix: \(prefix)")
             return .gray
         default:
             return .clear
