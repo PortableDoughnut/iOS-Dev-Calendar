@@ -30,12 +30,23 @@ class ResourceViewController: UIViewController {
 		setupShelf()
 	}
 	
+    @objc func openSettings() {
+        performSegue(withIdentifier: "showSettingsSegue", sender: nil)
+    }
+    
 	func setupShelf() {
 		let stack = UIStackView()
 		stack.axis = .vertical
 		stack.spacing = 20
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		
+        // Add settings button
+        
+        let settingsButton = UIButton()
+        settingsButton.setTitle("Settings", for: .normal)
+        settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
+        stack.addArrangedSubview(settingsButton)
+        
 			// Add Books label
 		let booksLabel = UILabel()
 		booksLabel.text = "Books"
