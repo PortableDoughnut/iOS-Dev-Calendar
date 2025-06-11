@@ -42,7 +42,7 @@ class ResourceViewController: UIViewController {
 		
         // Add settings button
         
-        let settingsButton = UIButton()
+        let settingsButton = UIButton(type: .system)
         settingsButton.setTitle("Settings", for: .normal)
         settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
         stack.addArrangedSubview(settingsButton)

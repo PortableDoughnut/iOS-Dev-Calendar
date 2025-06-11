@@ -5,7 +5,6 @@
 //  Created by Wesley Keetch on 4/22/25.
 //
 
-
 import Foundation
 
 enum JSONLoadError: Error {

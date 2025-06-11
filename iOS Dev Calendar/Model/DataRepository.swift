@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class DataRepository {
     static let shared = DataRepository()
     
@@ -40,47 +42,63 @@ class DataRepository {
     }
     
     func loadCachedData() throws {
-        calendarEntries = try JSONLoader.load("Calendar", as: [CalendarEntryModel].self)
-        wordOfTheDay    = try JSONLoader.load("WordOfTheDay", as: [WordOfTheDay].self)
-        scopeAndSequence = try JSONLoader.load("ScopeAndSequence", as: [ScopeAndSequenceEntry].self)
-        reviewTopics    = try JSONLoader.load("ReviewTopics", as: [ReviewTopicEntry].self)
-        codeChallenges = try JSONLoader.load("CodeChallenges", as: [CodeChallengeEntry].self)
+        Task { @MainActor in
+            let context = PersistenceController.shared.context
+            
+            if let dataRepo = try context.fetch(FetchDescriptor<DataRepository>()).first {
+                NSLog("Loaded Cached Data")
+                self.calendarEntries = dataRepo.calendarEntries
+                self.scopeAndSequence = dataRepo.scopeAndSequence
+                self.codeChallenges = dataRepo.codeChallenges
+                self.wordOfTheDay = dataRepo.wordOfTheDay
+                self.reviewTopics = dataRepo.reviewTopics
+            }
+        }
     }
     
     func loadRemoteData() async throws {
-        let baseURL = URL(string: "https://mtechmobiledevelopment.github.io/Mobile-Development-Lesson-Plans/")!
+        let cohort = UserDefaults.standard.string(forKey: "selectedCohort") ?? "fall"
+
+        let baseURL = URL(string: "https://mtechmobiledevelopment.github.io/Mobile-Development-Lesson-Plans/data/\(cohort)/")!
         
-        let cohort = UserDefaults.value(forKey: "selectedCohort") ?? "fall"
-        
-        let calendarURL = baseURL.appending(path: "data/\(cohort)/Calendar.json")
+        let calendarURL = baseURL.appending(path: "Calendar.json")
         calendarEntries = try await JSONLoader.load(
                 fromURLString: calendarURL.absoluteString,
                 as: [CalendarEntryModel].self
             )
         
-        let scopeAndSequenceURL = baseURL.appending(path: "data/ScopeAndSequence.json")
+        let scopeAndSequenceURL = baseURL.appending(path: "ScopeAndSequence.json")
         scopeAndSequence = try await JSONLoader.load(
                 fromURLString: scopeAndSequenceURL.absoluteString,
                 as: [ScopeAndSequenceEntry].self
             )
         
-        let reviewTopicsURL = baseURL.appending(path: "data/ReviewTopics.json")
+        let reviewTopicsURL = baseURL.appending(path: "ReviewTopics.json")
         reviewTopics = try await JSONLoader.load(
             fromURLString: reviewTopicsURL.absoluteString,
             as: [ReviewTopicEntry].self
         )
         
-        let codeChallengesURL = baseURL.appending(path: "data/CodeChallenges.json")
+        let codeChallengesURL = baseURL.appending(path: "CodeChallenges.json")
         codeChallenges = try await JSONLoader.load(
             fromURLString: codeChallengesURL.absoluteString,
             as: [CodeChallengeEntry].self
         )
         
-        let wordOfTheDayURL = baseURL.appending(path: "data/WordOfTheDay.json")
+        let wordOfTheDayURL = baseURL.appending(path: "WordOfTheDay.json")
         wordOfTheDay = try await JSONLoader.load(
             fromURLString: wordOfTheDayURL.absoluteString,
             as: [WordOfTheDay].self
         )
+        
+        Task { @MainActor in
+            let context = PersistenceController.shared.context
+            
+            // Delete previous caches
+            try context.delete(model: DataRepository.self, where: nil)
+            
+            context.insert(self)
+        }
     }
     
     // helper to lookup details by dayID
@@ -97,5 +115,32 @@ class DataRepository {
         guard let dayIDIndex = scopeAndSequence.firstIndex(where: { $0.id == dayID }) else { return nil }
         
         return wordOfTheDay[dayIDIndex]
+    }
+}
+
+@MainActor
+public final class PersistenceController {
+    public static let shared = PersistenceController()
+    public let container: ModelContainer
+
+    private init() {
+        // Configure in-memory vs. on-disk, custom URLs, etc.
+        let config = ModelConfiguration(
+            for: DataRepository.self,
+            isStoredInMemoryOnly: false
+        )
+        let schema = Schema([DataRepository.self])
+
+        do {
+            container = try ModelContainer(for: schema,
+                                           configurations: [config])
+        } catch {
+            fatalError("Unable to create ModelContainer: \(error)")
+        }
+    }
+
+    /// A convenient context you can hand out to your view controllers
+    public var context: ModelContext {
+        ModelContext(container)
     }
 }

@@ -75,7 +75,6 @@ extension MijickDayView.ColoredCircle {
         }
         // Extract the two‑letter prefix (e.g. "SF", "TP", etc.)
         let prefix = String(entry.item.prefix(2))
-        print("  ↪️ prefix: \(prefix)")
         switch prefix {
         case "SF":
             return .blue
