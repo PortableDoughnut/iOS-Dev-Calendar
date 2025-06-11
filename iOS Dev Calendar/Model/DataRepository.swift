@@ -50,7 +50,9 @@ class DataRepository {
     func loadRemoteData() async throws {
         let baseURL = URL(string: "https://mtechmobiledevelopment.github.io/Mobile-Development-Lesson-Plans/")!
         
-        let calendarURL = baseURL.appending(path: "data/Calendar.json")
+        let cohort = UserDefaults.value(forKey: "selectedCohort") ?? "fall"
+        
+        let calendarURL = baseURL.appending(path: "data/\(cohort)/Calendar.json")
         calendarEntries = try await JSONLoader.load(
                 fromURLString: calendarURL.absoluteString,
                 as: [CalendarEntryModel].self
