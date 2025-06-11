@@ -107,6 +107,14 @@ class TodayViewController: UIViewController {
         
         // Set the navigation title to the formatted date string
         navigationItem.title = dateString
+        
+        let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(refresh))
+        navigationItem.rightBarButtonItem = refreshButton
+    }
+    
+    @objc func refresh() {
+        setupData()
+        setupCards()
     }
     
     /// Configures each card view with the appropriate data for today
@@ -153,12 +161,7 @@ class TodayViewController: UIViewController {
         CodeChallenge = repository.codeChallenge(for: dayID)?.fileName ?? "N/A"
         review = repository.reviewTopic(for: dayID)?.reviewTopic ?? "N/A"
         
-        // Get random word of the day
-        if !repository.wordOfTheDay.isEmpty {
-            let wordToday = repository.wordOfTheDay[Int.random(in: 0..<repository.wordOfTheDay.count)]
-            wordOfTheDay = wordToday.word.isEmpty ? "N/A" : wordToday.word
-        } else {
-            wordOfTheDay = "N/A"
-        }
+        // Get  word of the day
+        wordOfTheDay = repository.wordOfTheDay(for: dayID)?.word ?? "N/A"
     }
 }
